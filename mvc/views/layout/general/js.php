@@ -1,31 +1,14 @@
-    <!-- ========== JAVASCRIPT ========== -->
-    <script src="<?php echo URL ."mvc/Assets/js/jquery.min.js"?>"></script>
+      <!-- ========== JAVASCRIPT ========== -->
+    <script src="<?php echo URL ."mvc/Assets/js/jquery-3.6.0.min.js"?>"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="<?php echo URL ."mvc/Assets/js/bootstrap.min.js"?>"></script>
-    <script src="<?php echo URL ."mvc/Assets/js/bootstrap-select.min.js"?>"></script>
-    <script src="<?php echo URL ."mvc/Assets/js/jquery.mmenu.js"?>"></script>
-    <script src="<?php echo URL ."mvc/Assets/js/jquery.inview.min.js"?>"></script>
-    <script src="<?php echo URL ."mvc/Assets/js/jquery.countdown.min.js"?>"></script>
-    <script src="<?php echo URL ."mvc/Assets/js/jquery.magnific-popup.min.js"?>"></script>
+    <script src="<?php echo URL ."mvc/Assets/js/cart-localstorage.min.js"?>"></script>
+    <script src="<?php echo URL ."mvc/Assets/js/cart.js"?>"></script>
     <script src="<?php echo URL ."mvc/Assets/js/owl.carousel.min.js"?>"></script>
-    <script src="<?php echo URL ."mvc/Assets/js/owl.carousel.thumbs.min.js"?>"></script>
-    <script src="<?php echo URL ."mvc/Assets/js/isotope.pkgd.min.js"?>"></script>
-    <script src="<?php echo URL ."mvc/Assets/js/imagesloaded.pkgd.min.js"?>"></script>
-    <script src="<?php echo URL ."mvc/Assets/js/masonry.pkgd.min.js"?>"></script>
-    <script src="<?php echo URL ."mvc/Assets/js/wow.min.js"?>"></script>
-    <script src="<?php echo URL ."mvc/Assets/js/moment.min.js"?>"></script>
-    <script src="<?php echo URL ."mvc/Assets/js/daterangepicker.js"?>"></script>
-    <script src="<?php echo URL ."mvc/Assets/js/parallax.min.js"?>"></script>
-    <script src="<?php echo URL ."mvc/Assets/js/smoothscroll.min.js"?>"></script>
-    <script src="<?php echo URL ."mvc/Assets/js/instafeed.min.js"?>"></script>
     <script src="<?php echo URL ."mvc/Assets/js/main.js"?>"></script>
-    <!-- ========== REVOLUTION SLIDER ========== -->
-    <script src="<?php echo URL ."mvc/Assets/revolution/js/jquery.themepunch.tools.min.js"?>"></script>
-    <script src="<?php echo URL ."mvc/Assets/revolution/js/jquery.themepunch.revolution.min.js"?>"></script>
-    <script src="<?php echo URL ."mvc/Assets/revolution/js/extensions/revolution.extension.actions.min.js"?>"></script>
-    <script src="<?php echo URL ."mvc/Assets/revolution/js/extensions/revolution.extension.carousel.min.js"?>"></script>
-    <script src="<?php echo URL ."mvc/Assets/revolution/js/extensions/revolution.extension.kenburn.min.js"?>"></script>
-    <script src="<?php echo URL ."mvc/Assets/revolution/js/extensions/revolution.extension.layeranimation.min.js"?>"></script>
-    <script src="<?php echo URL ."mvc/Assets/revolution/js/extensions/revolution.extension.migration.min.js"?>"></script>
-    <script src="<?php echo URL ."mvc/Assets/revolution/js/extensions/revolution.extension.navigation.min.js"?>"></script>
-    <script src="<?php echo URL ."mvc/Assets/revolution/js/extensions/revolution.extension.parallax.min.js"?>"></script>
-    <script src="<?php echo URL ."mvc/Assets/revolution/js/extensions/revolution.extension.slideanims.min.js"?>"></script>
+    <script src="<?php echo URL ."mvc/Assets/js/tabs.js"?>"></script>
+    <script src="<?php echo URL ."mvc/Assets/js/validator.js"?>"></script>
+    <script src="<?php echo URL ."mvc/Assets/js/toast-message.js"?>"></script>
+    <script src="<?php echo URL ."mvc/Assets/js/checkout.js"?>"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

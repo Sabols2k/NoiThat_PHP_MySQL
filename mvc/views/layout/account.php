@@ -1,0 +1,91 @@
+    <!-- ========== SECTION-BREAD-CRUMP ========== -->
+    <section class="bread-crump">
+        <div class="container">
+            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Giới thiệu</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+    <!-- ========== SECTION-PAGE-ACCOUNT ========== -->
+    <section class="page-customer-account">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-lg-4">
+                    <h1 class="title-head">Thông tin tài khoản</h1>
+                    <div class="form-info-account">
+                        <p>
+                            <img id="avatar-image" class="change-avatar" src="../img/users/{{user.img}}" alt="account" 
+                            data-bs-toggle="modal" data-bs-target="#changeAvatarModal">
+                        </p>
+                        <p>
+                            <strong>Họ tên:</strong>
+                            {{user.firstname}} {{user.lastname}}
+                        </p>
+                        <p>
+                            <strong>Email:</strong>
+                            {{user.email}}
+                        </p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-lg-8">
+                    <h1 class="title-head">Đơn hàng của bạn</h1>
+                    <div class="table-order-responsive">
+                        <table class="table-order">
+                            <thead>
+                                <th>Đơn hàng</th>
+                                <th>Ngày</th>
+                                <th>Địa chỉ</th>
+                                <th>Giá trị đơn hàng</th>
+                                <th>TT thanh toán</th>
+                                <th>TT vận chuyển</th>
+                            </thead>
+                            <tbody>
+                                 {{#each bill}}
+                                <tr>
+                                    <td>#{{this._id}}</td>
+                                    <td>{{this.createdAt}}</td>
+                                    <td>Hà Nội, Vietnam</td>
+                                    <td class="price">{{this.totalPrice}}₫</td>
+                                    <td class="span-pending">Chưa thu tiền</td>
+                                    <td>Chưa chuyển</td>
+                                </tr>
+                                 {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Modal -->
+    <div class="modal fade" id="changeAvatarModal" tabindex="-1" aria-labelledby="changeAvatarModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="changeAvatarModalLabel">Change avatar</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+             <form id="changeformAvatar" action="account/changeAvatar" method="POST" enctype="multipart/form-data">
+            <div class="modal-body">
+               
+                    <div class="avatar text-center">
+                        <img src="../img/users/{{user.img}}" class="change-avatar">
+                    </div>
+                    <div class="form-group">
+                      <label for="avatar" class="col-form-label" style="font-size: 1.4rem;">Choose avatar:</label>
+                      <input type="file" name="avatar" class="form-control" id="avatar-name" style="padding: 10px 10px; font-size: 1.4rem;">
+                    </div>
+                 
+            </div>
+            <div class="modal-footer">
+                <button id="changeAvatarr" name="changeAvatar" type="submit" class="btn btn-lg" >Save changes</button>
+            </div>
+             </form>
+        </div>
+        </div>
+    </div>
+
+

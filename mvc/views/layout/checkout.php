@@ -1,0 +1,205 @@
+<div id="toast"></div>
+    <div id="payment">
+        <header class="banner">
+            <div class="wrap">
+                <div class="logo logo-center">
+                    <a href="/">
+                        <img src="../img/logo.png" alt="Evo Nội Thất" class="logo-img">
+                    </a>
+                </div>
+            </div>
+        </header>
+        <div class="content">
+            <div class="wrap">
+                <main class="main">
+                    <div class="main-header">
+                        <div class="logo logo-center">
+                            <a href="/">
+                                <img src="../img/logo.png" alt="Evo Nội Thất" class="logo-img">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="main-content">
+                        <div class="row">
+                            <div class="col col--two">
+                                <!-- Thông tin nhận hàng -->
+                               
+                                 <section class="section">
+                                     {{{infoAccount}}}
+                                    {{!-- <div class="section-header">
+                                        <div class="d-flex layout-flex">
+                                            <h2 class="section-title">
+                                                <i class="far fa-address-card hide-on-desktop"></i>
+                                                Thông tin nhận hàng
+                                            </h2>
+                                            <a href="/login">
+                                                <i class="far fa-user-circle"></i>
+                                                <span>Đăng nhập</span>
+                                            </a>
+                                        </div>
+                                    </div> --}}
+                                    <div class="section-content">
+                                        <form action="" class="form" id="form-4">
+                                            <div class="form-group">
+                                                <input style="background: #f7f7f7" id="email" name="email" type="text" value="{{{infouser.email}}}" class="form-control" placeholder="Email" {{{disabled}}}>
+                                                <span class="form-message"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <input style="background: #f7f7f7" id="fullname" name="fullname" type="text" value="{{{infouser.name}}}"  class="form-control" placeholder="Họ và tên" {{{disabled}}}>
+                                                <span class="form-message"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <input style="background: #f7f7f7" id="phoneNumber" name="phoneNumber" type="text" value="{{{infouser.phone}}}" class="form-control" placeholder="Số Điện Thoại" {{{disabled}}}>
+                                                <span class="form-message"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <input id="address" name="address" type="text" class="form-control" placeholder="Địa chỉ (tùy chọn)">
+                                                <span class="form-message"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <select class="form-select" id="city">
+                                                    <option value="" selected="selected">Tỉnh thành</option>
+                                                </select>
+                                                <span class="form-message"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <select class="form-select" id="district">
+                                                    <option value="" selected="selected">Quận huyện(tùy chọn)</option>
+                                                </select>
+                                                <span class="form-message"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <select class="form-select" id="ward">
+                                                    <option value="" selected="selected">Phường xã(tùy chọn)</option>
+                                                </select>
+                                                <span class="form-message"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <textarea class="form-control" placeholder="Ghi chú (tùy chọn)"></textarea>
+                                            </div>
+                                        </form>         
+                                    </div>
+                                </section> 
+                            </div> 
+                            <div class="col col--two">
+                                <!-- Vận chuyển -->
+                                <section class="section">
+                                    <div class="section-header col-right">
+                                        <div class="d-flex layout-flex">
+                                            <h2 class="section-title">
+                                                <i class="fas fa-truck hide-on-desktop"></i>
+                                                Vận chuyển
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="section-content">
+                                        <div class="content-box">
+                                            <div class="radio-wrapper">
+                                                <div class="radio-input">
+                                                    <div class="input-radio"></div>
+                                                </div>
+                                                <label for="" class="radio-label">
+                                                    <span class="radio-label-primary">Giao hàng tận nơi</span>
+                                                    <span class="radio-label-accessory">40.000</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                                <!-- Thanh toán -->
+                                <section class="section">
+                                    <div class="section-header col-right">
+                                        <div class="d-flex layout-flex">
+                                            <h2 class="section-title">
+                                                <i class="far fa-credit-card hide-on-desktop"></i>
+                                                Thanh toán
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="section-content">
+                                        <div class="content-box">
+                                            <div class="radio-wrapper">
+                                                <div class="radio-input">
+                                                    <div class="input-radio"></div>
+                                                </div>
+                                                <label for="" class="radio-label">
+                                                    <span class="radio-label-primary">Thanh toán khi giao hàng (COD)</span>
+                                                    <span class="radio-label-accessory">
+                                                        <span class="radio-label-icon pr-1">
+                                                            <i class="far fa-money-bill-alt"></i>
+                                                        </span>
+                                                    </span>
+                                                </label>
+                                            </div> 
+                                        </div>
+                                        <div class="content-box-last">
+                                            <p>Bạn chỉ phải thanh toán khi nhận được hàng</p>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                        <div class="field-input-wrapper hide-on-desktop">
+                            <button class="btn btn-lg btn-checkout" onclick="sendEmail()">Đặt hàng</button>
+                            <a href="/cart" class="prev-cart">
+                                <i class="fas fa-arrow-left"></i>
+                                <span>Quay về giỏ hàng</span>
+                            </a>
+                        </div>
+                    </div>
+                </main>
+                <aside class="sidebar">
+                    <div class="sidebar-header">
+                        <h2 class="sidebar-title">
+							Đơn hàng
+                            <span class="count-item">(0 sản phẩm)</span>
+                        </h2>
+                    </div>
+                    <div class="sidebar-content">
+                        <div class="order-summary-section scroll-over">
+                            <table class="product-table">
+                                <tbody id="order-summary">
+                                    <!-- ...Render from cart to checkout page with localstorage -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="order-summary-section">
+                            <table class="total-line-table">
+                                <tbody class="total-line-table_tbody">
+                                    <tr class="total-line">
+                                        <th class="total-line_name">Tạm tính</th>
+                                        <td class="total-line_price">
+                                            <span class="total">0₫</span>
+                                        </td>
+                                    </tr>
+                                    <tr class="total-line">
+                                        <th class="total-line_name">Phí vận chuyển</th>
+                                        <td class="total-line_price">
+                                            <span class="transport-cost">40.000₫</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tfoot class="total-line-table_tfoot">
+                                    <tr class="total-line payment-due">
+                                        <th class="total-line_name">Tổng cộng</th>
+                                        <td class="total-line_price">
+                                            <span class="total amount">0₫</span>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                        <div class="order-summary-section">
+                            <div class="field-input-wrapper hide-on-mobile">
+                                <button class="btn btn-lg btn-checkout" onclick="sendEmail()">Đặt hàng</button>
+                                <a href="/cart" class="prev-cart">
+                                    <i class="fas fa-arrow-left"></i>
+                                    <span>Quay về giỏ hàng</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>

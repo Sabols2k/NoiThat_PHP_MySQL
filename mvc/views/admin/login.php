@@ -33,15 +33,15 @@
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Welcome back Admin!</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">Welcome back!</h1>
                                     </div>
                                     <form class="user" action="<?php echo URLAdmin ."/login"?>" method="POST">
                                         <div class="form-group">
-                                            <input name="username" type="text" class="form-control form-control-user"
+                                            <input name="email" type="text" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Enter Username..."  maxlength=15 >
+                                                placeholder="Enter email..."  maxlength=15 >
                                                 <span class="invalidFeedback" style="color:red">
-                                                    <?php echo $data['usernameError']; ?>
+                                                    <?php echo $data['emailError']; ?>
                                                 </span>
                                         </div>
                                         <div class="form-group">
@@ -51,11 +51,11 @@
                                                 <?php echo $data['passwordError']; ?>
                                             </span>
                                         </div>
-                                        <button class="btn btn-info btn-user btn-block" id="submit" name="login" type="submit" value="submit">LOGIN</button>
                                     </form>
+                                        <input class="btn btn-danger btn-user btn-block" type="submit" class="fadeIn fourth" value="Log In">
                                     <hr>
                                     <div class="text-center">
-                                        <a class="large" href="<?php echo URLAdmin."loginReserve"?>">Are you a receptionist?</a>
+                                        <a class="small" href="<?php echo URLAdmin."register"?>">Create an Account!</a>
                                     </div>
                                 </div>
                             </div>

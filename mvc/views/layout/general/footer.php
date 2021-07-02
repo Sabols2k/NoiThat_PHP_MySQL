@@ -1,128 +1,217 @@
-<footer>
-        <div class="footer-widgets">
-          <div class="container">
-            <div class="row">
-              <!-- WIDGET -->
-              <div class="col-md-3">
-                <div class="footer-widget">
-                  <h1>QUIET LUXURY</h1>
-                  <div class="inner">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, velit placeat assumenda incidunt dolorem aliquam!</p>
-                    <a>
-                      <div class="tripadvisor-banner">
-                        <span class="review">Recommended</span>
-                        <img src="<?php echo URL ."mvc/Assets/images/icons/tripadvisor.png"?>" alt="Image">
-                      </div>
-                    </a>
-                  </div>
+<!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="site-footer">
+            <div class="container">
+                <div class="footer-inner pb-2">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <div class="footer-widget">
+                                <h3>Về chúng tôi</h3>
+                                <ul class="list-menu">
+                                    <li>
+                                        <a href="">Trang chủ</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Giới thiệu</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Sản phẩm</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Hàng mới về</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Tin tức</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Liên hệ</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <div class="footer-widget">
+                                <h3>Hỗ trợ khách hàng</h3>
+                                <ul class="list-menu">
+                                    <li>
+                                        <a href="">Trang chủ</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Giới thiệu</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Sản phẩm</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Hàng mới về</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Tin tức</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Liên hệ</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <div class="footer-widget">
+                                <h3>Liên hệ chúng tôi</h3>
+                                <ul class="list-menu">
+                                    <li>
+                                        <strong>Địa chỉ</strong>
+                                        30 Đường 2/9, Phường Bình Hiên, Quận Hải Châu, Đà Nẵng
+                                    </li>
+                                    <li>
+                                        <strong>Hotline</strong>
+                                        <a href="tel:0900090909">0900090909</a>
+                                    </li>
+                                    <li>
+                                        <strong>Email</strong>     
+                                        <a href="mailto:mchuong1852@gmail.com">mchuong1852@gmail.com</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <div class="footer-widget form-mail">
+                                <h3>Đăng ký nhận bản tin</h3>
+                                <form action="">
+                                    <input type="email" class="form-control" placeholder="Email của bạn...">
+                                    <button class="btn btn-default">
+                                        <i class="fas fa-paper-plane"></i>
+                                    </button>
+                                </form>
+                                <p>Bạn là khách hàng mới. Đăng ký email và nhận mã giảm giá 50.000 đ.</p>
+                                <div class="bct-payment">
+                                    <div class="bct-img">
+                                        <img src="../img/footer/bct.png" alt="">
+                                    </div>
+                                    <div class="payment-img">
+                                        <img src="../img/footer/payment-1.svg" alt="">
+                                        <img src="../img/footer/payment-2.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <!-- WIDGET -->
-              <div class="col-md-3">
-                <div class="footer-widget">
-                  <h3>LATEST NEWS</h3>
-                  <div class="inner">
-                    <ul class="latest-posts">
-                      <li>
-                        <a>10 Tips for holiday travel</a>
-                      </li>
-                      <li>
-                        <a>Are you ready to enjoy your holidays</a>
-                      </li>
-                      <li>
-                        <a>Travel gift ideas for every type of traveler</a>
-                      </li>
-                      <li>
-                        <a>Breakfast with coffee and orange juice</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <!-- WIDGET -->
-              <div class="col-md-3">
-                <div class="footer-widget">
-                  <h3>USEFUL LINKS</h3>
-                  <div class="inner">
-                    <ul class="useful-links">
-                      <li>
-                        <a href="<?php echo URL_Layout."aboutus"?>">About Us</a>
-                        </li>
-                        <li>
-                          <a href="<?php echo URL_Layout."contact"?>">Contact Us</a>
-                      </li>
-                      <li>
-                        <a href="<?php echo URL_Layout."roomlist"?>">Room</a>
-                      </li>
-                      <li>
-                        <a href="#">Quite Luxury Hotel</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <!-- WIDGET -->
-              <div class="col-md-3">
-                <div class="footer-widget">
-                  <h3>Contact Info</h3>
-                  <div class="inner">
-                    <ul class="contact-details">
-                      <li>
-                        <i class="fa fa-map-marker" aria-hidden="true"></i>
-                        Lorem ipsum dolor, 25, Quite Luxury</li>
-                      <li>
-                        <i class="fa fa-phone" aria-hidden="true"></i>
-                        Phone: +1 888 123 4567
-                      </li>
-                      <li>
-                        <i class="fa fa-globe"></i>
-                        Web: www.hotelquiteluxury.com</li>
-                      <li>
-                        <i class="fa fa-envelope"></i>
-                        Email:
-                        <a>quiteluxury@gmail.com</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- SUBFOOTER -->
-        <div class="subfooter">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="copyrights">&copy; 2020 Hotel Quite Luxury. Designed by Team 5
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="social-media">
-                  <a class="facebook" data-original-title="Facebook" data-toggle="tooltip" href="#">
-                    <i class="fa fa-facebook"></i>
-                  </a>
-                  <a class="twitter" data-original-title="Twitter" data-toggle="tooltip" href="#">
-                    <i class="fa fa-twitter"></i>
-                  </a>
-                  <a class="googleplus" data-original-title="Google Plus" data-toggle="tooltip" href="#">
-                    <i class="fa fa-google-plus"></i>
-                  </a>
-                  <a class="pinterest" data-original-title="Pinterest" data-toggle="tooltip" href="#">
-                    <i class="fa fa-pinterest"></i>
-                  </a>
-                  <a class="linkedin" data-original-title="Linkedin" data-toggle="tooltip" href="#">
-                    <i class="fa fa-linkedin"></i>
-                  </a>
-                  <a class="youtube" data-original-title="Youtube" data-toggle="tooltip" href="#">
-                    <i class="fa fa-youtube"></i>
-                  </a>
-                  <a class="instagram" data-original-title="Instagram" data-toggle="tooltip" href="#">
-                    <i class="fa fa-instagram"></i>
-                  </a>
-                </div>
-              </div>
             </div>
         </div>
-    </div>
-</footer>
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <span>
+                            © Bản quyền thuộc về 
+                            <b>Minh Chuong</b>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="back-to-top">
+            <i class="fas fa-angle-up"></i>
+        </div>
+        <!-- ========== CART D-NONE ========== -->
+        <div class="shopping-cart d-none">
+            <div class="container">
+                <!-- Cart-Title -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="title-head">
+                            Giỏ Hàng
+                            <span class="count-item">(0 sản phẩm)</span>
+                        </h1>
+                    </div>
+                </div>
+                <!-- Cart-Content -->
+                <div class="row">
+                    <div class="col-lg-9">
+                        <div class="content">
+                            <table class="table d-none d-lg-table">
+                                <tbody id="order_items">
+                                    <!-- Render products desktop -->
+                                </tbody>
+                            </table>
+                            <div id="order_items_mobile" class="mobile_table d-lg-none mb-3 bg-white p-3 pt-4">
+                                <!-- Render products mobile -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="container">
+                            <div class="cart-submit">
+                                <div class="box-fee">
+                                    <p>
+                                        <span>Tạm tính:</span>
+                                        <strong class="total total-price">0₫</strong>
+                                    </p>
+                                </div>
+                                <div class="box-fee">
+                                    <p>
+                                        <span>Thành tiền:</span>
+                                        <strong class="total total-price amount">0₫</strong>
+                                    </p>
+                                </div>
+                                <button type="button" class="btn btn-lg btn-checkout">Thanh toán ngay</button>
+                                <button type="button" class="btn btn-lg btn-checkouts">Tiếp tục mua hàng</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--  ========== CART-MODAL D-NONE ========== -->
+        <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="cartModalLabel">
+                            BẠN ĐÃ THÊM
+                            <span class="cart-name">1 SẢN PHẨM</span>
+                            VÀO GIỎ HÀNG
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="title-quantily">
+                            <a href="cart">Xem giỏ hàng</a>
+                        </div>
+                        <div class="content-cart">
+                            <div class="thead-popup">
+                                <div style="width: 55%" class="text-left">Sản phẩm</div>
+                                <div style="width: 15%" class="text-center">Đơn giá</div>
+                                <div style="width: 15%" class="text-center">Số lượng</div>
+                                <div style="width: 15%" class="text-center">Thành tiền</div>
+                            </div>
+                            <div class="tbody-popup">
+                                <!-- ...Render -->
+                            </div>
+                            <div class="tfoot-popup">
+                                <div class="pull-left">
+                                    <a href="">
+                                        <span data-bs-dismiss="modal">
+                                            <i class="fas fa-arrow-left"></i>
+                                            Tiếp tục mua hàng
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="pull-right">
+                                    <p>
+                                        Thành tiền:
+                                        <span id="total-price">43.860.000₫</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer"> 
+                        <a href="/cart">
+                            <button  type="button" class="btn btn-lg">Thanh toán đơn hàng</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
