@@ -1,10 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evo Nội Thất</title>
+    <?php 
+        require_once "general/css.php";
+    ?>
+  </head>
+<body>
 <div id="toast"></div>
     <div id="payment">
         <header class="banner">
             <div class="wrap">
                 <div class="logo logo-center">
-                    <a href="/">
-                        <img src="../img/logo.png" alt="Evo Nội Thất" class="logo-img">
+                    <a href="<?php echo URL. "home"?>">
+                        <img src="<?php echo URL_Layout ."mvc/Assets/img/logo.png"?>" alt="Evo Nội Thất" class="logo-img">
                     </a>
                 </div>
             </div>
@@ -14,8 +26,8 @@
                 <main class="main">
                     <div class="main-header">
                         <div class="logo logo-center">
-                            <a href="/">
-                                <img src="../img/logo.png" alt="Evo Nội Thất" class="logo-img">
+                            <a href="<?php echo URL. "home"?>">
+                                <img src="<?php echo URL_Layout ."mvc/Assets/img/logo.png"?>" alt="Evo Nội Thất" class="logo-img">
                             </a>
                         </div>
                     </div>
@@ -203,3 +215,7 @@
             </div>
         </div>
     </div>
+<!-- ========== JAVASCRIPT ========== -->
+<?php 
+    require_once('general/js.php');
+?>

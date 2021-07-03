@@ -112,7 +112,7 @@
                                             <div class="owl-carousel owl-product owl-theme">
                                                 <div class="evo-product-block-item ">
                                                     <div class="product-img">
-                                                        <a href="./detail-sanpham.html">
+                                                        <a href="<?php echo URL_Layout."DetailSanpham"?>">
                                                             <img class="img-prd" src="<?php echo URL ."mvc/Assets/img/All-products/giuong-ngu-go.jpg"?>" alt="">
                                                         </a>
                                                     </div>
@@ -130,14 +130,14 @@
                                                             <a href="">Evo Nội Thất</a>
                                                         </div>
                                                         <h3>
-                                                            <a href="./detail-sanpham.html" class="pro-name">Giường ngủ gỗ chất lượng cao cho gia đình</a>
+                                                            <a href="<?php echo URL_Layout."DetailSanpham"?>" class="pro-name">Giường ngủ gỗ chất lượng cao cho gia đình</a>
                                                         </h3>
                                                         <p class="pro-price">300.000₫</p>
                                                     </div>
                                                 </div>
                                                 <div class="evo-product-block-item ">
                                                     <div class="product-img">
-                                                        <a href="./detail-sanpham.html">
+                                                        <a href="<?php echo URL_Layout."DetailSanpham"?>">
                                                             <img class="img-prd" src="<?php echo URL ."mvc/Assets/img/All-products/gia-sach-go.jpg"?>" alt="">
                                                         </a>
                                                     </div>
@@ -155,14 +155,14 @@
                                                             <a href="">Evo Nội Thất</a>
                                                         </div>
                                                         <h3>
-                                                            <a href="./detail-sanpham.html" class="pro-name">Giá sách gỗ tự nhiên thiết kế đẹp</a>
+                                                            <a href="<?php echo URL_Layout."DetailSanpham"?>" class="pro-name">Giá sách gỗ tự nhiên thiết kế đẹp</a>
                                                         </h3>
                                                         <p class="pro-price">350.000₫</p>
                                                     </div>
                                                 </div>
                                                 <div class="evo-product-block-item ">
                                                     <div class="product-img">
-                                                        <a href="./detail-sanpham.html">
+                                                        <a href="<?php echo URL_Layout."DetailSanpham"?>">
                                                             <img class="img-prd" src="<?php echo URL ."mvc/Assets/img/All-products/tu-bep-gia-dinh.jpg"?>" alt="">
                                                         </a>
                                                     </div>
@@ -180,14 +180,14 @@
                                                             <a href="">Evo Nội Thất</a>
                                                         </div>
                                                         <h3>
-                                                            <a href="./detail-sanpham.html" class="pro-name">Tủ bếp gia đình gỗ sồi tự nhiên thiết kế hiện đại</a>
+                                                            <a href="<?php echo URL_Layout."DetailSanpham"?>" class="pro-name">Tủ bếp gia đình gỗ sồi tự nhiên thiết kế hiện đại</a>
                                                         </h3>
                                                         <p class="pro-price">400.000₫</p>
                                                     </div>
                                                 </div>
                                                 <div class="evo-product-block-item ">
                                                     <div class="product-img">
-                                                        <a href="./detail-sanpham.html">
+                                                        <a href="<?php echo URL_Layout."DetailSanpham"?>">
                                                             <img class="img-prd" src="<?php echo URL ."mvc/Assets/img/All-products/tu-bep-go-hien-dai.jpg"?>" alt="">
                                                         </a>
                                                     </div>
@@ -205,7 +205,7 @@
                                                             <a href="">Evo Nội Thất</a>
                                                         </div>
                                                         <h3>
-                                                            <a href="./detail-sanpham.html" class="pro-name">Tủ bếp gỗ tự nhiên thiết kế đa năng đẹp hiện đại</a>
+                                                            <a href="<?php echo URL_Layout."DetailSanpham"?>" class="pro-name">Tủ bếp gỗ tự nhiên thiết kế đa năng đẹp hiện đại</a>
                                                         </h3>
                                                         <p class="pro-price">500.000₫</p>
                                                     </div>
@@ -220,7 +220,7 @@
                                             <div class="owl-carousel owl-product owl-theme">
                                                 <div class="evo-product-block-item ">
                                                     <div class="product-img">
-                                                        <a href="./detail-sanpham.html">
+                                                        <a href="<?php echo URL_Layout."DetailSanpham"?>">
                                                             <img class="img-prd" src="<?php echo URL ."mvc/Assets/img/All-products/giuong-ngu-go.jpg"?>" alt="">
                                                         </a>
                                                     </div>
@@ -237,7 +237,7 @@
                                                             <a href="">Evo Nội Thất</a>
                                                         </div>
                                                         <h3>
-                                                            <a href="./detail-sanpham.html" class="pro-name">Giường ngủ gỗ</a>
+                                                            <a href="<?php echo URL_Layout."DetailSanpham"?>" class="pro-name">Giường ngủ gỗ</a>
                                                         </h3>
                                                         <p class="pro-price">500.000₫</p>
                                                     </div>
@@ -284,7 +284,7 @@
                                             <div class="owl-carousel owl-product owl-theme">
                                                 <div class="evo-product-block-item ">
                                                     <div class="product-img">
-                                                        <a href="./detail-sanpham.html">
+                                                        <a href="<?php echo URL_Layout."DetailSanpham"?>">
                                                             <img class="img-prd" src="<?php echo URL ."mvc/Assets/img/All-products/tu-bep-gia-dinh.jpg"?>" alt="">
                                                         </a>
                                                     </div>
@@ -301,7 +301,7 @@
                                                             <a href="">Evo Nội Thất</a>
                                                         </div>
                                                         <h3>
-                                                            <a href="./detail-sanpham.html" class="pro-name">Tủ bếp gia đình gỗ sồi tự nhiên thiết kế hiện đại</a>
+                                                            <a href="<?php echo URL_Layout."DetailSanpham"?>" class="pro-name">Tủ bếp gia đình gỗ sồi tự nhiên thiết kế hiện đại</a>
                                                         </h3>
                                                         <p class="pro-price">400.000₫</p>
                                                     </div>

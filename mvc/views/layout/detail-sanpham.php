@@ -38,10 +38,10 @@
                                 <div class="col-md-6">
                                     <div class="slider-img-product">
                                         <div class="mySlides">
-                                            <img src="../img/All-products/{{product.img}}.jpg" style="width:100%">
+                                            <img src="<?php echo URL_Layout ."mvc/Assets/img/All-products/{{product.img}}.jpg"?>" style="width:100%">
                                         </div>
                                         <div class="mySlides">
-                                            <img src="../img/All-products/{{product.img}}.jpg" style="width:100%">
+                                            <img src="<?php echo URL_Layout ."mvc/Assets/img/All-products/{{product.img}}.jpg"?>" style="width:100%">
                                         </div>
                                       
                                         <a class="prev" onclick="plusSlides(-1)">❮</a>
@@ -49,10 +49,10 @@
                                       
                                         <div class="thumb">
                                             <div class="thumb-item">
-                                                <img class="demo" src="../img/All-products/{{product.img}}.jpg" style="width:100%" onclick="currentSlide(1)">
+                                                <img class="demo" src="<?php echo URL_Layout ."mvc/Assets/img/All-products/{{product.img}}.jpg"?>" style="width:100%" onclick="currentSlide(1)">
                                             </div>
                                             <div class="thumb-item">
-                                                <img class="demo" src="../img/All-products/{{product.img}}.jpg" style="width:100%" onclick="currentSlide(2)">
+                                                <img class="demo" src="<?php echo URL_Layout ."mvc/Assets/img/All-products/{{product.img}}.jpg"?>" style="width:100%" onclick="currentSlide(2)">
                                             </div>
                                         </div>
                                     </div>
@@ -105,7 +105,8 @@
                                                     <div class="modal-header">
                                                         <h5 class="modal-title" id="cartModalLabel">
                                                             BẠN ĐÃ THÊM
-                                                            <span class="cart-name">1 SẢN PHẨM</span>                                                            VÀO GIỎ HÀNG
+                                                            <span class="cart-name">1 SẢN PHẨM</span>                                                           
+                                                            VÀO GIỎ HÀNG
                                                         </h5>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
@@ -159,9 +160,9 @@
                                         </div>
                                         <div class="payment-product">
                                             <span>Hình thức thanh toán</span>
-                                            <img src="../img/All-products/payment/ppayment-1.svg" alt="">
-                                            <img src="../img/All-products/payment/ppayment-2.svg" alt="">
-                                            <img src="../img/All-products/payment/ppayment-3.svg" alt="">
+                                            <img src="<?php echo URL_Layout ."mvc/Assets/img/All-products/payment/ppayment-1.svg"?>" alt="">
+                                            <img src="<?php echo URL_Layout ."mvc/Assets/img/All-products/payment/ppayment-2.svg"?>" alt="">
+                                            <img src="<?php echo URL_Layout ."mvc/Assets/img/All-products/payment/ppayment-3.svg"?>" alt="">
                                         </div>
                                     </div>
                                 </div>
@@ -182,7 +183,7 @@
                                            <div class="describe">
                                                <p><strong> Giường ngủ gỗ chất lượng cao cho gia đình GHS-9071 </strong>khiến mọi vị khách cảm thấy hài lòng trong quá trình sử dụng. Điều thu hút khách hàng đầu tiện chính là vẻ đpẹ hiện đại, thanh lịch của mẫu giường ngủ gỗ. Cùng với đó, thiết kế nệm bọc nỉ, da cao cấp của sản phẩm cũng góp phần đem đến những trải nghiệm thoải mái, dễ chịu nhất đối với người dùng.</p>
                                                <p>
-                                                   <img class="mw-100" src="../img/All-products/giuong-ngu-go-chat-luong-cao-cho-gia-dinh-ghs-9071-ava.jpg" alt="">
+                                                   <img class="mw-100" src="<?php echo URL_Layout ."mvc/Assets/img/All-products/giuong-ngu-go-gia-dinh-phun-son-hien-dai.jpg"?>" alt="">
                                                </p>
                                                <h2>Thông tin chi tiết về giường ngủ gỗ chất lượng cao cho gia đình GHS-9071</h2>
                                                <p>
@@ -260,7 +261,7 @@
                                                             <span>- 16% </span>
                                                         </div>
                                                         <a href="">
-                                                            <img src="../img/section-tab-san-pham/tu-bep-gia-dinh-go-cong-nghiep-nho-gon-da-nang.jpg" alt="">
+                                                            <img src="<?php echo URL_Layout ."mvc/Assets/img/section-tab-san-pham/tu-bep-gia-dinh-go-cong-nghiep-nho-gon-da-nang.jpg"?>" alt="">
                                                         </a>
                                                     </div>
                                                     <div class="product-detail">
@@ -284,7 +285,7 @@
                                                             <span>- 16% </span>
                                                         </div>
                                                         <a href="">
-                                                            <img src="../img/section-tab-san-pham/ezgif.jpg" alt="">
+                                                            <img src="<?php echo URL_Layout ."mvc/Assets/img/section-tab-san-pham/ezgif.jpg"?>" alt="">
                                                         </a>
                                                     </div>
                                                     <div class="product-detail">
@@ -308,7 +309,7 @@
                                                             <span>- 16% </span>
                                                         </div>
                                                         <a href="">
-                                                            <img src="../img/section-tab-san-pham/tu-bep-go-tu-nhien-thiet-ke-da-nang-dep-hien-dai.jpg" alt="">
+                                                            <img src="<?php echo URL_Layout ."mvc/Assets/img/section-tab-san-pham/tu-bep-go-tu-nhien-thiet-ke-da-nang-dep-hien-dai.jpg"?>" alt="">
                                                         </a>
                                                     </div>
                                                     <div class="product-detail">
@@ -332,7 +333,7 @@
                                                             <span>- 16% </span>
                                                         </div>
                                                         <a href="">
-                                                            <img src="../img/section-tab-san-pham/tu-bep-go-tu-nhien-thiet-ke-da-nang-dep-hien-dai.jpg" alt="">
+                                                            <img src="<?php echo URL_Layout ."mvc/Assets/img/section-tab-san-pham/tu-bep-go-tu-nhien-thiet-ke-da-nang-dep-hien-dai.jpg"?>" alt="">
                                                         </a>
                                                     </div>
                                                     <div class="product-detail">
@@ -367,7 +368,7 @@
                                             <div class="evo-product-block-item">
                                                 <div class="product-img">
                                                     <a href="">
-                                                        <img src="../img/section-tab-san-pham/ezgif.jpg" alt="">
+                                                        <img src="<?php echo URL_Layout ."mvc/Assets/img/section-tab-san-pham/ezgif.jpg"?>">
                                                     </a>
                                                     <div class="button-add">
                                                         <button>
@@ -391,7 +392,7 @@
                                             <div class="evo-product-block-item">
                                                 <div class="product-img">
                                                     <a href="">
-                                                        <img src="../img/section-tab-san-pham/tu-bep-go-tu-nhien-thiet-ke-da-nang-dep-hien-dai.jpg" alt="">
+                                                        <img src="<?php echo URL_Layout ."mvc/Assets/img/section-tab-san-pham/tu-bep-go-tu-nhien-thiet-ke-da-nang-dep-hien-dai.jpg"?>">
                                                     </a>
                                                     <div class="button-add">
                                                         <button>
@@ -415,7 +416,7 @@
                                             <div class="evo-product-block-item">
                                                 <div class="product-img">
                                                     <a href="">
-                                                        <img src="../img/section-tab-san-pham/tu-bep-gia-dinh-go-cong-nghiep-nho-gon-da-nang.jpg" alt="">
+                                                        <img src="<?php echo URL_Layout ."mvc/Assets/img/section-tab-san-pham/tu-bep-gia-dinh-go-cong-nghiep-nho-gon-da-nang.jpg"?>" alt="">
                                                     </a>
                                                     <div class="button-add">
                                                         <button>
@@ -463,7 +464,7 @@
                 <div class="item-popup">
                     <div style="width: 55%" class="text-left">
                         <div class="item-image">
-                            <img src="../img/All-products/${item.img}.jpg" alt="" width="80">
+                            <img src="mvc/Assets/img/All-products/${item.img}.jpg"?>" alt="" width="80">
                         </div>
                         <div class="item-info">
                             <p class="item-name">${item.name}</p>
@@ -501,8 +502,8 @@
         renderCartModal(cartLS.list())
         cartLS.onChange(renderCartModal)
     </script>
-        <!-- ========== FOOTER ========== -->
-        <?php
+    <!-- ========== FOOTER ========== -->
+    <?php
         require_once('general/footer.php');
       ?> 
     </div>

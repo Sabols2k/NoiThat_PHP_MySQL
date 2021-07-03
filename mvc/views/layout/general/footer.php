@@ -176,7 +176,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="title-quantily">
-                            <a href="cart">Xem giỏ hàng</a>
+                            <a href="<?php echo URL_Layout."Cart"?>">Xem giỏ hàng</a>
                         </div>
                         <div class="content-cart">
                             <div class="thead-popup">
@@ -207,8 +207,8 @@
                         </div>
                     </div>
                     <div class="modal-footer"> 
-                        <a href="/cart">
-                            <button  type="button" class="btn btn-lg">Thanh toán đơn hàng</button>
+                        <a href="<?php echo URL_Layout."Checkout"?>">
+                            <button type="button" class="btn btn-lg">Thanh toán đơn hàng</button>
                         </a>
                     </div>
                 </div>

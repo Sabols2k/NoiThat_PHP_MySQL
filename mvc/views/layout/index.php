@@ -10,18 +10,17 @@
     ?>
   </head>
 <body>
-      <!-- ========== HEADER ========== -->
       <?php $page = 'home'; require_once('general/header.php');?>
-      <!-- ========== HOMEPAGE ========== -->
+
       <?php
         require_once('general/home.php');
       ?> 
-      <!-- ========== FOOTER ========== -->
+
       <?php
         require_once('general/footer.php');
       ?> 
     </div>
-    <!-- ========== JAVASCRIPT ========== -->
+
     <?php 
         require_once('general/js.php');
     ?>

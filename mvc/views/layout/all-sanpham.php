@@ -21,7 +21,7 @@
                   <li class="breadcrumb-item active" aria-current="page">Tất cả sản phẩm</li>
                 </ol>
             </nav>
-        </div>
+        </div>  
     </section>    
     <!-- ========== SECTION-ALL-PRODUCT ========== -->
     <section class="page-all-product">
@@ -30,14 +30,14 @@
                 <div class="col-md-12">
                     <h1 class="title-head">Tất cả sản phẩm</h1>
                     <div class="single-image">
-                        <img src="../img/All-products/cat-banner-1.jpg" alt="">
+                        <img src="<?php echo URL_Layout ."mvc/Assets/img/All-products/cat-banner-1.jpg"?>" alt="">
                     </div>
                     <div class="owl-carousel owl-category owl-theme">
 
                         <div class="category-item">
                             <a href="">
                                 <div class="category-item-image">
-                                    <img src="../img/All-products/category-group/desk.png" alt="">
+                                    <img src="<?php echo URL_Layout ."mvc/Assets/img/All-products/category-group/desk.png"?>" alt="">
                                     <h6>Nội thất gỗ</h6>    
                                 </div>
                             </a>
@@ -46,7 +46,7 @@
                         <div class="category-item">
                             <a href="">
                                 <div class="category-item-image">
-                                    <img src="../img/All-products/category-group/sofa.png" alt="">
+                                    <img src="<?php echo URL_Layout ."mvc/Assets/img/All-products/category-group/sofa.png"?>" alt="">
                                     <h6>Sofa, Ghế thư giãn</h6>    
                                 </div>
                             </a>
@@ -54,7 +54,7 @@
                         <div class="category-item">
                             <a href="">
                                 <div class="category-item-image">
-                                    <img src="../img/All-products/category-group/living-room.png" alt="">
+                                    <img src="<?php echo URL_Layout ."mvc/Assets/img/All-products/category-group/living-room.png"?>" alt="">
                                     <h6>Đồ trang trí</h6>    
                                 </div>
                             </a>
@@ -62,7 +62,7 @@
                         <div class="category-item">
                             <a href="">
                                 <div class="category-item-image">
-                                    <img src="../img/All-products/category-group/curtains.png" alt="">
+                                    <img src="<?php echo URL_Layout ."mvc/Assets/img/All-products/category-group/curtains.png"?>" alt="">
                                     <h6>Đồ dùng vải</h6>    
                                 </div>
                             </a>
@@ -70,7 +70,7 @@
                         <div class="category-item">
                             <a href="">
                                 <div class="category-item-image">
-                                    <img src="../img/All-products/category-group/dinner-table.png" alt="">
+                                    <img src="<?php echo URL_Layout ."mvc/Assets/img/All-products/category-group/dinner-table.png"?>" alt="">
                                     <h6>Vật dụng bàn ăn</h6>    
                                 </div>
                             </a>
@@ -78,7 +78,7 @@
                         <div class="category-item">
                             <a href="">
                                 <div class="category-item-image">
-                                    <img src="../img/All-products/category-group/work-station-1.png" alt="">
+                                    <img src="<?php echo URL_Layout ."mvc/Assets/img/All-products/category-group/work-station-1.png"?>" alt="">
                                     <h6>Đồ dùng văn phòng</h6>    
                                 </div>
                             </a>
@@ -162,7 +162,7 @@
                                             <span>
                                                 <label for="">
                                                     <input type="checkbox">
-                                                    Giá dưới 100.000đ
+                                                    100.000đ - 200.000đ
                                                 </label>
                                             </span>
                                         </li>
@@ -170,7 +170,7 @@
                                             <span>
                                                 <label for="">
                                                     <input type="checkbox">
-                                                    Giá dưới 100.000đ
+                                                    200.000đ - 300.000đ
                                                 </label>
                                             </span>
                                         </li>
@@ -178,7 +178,7 @@
                                             <span>
                                                 <label for="">
                                                     <input type="checkbox">
-                                                    Giá dưới 100.000đ
+                                                    300.000đ - 500.000đ
                                                 </label>
                                             </span>
                                         </li>
@@ -186,7 +186,7 @@
                                             <span>
                                                 <label for="">
                                                     <input type="checkbox">
-                                                    Giá dưới 100.000đ
+                                                    500.000đ - 1.000.000đ
                                                 </label>
                                             </span>
                                         </li>
@@ -194,97 +194,11 @@
                                 </div>
                             </div>
                             <div class="filter">
-                                <div class="title">Giá sản phẩm</div>
+                                <div class="title">Khuyến mãi</div>
                                 <div class="content">
-                                    <ul>
-                                        <li class="filter-item">
-                                            <span>
-                                                <label for="">
-                                                    <input type="checkbox">
-                                                    Giá dưới 100.000đ
-                                                </label>
-                                            </span>
-                                        </li>
-                                        <li class="filter-item">
-                                            <span>
-                                                <label for="">
-                                                    <input type="checkbox">
-                                                    Giá dưới 100.000đ
-                                                </label>
-                                            </span>
-                                        </li>
-                                        <li class="filter-item">
-                                            <span>
-                                                <label for="">
-                                                    <input type="checkbox">
-                                                    Giá dưới 100.000đ
-                                                </label>
-                                            </span>
-                                        </li>
-                                        <li class="filter-item">
-                                            <span>
-                                                <label for="">
-                                                    <input type="checkbox">
-                                                    Giá dưới 100.000đ
-                                                </label>
-                                            </span>
-                                        </li>
-                                        <li class="filter-item">
-                                            <span>
-                                                <label for="">
-                                                    <input type="checkbox">
-                                                    Giá dưới 100.000đ
-                                                </label>
-                                            </span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="filter">
-                                <div class="title">Giá sản phẩm</div>
-                                <div class="content">
-                                    <ul>
-                                        <li class="filter-item">
-                                            <span>
-                                                <label for="">
-                                                    <input type="checkbox">
-                                                    Giá dưới 100.000đ
-                                                </label>
-                                            </span>
-                                        </li>
-                                        <li class="filter-item">
-                                            <span>
-                                                <label for="">
-                                                    <input type="checkbox">
-                                                    Giá dưới 100.000đ
-                                                </label>
-                                            </span>
-                                        </li>
-                                        <li class="filter-item">
-                                            <span>
-                                                <label for="">
-                                                    <input type="checkbox">
-                                                    Giá dưới 100.000đ
-                                                </label>
-                                            </span>
-                                        </li>
-                                        <li class="filter-item">
-                                            <span>
-                                                <label for="">
-                                                    <input type="checkbox">
-                                                    Giá dưới 100.000đ
-                                                </label>
-                                            </span>
-                                        </li>
-                                        <li class="filter-item">
-                                            <span>
-                                                <label for="">
-                                                    <input type="checkbox">
-                                                    Giá dưới 100.000đ
-                                                </label>
-                                            </span>
-                                        </li>
-                                    </ul>
+                                    <div class="single-image">
+                                        <img src="<?php echo URL_Layout ."mvc/Assets/img/All-products/aside_banner.jpg"?>" alt="">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -397,7 +311,7 @@
                         <div class="evo-product-block-item">
                             <div class="product-img">
                                 <a href="/detail-sanpham/${product._id}">
-                                    <img class="img-prd" src="../img/All-products/${product.img}.jpg" alt="">
+                                    <img class="img-prd" src="mvc/Assets/img/All-products/${product.img}.jpg"?>" alt="">
                                 </a>
                             </div>
                             <div class="button-add">
@@ -427,8 +341,8 @@
         
     </script>
 
-              <!-- ========== FOOTER ========== -->
-              <?php
+    <!-- ========== FOOTER ========== -->
+    <?php
         require_once('general/footer.php');
       ?> 
     </div>
