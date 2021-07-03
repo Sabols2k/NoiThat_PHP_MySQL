@@ -1,3 +1,17 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evo Nội Thất</title>
+    <?php 
+        require_once "general/css.php";
+    ?>
+  </head>
+<body>
+     <!-- ========== HEADER ========== -->
+     <?php $page = 'home'; require_once('general/header.php');?>
     <!-- ========== SECTION-DETAIL-PRODUCT ========== -->
     <section class="detail-product">
         <div class="container">
@@ -75,7 +89,8 @@
                                             <button type="submit" 
                                                     class="btn btn-gray btn-lg add-to-cart"
                                                     data-bs-toggle="modal" data-bs-target="#cartModal"
-                                                    onClick="cartLS.add({id: {{product.product_id}}, name: '{{product.name}}', img:'{{product.img}}', price: {{product.price}} })">
+                                            
+                                                    >
                                                 <span>
                                                     Mua ngay 
                                                     <b class="product-price">{{product.price}}₫</b>
@@ -486,3 +501,14 @@
         renderCartModal(cartLS.list())
         cartLS.onChange(renderCartModal)
     </script>
+        <!-- ========== FOOTER ========== -->
+        <?php
+        require_once('general/footer.php');
+      ?> 
+    </div>
+    <!-- ========== JAVASCRIPT ========== -->
+    <?php 
+        require_once('general/js.php');
+    ?>
+  </body>
+</html>

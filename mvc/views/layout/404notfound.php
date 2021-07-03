@@ -16,7 +16,7 @@
                 <div class="col-lg-12">
                     <div class="page-404 text-center">
                         <div class="image-404">
-                            <img src="../img/404.png" alt="404" class="center-block">
+                            <img src="<?php echo URL ."mvc/Assets/img/404.png"?>"  alt="404" class="center-block">
                         </div>
                         <h1>Lỗi không tìm thấy trang</h1>
                         <p class="land">Có vẻ như các trang mà bạn đang cố gắng tiếp cận không tồn tại nữa hoặc có thể nó vừa di chuyển.</p>

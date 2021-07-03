@@ -22,11 +22,13 @@
                         </p>
                         <p>
                             <strong>Họ tên:</strong>
-                            {{user.firstname}} {{user.lastname}}
+                            <!-- {{user.firstname}} {{user.lastname}} -->
+                            Đặng Đức Châu
                         </p>
                         <p>
                             <strong>Email:</strong>
-                            {{user.email}}
+                            <!-- {{user.email}} -->
+                            dangducchau2000@gmail.com
                         </p>
                     </div>
                 </div>

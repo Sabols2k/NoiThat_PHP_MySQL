@@ -62,7 +62,7 @@
                     <div class="col-md-12 col-lg-9">
                         <!--- BANNER -->
                         <div class="banner">
-                            <img src="img/banner.jpg" class="d-block w-100" alt="banner.jpg">
+                            <img  src="<?php echo URL ."mvc/Assets/img/banner.jpg"?>" class="d-block w-100" alt="banner.jpg">
                         </div>
                     </div>
                 </div>
@@ -113,7 +113,7 @@
                                                 <div class="evo-product-block-item ">
                                                     <div class="product-img">
                                                         <a href="./detail-sanpham.html">
-                                                            <img class="img-prd" src="img/All-products/giuong-ngu-go.jpg" alt="">
+                                                            <img class="img-prd" src="<?php echo URL ."mvc/Assets/img/All-products/giuong-ngu-go.jpg"?>" alt="">
                                                         </a>
                                                     </div>
                                                     <div class="button-add">
@@ -138,7 +138,7 @@
                                                 <div class="evo-product-block-item ">
                                                     <div class="product-img">
                                                         <a href="./detail-sanpham.html">
-                                                            <img class="img-prd" src="img/All-products/gia-sach-go.jpg" alt="">
+                                                            <img class="img-prd" src="<?php echo URL ."mvc/Assets/img/All-products/gia-sach-go.jpg"?>" alt="">
                                                         </a>
                                                     </div>
                                                     <div class="button-add">
@@ -163,7 +163,7 @@
                                                 <div class="evo-product-block-item ">
                                                     <div class="product-img">
                                                         <a href="./detail-sanpham.html">
-                                                            <img class="img-prd" src="img/All-products/tu-bep-gia-dinh.jpg" alt="">
+                                                            <img class="img-prd" src="<?php echo URL ."mvc/Assets/img/All-products/tu-bep-gia-dinh.jpg"?>" alt="">
                                                         </a>
                                                     </div>
                                                     <div class="button-add">
@@ -188,7 +188,7 @@
                                                 <div class="evo-product-block-item ">
                                                     <div class="product-img">
                                                         <a href="./detail-sanpham.html">
-                                                            <img class="img-prd" src="img/All-products/tu-bep-go-hien-dai.jpg" alt="">
+                                                            <img class="img-prd" src="<?php echo URL ."mvc/Assets/img/All-products/tu-bep-go-hien-dai.jpg"?>" alt="">
                                                         </a>
                                                     </div>
                                                     <div class="button-add">
@@ -221,7 +221,7 @@
                                                 <div class="evo-product-block-item ">
                                                     <div class="product-img">
                                                         <a href="./detail-sanpham.html">
-                                                            <img class="img-prd" src="img/All-products/giuong-ngu-go.jpg" alt="">
+                                                            <img class="img-prd" src="<?php echo URL ."mvc/Assets/img/All-products/giuong-ngu-go.jpg"?>" alt="">
                                                         </a>
                                                     </div>
                                                     <div class="button-add">
@@ -253,7 +253,7 @@
                                                 <div class="evo-product-block-item ">
                                                     <div class="product-img">
                                                         <a href="">
-                                                            <img class="img-prd" src="img/All-products/gia-sach-go.jpg" alt="">
+                                                            <img class="img-prd" src="<?php echo URL ."mvc/Assets/img/All-products/gia-sach-go.jpg"?>" alt="">
                                                         </a>
                                                     </div>
                                                     <div class="button-add" onClick="cartLS.add({id: 2, name: 'Giá sách gỗ', img:'gia-sach-go', price: 120})">
@@ -285,7 +285,7 @@
                                                 <div class="evo-product-block-item ">
                                                     <div class="product-img">
                                                         <a href="./detail-sanpham.html">
-                                                            <img class="img-prd" src="img/All-products/tu-bep-gia-dinh.jpg" alt="">
+                                                            <img class="img-prd" src="<?php echo URL ."mvc/Assets/img/All-products/tu-bep-gia-dinh.jpg"?>" alt="">
                                                         </a>
                                                     </div>
                                                     <div class="button-add">
@@ -323,7 +323,7 @@
                 <div class="row">
                     <div class="col-md-4 col-sm-6 col-xs-6">
                         <a href="" class="btn-type">
-                            <img src="img/section-banner/evo_banner_index_1.jpg" alt="">
+                            <img src="<?php echo URL ."mvc/Assets/img/section-banner/evo_banner_index_1.jpg"?>" alt="">
                             <div class="figcaption">
                                 <div class="banner-content">
                                     <span>Creative</span>
@@ -334,7 +334,7 @@
                     </div>
                     <div class="col-md-4 col-sm-6 col-xs-6">
                         <a href="" class="btn-type">
-                            <img src="img/section-banner/evo_banner_index_2.jpg" alt="">
+                            <img src="<?php echo URL ."mvc/Assets/img/section-banner/evo_banner_index_2.jpg"?>" alt="">
                             <div class="figcaption">
                                 <div class="banner-content">
                                     <span>Creative</span>
@@ -345,7 +345,7 @@
                     </div>
                     <div class="col-md-4 col-sm-12">
                         <a href="" class="btn-type">
-                            <img src="img/section-banner/evo_banner_index_3.jpg" alt="">
+                            <img src="<?php echo URL ."mvc/Assets/img/section-banner/evo_banner_index_3.jpg"?>" alt="">
                             <div class="figcaption">
                                 <div class="banner-content">
                                     <span>Creative</span>
@@ -356,7 +356,7 @@
                     </div>
                     <div class="col-md-6 col-sm-6 col-xs-6">
                         <a href="" class="btn-type">
-                            <img src="img/section-banner/evo_banner_index_4.jpg" alt="">
+                            <img src="<?php echo URL ."mvc/Assets/img/section-banner/evo_banner_index_4.jpg"?>" alt="">
                             <div class="figcaption">
                                 <div class="banner-content">
                                     <span>Creative</span>
@@ -367,7 +367,7 @@
                     </div>
                     <div class="col-md-6 col-sm-6 col-xs-6">
                         <a href="" class="btn-type">
-                            <img src="img/section-banner/evo_banner_index_5.jpg" alt="">
+                            <img src="<?php echo URL ."mvc/Assets/img/section-banner/evo_banner_index_5.jpg"?>" alt="">
                             <div class="figcaption">
                                 <div class="banner-content">
                                     <span>Creative</span>
@@ -395,7 +395,7 @@
                                         <div class="evo-product-block-item">
                                             <div class="product-img">
                                                 <a href="">
-                                                    <img src="img/section-tab-san-pham/tu-bep-bang-go-tu-nhien-nho-gon-da-nang-tien-loi.jpg" alt="">
+                                                    <img src="<?php echo URL ."mvc/Assets/img/section-tab-san-pham/tu-bep-bang-go-tu-nhien-nho-gon-da-nang-tien-loi.jpg"?>" alt="">
                                                 </a>
                                                 <div class="button-add">
                                                     <button>
@@ -419,7 +419,7 @@
                                         <div class="evo-product-block-item">
                                             <div class="product-img">
                                                 <a href="">
-                                                    <img src="img/section-tab-san-pham/tu-bep-gia-dinh-go-cong-nghiep-nho-gon-da-nang.jpg" alt="">
+                                                    <img src="<?php echo URL ."mvc/Assets/img/section-tab-san-pham/tu-bep-gia-dinh-go-cong-nghiep-nho-gon-da-nang.jpg"?>" alt="">
                                                 </a>
                                                 <div class="button-add">
                                                     <button>
@@ -443,7 +443,7 @@
                                         <div class="evo-product-block-item">
                                             <div class="product-img">
                                                 <a href="">
-                                                    <img src="img/section-tab-san-pham/tu-bep-bang-go-tu-nhien-nho-gon-da-nang-tien-loi.jpg" alt="">
+                                                    <img src="<?php echo URL ."mvc/Assets/img/section-tab-san-pham/tu-bep-bang-go-tu-nhien-nho-gon-da-nang-tien-loi.jpg"?>" alt="">
                                                 </a>
                                                 <div class="button-add">
                                                     <button>
@@ -467,7 +467,7 @@
                                         <div class="evo-product-block-item">
                                             <div class="product-img">
                                                 <a href="">
-                                                    <img src="img/section-tab-san-pham/ezgif.jpg" alt="">
+                                                    <img src="<?php echo URL ."mvc/Assets/img/section-tab-san-pham/ezgif.jpg"?>" alt="">
                                                 </a>
                                                 <div class="button-add">
                                                     <button>
@@ -505,7 +505,7 @@
                         <div class="banner-item">
                             <div class="banner-img">
                                 <a href="">
-                                    <img src="img/section-trending/evo_banner_two_1.jpg" alt="">
+                                    <img src="<?php echo URL ."mvc/Assets/img/section-trending/evo_banner_two_1.jpg"?>" alt="">
                                 </a>
                             </div>
                             <div class="banner-content">
@@ -522,7 +522,7 @@
                         <div class="banner-item banner-item-last">
                             <div class="banner-img">
                                 <a href="">
-                                    <img src="img/section-trending/evo_banner_two_2.jpg" alt="">
+                                    <img src="<?php echo URL ."mvc/Assets/img/section-trending/evo_banner_two_2.jpg"?>" alt="">
                                 </a>
                             </div>
                             <div class="banner-content">
@@ -554,7 +554,7 @@
                                         <span>- 16% </span>
                                     </div>
                                     <a href="">
-                                        <img src="img/section-tab-san-pham/tu-bep-gia-dinh-go-cong-nghiep-nho-gon-da-nang.jpg" alt="">
+                                        <img src="<?php echo URL ."mvc/Assets/img/section-tab-san-pham/tu-bep-gia-dinh-go-cong-nghiep-nho-gon-da-nang.jpg"?>" alt="">
                                     </a>
                                 </div>
                                 <div class="product-detail">
@@ -578,7 +578,7 @@
                                         <span>- 16% </span>
                                     </div>
                                     <a href="">
-                                        <img src="img/section-tab-san-pham/ezgif.jpg" alt="">
+                                        <img src="<?php echo URL ."mvc/Assets/img/section-tab-san-pham/ezgif.jpg"?>" alt="">
                                     </a>
                                 </div>
                                 <div class="product-detail">
@@ -602,7 +602,7 @@
                                         <span>- 16% </span>
                                     </div>
                                     <a href="">
-                                        <img src="img/section-tab-san-pham/tu-bep-go-tu-nhien-thiet-ke-da-nang-dep-hien-dai.jpg" alt="">
+                                        <img src="<?php echo URL ."mvc/Assets/img/section-tab-san-pham/tu-bep-go-tu-nhien-thiet-ke-da-nang-dep-hien-dai.jpg"?>" alt="">
                                     </a>
                                 </div>
                                 <div class="product-detail">
@@ -633,7 +633,7 @@
                                         <span>- 16% </span>
                                     </div>
                                     <a href="">
-                                        <img src="img/section-tab-san-pham/tu-bep-gia-dinh-go-cong-nghiep-nho-gon-da-nang.jpg" alt="">
+                                        <img src="<?php echo URL ."mvc/Assets/img/section-tab-san-pham/tu-bep-gia-dinh-go-cong-nghiep-nho-gon-da-nang.jpg"?>" alt="">
                                     </a>
                                 </div>
                                 <div class="product-detail">
@@ -657,7 +657,7 @@
                                         <span>- 16% </span>
                                     </div>
                                     <a href="">
-                                        <img src="img/section-tab-san-pham/tu-bep-gia-dinh-go-cong-nghiep-nho-gon-da-nang.jpg" alt="">
+                                        <img src="<?php echo URL ."mvc/Assets/img/section-tab-san-pham/tu-bep-gia-dinh-go-cong-nghiep-nho-gon-da-nang.jpg"?>" alt="">
                                     </a>
                                 </div>
                                 <div class="product-detail">
@@ -681,7 +681,7 @@
                                         <span>- 16% </span>
                                     </div>
                                     <a href="">
-                                        <img src="img/section-tab-san-pham/tu-bep-gia-dinh-go-cong-nghiep-nho-gon-da-nang.jpg" alt="">
+                                        <img src="<?php echo URL ."mvc/Assets/img/section-tab-san-pham/tu-bep-gia-dinh-go-cong-nghiep-nho-gon-da-nang.jpg"?>" alt="">
                                     </a>
                                 </div>
                                 <div class="product-detail">
@@ -712,7 +712,7 @@
                                         <span>- 16% </span>
                                     </div>
                                     <a href="">
-                                        <img src="img/section-tab-san-pham/ezgif.jpg" alt="">
+                                        <img src="<?php echo URL ."mvc/Assets/img/section-tab-san-pham/ezgif.jpg"?>" alt="">
                                     </a>
                                 </div>
                                 <div class="product-detail">
@@ -736,7 +736,7 @@
                                         <span>- 16% </span>
                                     </div>
                                     <a href="">
-                                        <img src="img/section-tab-san-pham/tu-bep-go-tu-nhien-thiet-ke-da-nang-dep-hien-dai.jpg" alt="">
+                                        <img src="<?php echo URL ."mvc/Assets/img/section-tab-san-pham/tu-bep-go-tu-nhien-thiet-ke-da-nang-dep-hien-dai.jpg"?>" alt="">
                                     </a>
                                 </div>
                                 <div class="product-detail">
@@ -760,7 +760,7 @@
                                         <span>- 16% </span>
                                     </div>
                                     <a href="">
-                                        <img src="img/section-tab-san-pham/tu-bep-gia-dinh-go-cong-nghiep-nho-gon-da-nang.jpg" alt="">
+                                        <img src="<?php echo URL ."mvc/Assets/img/section-tab-san-pham/tu-bep-gia-dinh-go-cong-nghiep-nho-gon-da-nang.jpg"?>" alt="">
                                     </a>
                                 </div>
                                 <div class="product-detail">
@@ -795,7 +795,7 @@
                         <div class="blog-item">
                             <div class="blog-img">
                                 <a href="">
-                                    <img src="img/section-blogs/blog_1.jpg" alt="">
+                                    <img src="<?php echo URL ."mvc/Assets/img/section-blogs/blog_1.jpg"?>" alt="">
                                 </a>
                             </div>
                             <div class="blog-content">
@@ -808,7 +808,7 @@
                         <div class="blog-item">
                             <div class="blog-img">
                                 <a href="">
-                                    <img src="img/section-blogs/blog_2.jpg" alt="">
+                                    <img src="<?php echo URL ."mvc/Assets/img/section-blogs/blog_2.jpg"?>" alt="">
                                 </a>
                             </div>
                             <div class="blog-content">
@@ -821,7 +821,7 @@
                         <div class="blog-item">
                             <div class="blog-img">
                                 <a href="">
-                                    <img src="img/section-blogs/blog_3.jpg" alt="">
+                                    <img src="<?php echo URL ."mvc/Assets/img/section-blogs/blog_3.jpg"?>" alt="">
                                 </a>
                             </div>
                             <div class="blog-content">
@@ -834,7 +834,7 @@
                         <div class="blog-item">
                             <div class="blog-img">
                                 <a href="">
-                                    <img src="img/section-blogs/blog_4.jpg" alt="">
+                                    <img src="<?php echo URL ."mvc/Assets/img/section-blogs/blog_4.jpg"?>" alt="">
                                 </a>
                             </div>
                             <div class="blog-content">
@@ -856,22 +856,22 @@
                     <div class="evo-brand">
                         <div class="owl-carousel owl-brands">
                             <div class="evo-brand-img">
-                                <img src="img/section-brand/partner_1.jpg" alt="">
+                                <img src="<?php echo URL ."mvc/Assets/img/section-brand/partner_1.jpg"?>" alt="">
                             </div>
                             <div class="evo-brand-img">
-                                <img src="img/section-brand/partner_2.jpg" alt="">
+                                <img src="<?php echo URL ."mvc/Assets/img/section-brand/partner_2.jpg"?>" alt="">
                             </div>
                             <div class="evo-brand-img">
-                                <img src="img/section-brand/partner_3.jpg" alt="">
+                                <img src="<?php echo URL ."mvc/Assets/img/section-brand/partner_3.jpg"?>" alt="">
                             </div>
                             <div class="evo-brand-img">
-                                <img src="img/section-brand/partner_4.jpg" alt="">
+                                <img src="<?php echo URL ."mvc/Assets/img/section-brand/partner_4.jpg"?>" alt="">
                             </div>
                             <div class="evo-brand-img">
-                                <img src="img/section-brand/partner_5.jpg" alt="">
+                                <img src="<?php echo URL ."mvc/Assets/img/section-brand/partner_5.jpg"?>" alt="">
                             </div>
                             <div class="evo-brand-img">
-                                <img src="img/section-brand/partner_1.jpg" alt="">
+                                <img src="<?php echo URL ."mvc/Assets/img/section-brand/partner_1.jpg"?>" alt="">
                             </div>
                         </div>
                     </div>
