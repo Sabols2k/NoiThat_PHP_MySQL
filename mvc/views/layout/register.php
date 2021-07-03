@@ -1,3 +1,17 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evo Nội Thất</title>
+    <?php 
+        require_once "general/css.php";
+    ?>
+  </head>
+<body>
+     <!-- ========== HEADER ========== -->
+     <?php $page = 'home'; require_once('general/header.php');?>
     <!-- ========== SECTION-BREAD-CRUMP ========== -->
     <section class="bread-crump">
         <div class="container">
@@ -19,10 +33,10 @@
                     </div>
                     <div class="page-login-social">
                         <a href="" class="social-login">
-                            <img src="../img/login-register/fb-btn.svg" alt="">
+                            <img src="<?php echo URL ."mvc/Assets/img/login-register/fb-btn.svg"?>" alt="">
                         </a>
                         <a href="" class="social-login">
-                            <img src="../img/login-register/gp-btn.svg" alt="">
+                            <img src="<?php echo URL ."mvc/Assets/img/login-register/gp-btn.svg"?>" alt="">
                         </a>
                     </div>
                     <div class="line-break">
@@ -76,6 +90,15 @@
             </div>
         </div>
     </section>
+    <!-- ========== FOOTER ========== -->
+    <?php
+        require_once('general/footer.php');
+    ?> 
+    </div>
+    <!-- ========== JAVASCRIPT ========== -->
+    <?php 
+        require_once('general/js.php');
+    ?>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             Validator({

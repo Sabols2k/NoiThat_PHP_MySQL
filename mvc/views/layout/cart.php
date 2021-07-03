@@ -1,3 +1,17 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evo Nội Thất</title>
+    <?php 
+        require_once "general/css.php";
+    ?>
+  </head>
+<body>
+     <!-- ========== HEADER ========== -->
+     <?php $page = 'home'; require_once('general/header.php');?>
     <!-- ========== SECTION-BREAD-CRUMP ========== -->
     <section class="bread-crump">
         <div class="container">
@@ -28,7 +42,7 @@
                         <i class="ico-cart"></i>
                     </span>
                     <div class="btn-cart-empty">
-                        <a href="/all-sanpham" class="btn btn-lg btn-checkouts">Tiếp tục mua hàng</a>
+                        <a href="<?php echo URL_Layout."AllSanpham"?>" class="btn btn-lg btn-checkouts">Tiếp tục mua hàng</a>
                     </div>
                 </div>
                 <div class="col-lg-9 cart-in-stock">
@@ -58,11 +72,20 @@
                                     <strong id="total-price" class="total amount">0₫</strong>
                                 </p>
                             </div>
-                            <a href="checkout" class="btn btn-lg btn-checkout">Thanh toán ngay</a>
-                            <a href="all-sanpham" class="btn btn-lg btn-checkouts">Tiếp tục mua hàng</a>
+                            <a href="<?php echo URL_Layout."Checkout"?>" class="btn btn-lg btn-checkout">Thanh toán ngay</a>
+                            <a href="<?php echo URL_Layout."AllSanpham"?>" class="btn btn-lg btn-checkouts">Tiếp tục mua hàng</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- ========== FOOTER ========== -->
+    <?php
+        require_once('general/footer.php');
+    ?> 
+    </div>
+    <!-- ========== JAVASCRIPT ========== -->
+    <?php 
+        require_once('general/js.php');
+    ?>

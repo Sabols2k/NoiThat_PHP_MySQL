@@ -138,6 +138,15 @@
             </div>
         </div>
     </section>
+    <!-- ========== FOOTER ========== -->
+    <?php
+        require_once('general/footer.php');
+      ?> 
+    </div>
+    <!-- ========== JAVASCRIPT ========== -->
+    <?php 
+        require_once('general/js.php');
+    ?>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             Validator({
@@ -157,14 +166,5 @@
             })
         })
     </script>
-          <!-- ========== FOOTER ========== -->
-          <?php
-        require_once('general/footer.php');
-      ?> 
-    </div>
-    <!-- ========== JAVASCRIPT ========== -->
-    <?php 
-        require_once('general/js.php');
-    ?>
   </body>
 </html>

@@ -68,10 +68,10 @@
         </div>
     </section>
 
-          <!-- ========== FOOTER ========== -->
-          <?php
+    <!-- ========== FOOTER ========== -->
+    <?php
         require_once('general/footer.php');
-      ?> 
+    ?> 
     </div>
     <!-- ========== JAVASCRIPT ========== -->
     <?php 

@@ -9,18 +9,16 @@
                 <div class="col-lg-6 col-md-6 col-sm-6 evo-account">
                     <ul>
                         <li>
-                            <!-- {{{loginAccount}}} -->
-                            <a href="<?php echo URL_Layout."login"?>">>
+                            <a href="<?php echo URL_Layout."login"?>">
                                 <i class="fas fa-sign-in-alt"></i>
                                 Đăng nhập
                             </a>
                         </li>
                         <li>
-                            <a href="<?php echo URL_Layout."register"?>">>
+                            <a href="<?php echo URL_Layout."register"?>">
                                 <i class="fas fa-user-plus"></i>
                                 Đăng kí
                             </a>
-                            <!-- {{{registerLogout}}} -->
                         </li>
                     </ul>
                 </div>
@@ -37,8 +35,8 @@
                     <span class="line"></span>
                     <span class="line"></span>
                 </label>
-                <a href="/" class="logo">
-                    <img  src="<?php echo URL ."mvc/Assets/img/logo.png"?>" alt="evo_logo">
+                <a href="<?php echo URL. "home"?>" class="logo">
+                    <img  src="<?php echo URL_Layout ."mvc/Assets/img/logo.png"?>" alt="evo_logo">
                 </a>
                 <a class="evo-cart mini-cart d-none" href="/cart">
                     <i class="fas fa-cart-plus"></i>
@@ -65,13 +63,13 @@
                     </a>
                 </div>
                 <div class="hotline">
-                    <a href="/he-thong-cua-hang">
+                    <a href="">
                         <span class="evo-title">Tìm địa chỉ</span>
                         <span class="evo-hotline">Cửa hàng</span>
                     </a>
                 </div>
                 <div class="evo-cart mini-cart">
-                    <a href="/cart">
+                    <a href="cart">
                         <i class="fas fa-cart-plus"></i>
                         <span class="count_item desktop">0</span>
                     </a>
@@ -149,13 +147,13 @@
                     <nav>
                         <ul class="nav">
                             <li class="nav-item active">
-                                <a href="/" class="nav-link">Trang chủ</a>
+                                <a href="<?php echo URL. "home"?>" class="nav-link">Trang chủ</a>
                             </li>
                             <li class="nav-item">
                                 <a href="<?php echo URL_Layout."GioiThieu"?>" class="nav-link">Giới thiệu</a>
                             </li>
                             <li class="nav-item open-mega-content">
-                                <a href="<?php echo URL_Layout."all-sanpham"?>" class="nav-link">
+                                <a href="<?php echo URL_Layout."AllSanpham"?>" class="nav-link">
                                     Sản phẩm
                                     <i class="fas fa-angle-down"></i>
                                 </a>
@@ -243,13 +241,11 @@
                                 <a href="" class="nav-link">Tin tức</a>
                             </li>
                             <li class="nav-item">
-                                <a href="<?php echo URL_Layout."lien-he"?>" class="nav-link">Liên hệ</a>
+                                <a href="<?php echo URL_Layout."LienHe"?>" class="nav-link">Liên hệ</a>
                             </li>
                         </ul>
                     </nav>
-                    <!-- {{!-- <div class="banner">
-                            <img src="../img/banner.jpg" class="d-block w-100" alt="banner.jpg">
-                        </div> --}} -->
+
                 </div>
             </div>
             <!-- NAV INPUT CHECK -->
@@ -262,7 +258,7 @@
                     <label for="menu-mobile-input" class="close-nav">
                         <i class="fas fa-arrow-left"></i>
                     </label>
-                    <img src="<?php echo URL ."mvc/Assets/img/logo.png"?>" alt="">
+                    <img src="<?php echo URL_Layout ."mvc/Assets/img/logo.png"?>" alt="">
                 </div>
                 <div class="account-mobile">
                     <a href="login">Đăng nhập</a>

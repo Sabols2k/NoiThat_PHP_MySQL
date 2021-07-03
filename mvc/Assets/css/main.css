@@ -1581,7 +1581,12 @@ textarea.form-control {
   color: #6f6f6f;
   cursor: pointer;
   font-size: 1.6rem;
-  font-weight: normal; }
+  font-weight: normal;
+  transition: color 0.1s ease-in-out; }
+
+.evo-sidebar .aside-filter .filter .content .filter-item span:hover {
+    color: var(--orange-color);
+}
 
 /* SORT-PRODUCT */
 .sort-product {
