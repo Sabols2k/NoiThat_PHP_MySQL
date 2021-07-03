@@ -1,5 +1,6 @@
 <?php  
-    if(isset($_SESSION['admin']['username'])){
+    print_r ($_SESSION);
+    if(isset($_SESSION['admin']['email'])){
         // header('Location:'.URLAdmin);
         echo "<script>window.location.href= '".URLAdmin."'</script>";
     }
@@ -39,7 +40,7 @@
                                         <div class="form-group">
                                             <input name="email" type="text" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Enter email..."  maxlength=15 >
+                                                placeholder="Enter email..."  maxlength=50 >
                                                 <span class="invalidFeedback" style="color:red">
                                                     <?php echo $data['emailError']; ?>
                                                 </span>
@@ -51,8 +52,9 @@
                                                 <?php echo $data['passwordError']; ?>
                                             </span>
                                         </div>
+                                        <input class="btn btn-danger btn-user btn-block" name="login" type="submit" class="fadeIn fourth" value="Log In">
                                     </form>
-                                        <input class="btn btn-danger btn-user btn-block" type="submit" class="fadeIn fourth" value="Log In">
+                                       
                                     <hr>
                                     <div class="text-center">
                                         <a class="small" href="<?php echo URLAdmin."register"?>">Create an Account!</a>

@@ -1,59 +1,61 @@
 <?php
+
 use App\Request as RequestLib;
-class Admin extends Controller{
+
+class Admin extends Controller
+{
     // function __construct() {
-	// 	parent::__construct();
-		  
-	// }
+    // 	parent::__construct();
+
+    // }
     // Must have SayHi()
-    public function __construct() {
-     
+    public function __construct()
+    {
+
         // Session::init();
         $this->adminModel = $this->modeladmin("login");
-        $this->accountModel= $this->modeladmin("account");
-        
+        $this->accountModel = $this->modeladmin("account");
     }
-    function index(){
+    function index()
+    {
         // $this->viewadmin("index");
-        $_SESSION['function']= "index";
+        $_SESSION['function'] = "index";
         // echo "abc"; die();
-        $model=$this->modeladmin("dashboard");
-        $data['dashboard'] =  $model->general();
+
+        // $model = $this->modeladmin("dashboard");
+        // $data['dashboard'] =  $model->general();
 
         $data['main'] = "home/main";
         // require_once "./mvc/views/admin/index.php";
-        $this->viewadmin("index",$data);
-
-        
-
-        
+        $this->viewadmin("index", $data);
     }
-   
-    public function login() {
-        
+
+    public function login()
+    {
+
         $data = [
             'title' => 'Login page',
-            'username' => '',
+            'email' => '',
             'password' => '',
-            'usernameError' => '',
+            'emailError' => '',
             'passwordError' => ''
         ];
-        
+
         //Check for post
-        if(isset($_POST['login'])) {
-            
+        if (isset($_POST['login'])) {
+
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
             $data = [
-                'username' => trim($_POST['username']),
+                'email' => trim($_POST['email']),
                 'password' => trim($_POST['password']),
-                'usernameError' => '',
+                'emailError' => '',
                 'passwordError' => '',
             ];
             // print_r($data); die();
-            //Validate username
-            if (empty($data['username'])) {
-                $data['usernameError'] = 'Please enter a username.';
+            //Validate email
+            if (empty($data['email'])) {
+                $data['emailError'] = 'Please enter a email.';
             }
 
             //Validate password
@@ -62,34 +64,31 @@ class Admin extends Controller{
             }
 
             //Check if all errors are empty
-            if (empty($data['usernameError']) && empty($data['passwordError'])) {
-                $model=$this->modeladmin("login");
-                $user =  $model->login($data['username'], $data['password']);
-                
-                if(isset($user['aUsername'])){
+            if (empty($data['emailError']) && empty($data['passwordError'])) {
+                $model = $this->modeladmin("login");
+                $user =  $model->login($data['email'], $data['password']);
+
+                if (isset($user['email'])) {
                     $this->createUserSession($user);
-                }
-                else {
-                    $data['passwordError'] = 'Password or username is incorrect. Please try again.';
+                } else {
+                    $data['passwordError'] = 'Password or email is incorrect. Please try again.';
 
                     $this->view('admin/login', $data);
-            
                 }
-               
             }
-
         } else {
             $data = [
-                'username' => '',
+                'email' => '',
                 'password' => '',
-                'usernameError' => '',
+                'emailError' => '',
                 'passwordError' => ''
             ];
         }
         $this->viewadmin('login', $data);
     }
-    public function loginReserve() {
-        
+    public function loginReserve()
+    {
+
         $data = [
             'title' => 'Login page',
             'username' => '',
@@ -97,9 +96,9 @@ class Admin extends Controller{
             'usernameError' => '',
             'passwordError' => ''
         ];
-        
+
         //Check for post
-        if(isset($_POST['loginReserve'])) {
+        if (isset($_POST['loginReserve'])) {
             // //Sanitize post data
             // $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
@@ -118,30 +117,26 @@ class Admin extends Controller{
             if (empty($data['password'])) {
                 $data['passwordError'] = 'Please enter a password.';
             }
-            
+
             //Check if all errors are empty
             if (empty($data['usernameError']) && empty($data['passwordError'])) {
-                $model=$this->modeladmin("login");
+                $model = $this->modeladmin("login");
                 $user =  $model->loginReserve($data['username'], $data['password']);
-                
+
                 // print_r($user); die();
                 // echo mysqli_num_rows($data['user']);
                 // print_r( $data['user']); die();
                 // die();
-                
-                if(isset($user['raUsername'])){
+
+                if (isset($user['raUsername'])) {
 
                     $this->createReserveSession($user);
-                }
-                else {
+                } else {
                     $data['passwordError'] = 'Password or username is incorrect. Please try again.';
 
                     $this->view('admin/loginReserve', $data);
-            
                 }
-               
             }
-
         } else {
             $data = [
                 'username' => '',
@@ -153,74 +148,504 @@ class Admin extends Controller{
         $this->viewadmin('loginReserve', $data);
     }
 
-    public function createUserSession($user) {
-        $_SESSION['admin']['type']= 'admin';
-        $_SESSION['admin']['user_id'] =  $user['aAdminID'] ;
-        $_SESSION['admin']['username'] = $user['aUsername'];
-        $_SESSION['admin']['mail'] = $user['aEmail'];
-        $_SESSION['admin']['img'] =imgAccount. $user['aimg'];
+    public function createUserSession($user)
+    {
+        $_SESSION['admin']['type'] = 'admin';
+        $_SESSION['admin']['adminid'] =  $user['adminid'];
+        $_SESSION['admin']['email'] = $user['email'];
+        $_SESSION['admin']['firstname'] = $user['firstname'];
+        $_SESSION['admin']['lastname'] = $user['lastname'];
+        $_SESSION['admin']['img'] = imgAccount . $user['avatar'];
         // header('Location:'.URL);
-        echo "<script>window.location.href= '".URLAdmin."'</script>";
+        echo "<script>window.location.href= '" . URLAdmin . "'</script>";
     }
-    public function createReserveSession($user) {
-        $_SESSION['admin']['type']= 'reserve';
-        $_SESSION['admin']['user_id'] =  $user['raReservationAgentID'] ;
+    public function createReserveSession($user)
+    {
+        $_SESSION['admin']['type'] = 'reserve';
+        $_SESSION['admin']['user_id'] =  $user['raReservationAgentID'];
         $_SESSION['admin']['username'] = $user['raUsername'];
         $_SESSION['admin']['mail'] = $user['raEmail'];
-        $_SESSION['admin']['img'] =imgAccount. $user['raImg'];
-        
+        $_SESSION['admin']['img'] = imgAccount . $user['raImg'];
+
         // header('Location:'.URLAdmin);
-        echo "<script>window.location.href= '".URLAdmin."'</script>";
+        echo "<script>window.location.href= '" . URLAdmin . "'</script>";
     }
 
-    public function logout() {
-        unset($_SESSION['admin']['user_id']);
-        unset($_SESSION['admin']['username']);
-        unset($_SESSION['admin']['mail']);
+    public function logout()
+    {
+        unset($_SESSION['admin']['adminid']);
+        unset($_SESSION['admin']['email']);
+        unset($_SESSION['admin']['firstname']);
+        unset($_SESSION['admin']['lastname']);
         unset($_SESSION['admin']['img']);
 
         // $data['main']="Booking/view-booking";
         // header('location:'.URLAdmin.'login');
-        echo "<script>window.location.href= '".URLAdmin.'login'."'</script>";
+        echo "<script>window.location.href= '" . URLAdmin . 'login' . "'</script>";
         // $this->viewadmin("login");
-        
+
 
     }
-  // function logout()
-	// {
-	// 	Session::destroy();
-	// 	header('location: index');
-	// 	exit;
+    // function logout()
+    // {
+    // 	Session::destroy();
+    // 	header('location: index');
+    // 	exit;
     // }
 
-//admin booking
+    //view account admin
 
-    public function ViewBooking(){
-        $_SESSION['function'] = 'booking';
-        $model=$this->modeladmin("booking");
-        $data['booking'] =  $model->getAllBooking();
+    public function account()
+    {
+        $_SESSION['function'] = 'account';
+        // echo "Welcome ". $_GET['value']. "<br />"; 
 
-        $data['main']="Booking/view-booking";
-        $this->viewadmin("index", $data);
+        //Hàm dùng để search data by name
+        if (isset($_GET['value'])) {
+            // echo "Welcome ". $_GET['value']. "<br />"; 
+            $data['value'] = trim($_GET['value']);
+            // echo $data['value']; die();
+            $model = $this->modeladmin("account");
+            // $data['value'] = strtolower($data['value']);
+            $a =  $model->searchAccountbyUsername($data['value']);
+            // print_r($a); die();
+            // echo $data['value']; die();
+            if (($data['value'] !== "")) {
+                if (isset($a)) {
+                    $stt = 0;
+                    foreach ($a as $name) {
+                        print_r($name['0']);
+                        $model = $this->modeladmin("account");
+                        $data['account'][$stt] = $model->getDataAccountById($name['0']);
+                        $stt++;
+                    }
+                    // die();
+                    $data['main'] = 'Account/view-account';
+                    $this->viewadmin('index', $data);
+                } else {
+                    $model = $this->modeladmin("account");
+                    $data['account'] =  NULL;
+                    $data['main'] = 'Account/view-account';
+                    $this->viewadmin('index', $data);
+                }
+                // $len=strlen($data['value']);
+
+                // print_r($a); die();
+
+            } else {
+                $model = $this->modeladmin("account");
+                $data['account'] =  $model->getAllAccount();
+                $data['main'] = 'Account/view-account';
+                $this->viewadmin('index', $data);
+            }
+        }
+
+        $model = $this->modeladmin("account");
+        $data['account'] =  $model->getAllAccount();
+        $data['main'] = 'Account/view-account';
+        $this->viewadmin('index', $data);
+    }
+    public function AddAccount()
+    {
+        $_SESSION['function'] = 'account';
+        $data['account'] = [
+
+            'email' => '',
+            'password' => '',
+            'firstname' => '',
+            'lastname' => '',
+            'phone' => '',
+            'emailError' => ' ',
+            'passwordError' => '',
+            'firstnameError' => ' ',
+            'lastnameError' => ' ',
+            'phoneError' => ' ',
+        ];
+        //Check for post
+        if (isset($_POST['addaccount'])) {
+
+            $data['account'] = [
+                'email' => trim($_POST['email']),
+                'password' => trim($_POST['password']),
+                'firstname' => trim($_POST['firstname']),
+                'lastname' => trim($_POST['lastname']),
+                'phone' => trim($_POST['phone']),
+                'usernameError' => '',
+                'passwordError' => '',
+                'emailError' => ' ',
+                'firstnameError' => ' ',
+                'lastnameError' => ' ',
+                'phoneError' => ' ',
+            ];
+            // echo $data['account'];
+            // exit;
+            $model = $this->modeladmin("account");
+            $model->InsertAccount(
+                $data['account']['email'],
+                $data['account']['password'],
+                $data['account']['phone'],
+                $data['account']['firstname'],
+                $data['account']['lastname']
+            );
+            echo "<script>window.location.href= '" . URLAdmin . 'account' . "'</script>";
+        }
+    }
+
+    public function editAccount()
+    {
+        $_SESSION['function'] = 'account';
+        $account = [
+            'update_id' => '',
+            'email' => '',
+            'phone' => '',
+            'firstname' => '',
+            'lastname' => '',
+            'avatar' => '',
+
+        ];
+
+        // $model = $this->modeladmin("account");
+        // $data['account'] = $model->getDataAccountById($id);
+        // print_r($data); die();
+        //Check for post
+        if (isset($_POST['updateaccount'])) {
+            
+            $account = [
+                'update_id' => trim($_POST['update_id']),
+                'email' => trim($_POST['email']),
+                'phone' =>  trim($_POST['phone']),
+                'firstname' =>  trim($_POST['firstname']),
+                'lastname' =>  trim($_POST['lastname']),
+
+
+            ];
+            // $id= $account['update_id'];
+            // print_r ($room);
+            $model = $this->modeladmin("account");
+            $model->updateAccount(
+                $account['update_id'], 
+                $account['email'], 
+                $account['phone'], 
+                $account['firstname'], 
+                $account['lastname'], 
+            );
+            echo "<script>window.location.href= '" . URLAdmin . 'account' . "'</script>";
+        }
+    }
+
+    public function deleteAccount($id)
+    {
+        $_SESSION['function'] = 'account';
+        $model = $this->modeladmin("account");
+        $model->DeleteAccountById($id);
+        // header('Location:'.URLAdmin. 'viewaccount');
+        echo "<script>window.location.href= '" . URLAdmin . 'account' . "'</script>";
     }
     
-    public function Addbooking() {
+
+    //view account user
+
+    public function user()
+    {
+        $_SESSION['function'] = 'user';
+
+        //Hàm dùng để search data by name
+        if (isset($_GET['value'])) {
+            $data['value'] = trim($_GET['value']);
+            $model = $this->modeladmin("user");
+            $a =  $model->searchUsertbyFirstname($data['value']);
+            // print_r($a); die();
+            // echo $data['value']; die();
+            if (($data['value'] !== "")) {
+                if (isset($a)) {
+                    $stt = 0;
+                    foreach ($a as $name) {
+                        print_r($name['0']);
+                        $model = $this->modeladmin("user");
+                        $data['account'][$stt] = $model->getDataUserById($name['0']);
+                        $stt++;
+                    }
+                    // die();
+                    $data['main'] = 'User/view-user';
+                    $this->viewadmin('index', $data);
+                } else {
+                    $model = $this->modeladmin("user");
+                    $data['account'] =  NULL;
+                    $data['main'] = 'User/view-user';
+                    $this->viewadmin('index', $data);
+                }
+                // $len=strlen($data['value']);
+
+                // print_r($a); die();
+
+            } else {
+                $model = $this->modeladmin("user");
+                $data['account'] =  $model->getAllUser();
+                $data['main'] = 'User/view-user';
+                $this->viewadmin('index', $data);
+            }
+        }
+
+        $model = $this->modeladmin("user");
+        $data['account'] =  $model->getAllUser();
+        $data['main'] = 'User/view-user';
+        $this->viewadmin('index', $data);
+    }
+    public function AddUser()
+    {
+        $_SESSION['function'] = 'user';
+        $data['user'] = [
+
+            'email' => '',
+            'password' => '',
+            'firstname' => '',
+            'lastname' => '',
+            'phone' => '',
+            'address' => '',
+            'emailError' => ' ',
+            'passwordError' => '',
+            'firstnameError' => ' ',
+            'lastnameError' => ' ',
+            'phoneError' => ' ',
+            'addressError' => ' ',
+        ];
+        //Check for post
+        if (isset($_POST['adduser'])) {
+
+            $data['user'] = [
+                'email' => trim($_POST['email']),
+                'password' => trim($_POST['password']),
+                'firstname' => trim($_POST['firstname']),
+                'lastname' => trim($_POST['lastname']),
+                'phone' => trim($_POST['phone']),
+                'address' => trim($_POST['address']),
+                'usernameError' => '',
+                'passwordError' => '',
+                'emailError' => ' ',
+                'firstnameError' => ' ',
+                'lastnameError' => ' ',
+                'phoneError' => ' ',
+                'addressError' => ' ',
+            ];
+            // echo $data['user'];
+            // exit;
+            $model = $this->modeladmin("user");
+            $model->InsertUser(
+                $data['user']['email'],
+                $data['user']['password'],
+                $data['user']['phone'],
+                $data['user']['firstname'],
+                $data['user']['lastname'],
+                $data['user']['address'],
+            );
+            echo "<script>window.location.href= '" . URLAdmin . 'user' . "'</script>";
+        }
+    }
+
+    public function editUser()
+    {
+        $_SESSION['function'] = 'user';
+        $user = [
+            'update_id' => '',
+            'email' => '',
+            'phone' => '',
+            'firstname' => '',
+            'lastname' => '',
+            'avatar' => '',
+
+        ];
+
+        // $model = $this->modeladmin("account");
+        // $data['account'] = $model->getDataAccountById($id);
+        // print_r($data); die();
+        //Check for post
+        if (isset($_POST['updateuser'])) {
+            
+            $user = [
+                'update_id' => trim($_POST['update_id']),
+                'email' => trim($_POST['email']),
+                'phone' =>  trim($_POST['phone']),
+                'firstname' =>  trim($_POST['firstname']),
+                'lastname' =>  trim($_POST['lastname']),
+                'address' =>  trim($_POST['address']),
+
+
+            ];
+            // $id= $user['update_id'];
+            // print_r ($room);
+            $model = $this->modeladmin("user");
+            $model->updateUser(
+                $user['update_id'], 
+                $user['email'], 
+                $user['phone'], 
+                $user['firstname'], 
+                $user['lastname'], 
+                $user['address'], 
+            );
+            echo "<script>window.location.href= '" . URLAdmin . 'user' . "'</script>";
+        }
+    }
+
+    public function deleteUser($id)
+    {
+        $_SESSION['function'] = 'user';
+        $model = $this->modeladmin("user");
+        $model->DeleteUserById($id);
+        // header('Location:'.URLAdmin. 'viewaccount');
+        echo "<script>window.location.href= '" . URLAdmin . 'user' . "'</script>";
+    }
+
+       //view product
+
+       public function product()
+       {
+           $_SESSION['function'] = 'product';
+   
+           //Hàm dùng để search data by name
+           if (isset($_GET['value'])) {
+               $data['value'] = trim($_GET['value']);
+               $model = $this->modeladmin("product");
+               $a =  $model->searchProductbyName($data['value']);
+               // print_r($a); die();
+               // echo $data['value']; die();
+               if (($data['value'] !== "")) {
+                   if (isset($a)) {
+                       $stt = 0;
+                       foreach ($a as $name) {
+                           print_r($name['0']);
+                           $model = $this->modeladmin("product");
+                           $data['product'][$stt] = $model->getDataProductById($name['0']);
+                           $stt++;
+                       }
+                       // die();
+                       $data['main'] = 'Product/view-product';
+                       $this->viewadmin('index', $data);
+                   } else {
+                       $model = $this->modeladmin("product");
+                       $data['product'] =  NULL;
+                       $data['main'] = 'Product/view-product';
+                       $this->viewadmin('index', $data);
+                   }
+                   // $len=strlen($data['value']);
+   
+                   // print_r($a); die();
+   
+               } else {
+                   $model = $this->modeladmin("product");
+                   $data['product'] =  $model->getAllProduct();
+                   $data['main'] = 'Product/view-product';
+                   $this->viewadmin('index', $data);
+               }
+           }
+   
+           $model = $this->modeladmin("product");
+           $data['product'] =  $model->getAllProduct();
+           $data['main'] = 'Product/view-product';
+           $this->viewadmin('index', $data);
+       }
+       public function AddProduct()
+       {
+           $_SESSION['function'] = 'user';
+           $data['product'] = [
+               'name' => '',
+               'price' => '',
+               'category' => '',
+           ];
+           //Check for post
+           if (isset($_POST['addproduct'])) {
+   
+               $data['product'] = [
+                   'name' => trim($_POST['name']),
+                   'price' => trim($_POST['price']),
+                   'category' => trim($_POST['category'])
+               ];
+               $model = $this->modeladmin("product");
+               $model->InsertProduct(
+                   $data['product']['name'],
+                   $data['product']['price'],
+                   $data['product']['category']
+               );
+               echo "<script>window.location.href= '" . URLAdmin . 'product' . "'</script>";
+           }
+       }
+   
+       public function editProduct()
+       {
+           $_SESSION['function'] = 'product';
+           $product = [
+               'update_id' => '',
+               'name' => '',
+               'price' => '',
+               'category' => '',
+           ];
+   
+           // $model = $this->modeladmin("account");
+           // $data['account'] = $model->getDataAccountById($id);
+           // print_r($data); die();
+           //Check for post
+           if (isset($_POST['updateproduct'])) {
+               
+               $product = [
+                   'update_id' => trim($_POST['update_id']),
+                   'name' => trim($_POST['name']),
+                   'price' =>  trim($_POST['price']),
+                   'category' =>  trim($_POST['category']),
+               ];
+               // $id= $product['update_id'];
+               // print_r ($room);
+               $model = $this->modeladmin("product");
+               $model->updateProduct(
+                   $product['update_id'], 
+                   $product['name'], 
+                   $product['price'], 
+                   $product['category']
+               );
+               echo "<script>window.location.href= '" . URLAdmin . 'product' . "'</script>";
+           }
+       }
+   
+       public function deleteProduct($id)
+       {
+           $_SESSION['function'] = 'product';
+           $model = $this->modeladmin("product");
+           $model->DeleteProductById($id);
+           // header('Location:'.URLAdmin. 'viewaccount');
+           echo "<script>window.location.href= '" . URLAdmin . 'product' . "'</script>";
+       }
+   
+
+
+
+    //admin booking
+
+    public function ViewBooking()
+    {
+        $_SESSION['function'] = 'booking';
+        $model = $this->modeladmin("booking");
+        $data['booking'] =  $model->getAllBooking();
+
+        $data['main'] = "Booking/view-booking";
+        $this->viewadmin("index", $data);
+    }
+
+    public function Addbooking()
+    {
         $_SESSION['function'] = 'booking';
         $data['booking'] = [
             'name' => '',
-            'mail' =>'',
+            'mail' => '',
             'phone' => '',
             'country' => '',
             'bDateCheckIn' => '',
             'bDateCheckOut' => '',
-            'numberAdults' =>'',
+            'numberAdults' => '',
             'numberChildren' => '',
-            'roomType' =>'',
+            'roomType' => '',
             'Description' => '',
         ];
-        
+
         //Check for post
-        if(isset($_POST['addbooking'])) {
+        if (isset($_POST['addbooking'])) {
             //Sanitize post data
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
@@ -236,161 +661,162 @@ class Admin extends Controller{
                 'roomType' => trim($_POST['booking-roomtype']),
                 'Description' => trim($_POST['Descriptions']),
                 'roomcount' => trim($_POST['roomcount'])
-                
+
             ];
             // print_r($data['booking']); die();
-            $model=$this->modeladmin("booking");
+            $model = $this->modeladmin("booking");
             $model->InsertBooking(
-                $data['booking']['name' ],
-                $data['booking']['mail' ],
-                $data['booking']['phone' ],
-                $data['booking']['country' ],
-                $data['booking']['bDateCheckIn' ],
-                $data['booking']['bDateCheckOut' ],
-                $data['booking']['numberAdults' ],
-                $data['booking']['numberChildren' ],
-                $data['booking']['roomType' ],
+                $data['booking']['name'],
+                $data['booking']['mail'],
+                $data['booking']['phone'],
+                $data['booking']['country'],
+                $data['booking']['bDateCheckIn'],
+                $data['booking']['bDateCheckOut'],
+                $data['booking']['numberAdults'],
+                $data['booking']['numberChildren'],
+                $data['booking']['roomType'],
                 $data['booking']['Description'],
-                $data['booking']['roomcount' ],
+                $data['booking']['roomcount'],
             );
-          
-        } 
-        $data['main'] ="Booking/add-booking";
-        $this->viewadmin('index',$data);
+        }
+        $data['main'] = "Booking/add-booking";
+        $this->viewadmin('index', $data);
     }
-    public function editbooking($id){
+    public function editbooking($id)
+    {
         $_SESSION['function'] = 'booking';
         $booking = [
-            'BookingID'=> '',
+            'BookingID' => '',
             'GuestID' => '',
             'ReservationAgentID' => '',
             'DateCheckIn' => '',
-            'DateCheckOut'=> '',
+            'DateCheckOut' => '',
             'RoomCount' => '',
-            
+
         ];
-   
-            $model= $this->modeladmin("booking");
-            $data['booking'] = $model->getDataBookingById($id);
-            // print_r($data); die();
-             //Check for post
-            if(isset($_POST['editBooking'])) {
-                //Sanitize post data
-                $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
-                $booking = [
-                    'BookingID' => trim($_POST['BookingID']),
-                    'GuestID' => trim($_POST['GuestID']),
-                    'ReservationAgentID' => trim($_POST['ReservationAgentID']),
-                    'DateCheckIn' => trim($_POST['DateCheckIn']),
-                    'DateCheckOut' => trim($_POST['DateCheckOut']),
-                    'RoomCount' => trim($_POST['RoomCount']),
-                    
-                ];
-                // print_r ($booking);
-                $model=$this->modeladmin("booking");
-                $model->updateBooking($id,$booking['BookingID'],   $booking['GuestID' ], $booking['ReservationAgentID'], $booking['DateCheckIn' ],$booking['DateCheckOut'], $booking['RoomCount'] );
+        $model = $this->modeladmin("booking");
+        $data['booking'] = $model->getDataBookingById($id);
+        // print_r($data); die();
+        //Check for post
+        if (isset($_POST['editBooking'])) {
+            //Sanitize post data
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
-                
-                $data['booking'] =  $model->getAllBooking();
-                $data['main']="Booking/view-booking";
-                // header('Location:'.URLAdmin. 'viewbooking');
-                echo "<script>window.location.href= '".URLAdmin. 'viewbooking'."'</script>";
-                $this->viewadmin("index",$data);
-            }
-        $data['main']="Booking/edit-booking";
-        $this->viewadmin("index",$data);
+            $booking = [
+                'BookingID' => trim($_POST['BookingID']),
+                'GuestID' => trim($_POST['GuestID']),
+                'ReservationAgentID' => trim($_POST['ReservationAgentID']),
+                'DateCheckIn' => trim($_POST['DateCheckIn']),
+                'DateCheckOut' => trim($_POST['DateCheckOut']),
+                'RoomCount' => trim($_POST['RoomCount']),
 
+            ];
+            // print_r ($booking);
+            $model = $this->modeladmin("booking");
+            $model->updateBooking($id, $booking['BookingID'],   $booking['GuestID'], $booking['ReservationAgentID'], $booking['DateCheckIn'], $booking['DateCheckOut'], $booking['RoomCount']);
+
+
+            $data['booking'] =  $model->getAllBooking();
+            $data['main'] = "Booking/view-booking";
+            // header('Location:'.URLAdmin. 'viewbooking');
+            echo "<script>window.location.href= '" . URLAdmin . 'viewbooking' . "'</script>";
+            $this->viewadmin("index", $data);
+        }
+        $data['main'] = "Booking/edit-booking";
+        $this->viewadmin("index", $data);
     }
-    public function deleteBooking($id){
+    public function deleteBooking($id)
+    {
         $_SESSION['function'] = 'booking';
-        $model= $this->modeladmin("booking");
+        $model = $this->modeladmin("booking");
         $model->DeleteBookingById($id);
         // header('Location:'.URLAdmin. 'viewbooking');
-        echo "<script>window.location.href= '".URLAdmin. 'viewbooking'."'</script>";
+        echo "<script>window.location.href= '" . URLAdmin . 'viewbooking' . "'</script>";
     }
-    public function confirm($id){
+    public function confirm($id)
+    {
         $_SESSION['function'] = 'booking';
-        $model= $this->modeladmin("booking");
+        $model = $this->modeladmin("booking");
         $model->confirm($id);
         // header('Location:'.URLAdmin. 'viewbooking');
-        echo "<script>window.location.href= '".URLAdmin. 'viewbooking'."'</script>";
+        echo "<script>window.location.href= '" . URLAdmin . 'viewbooking' . "'</script>";
     }
-    public function checkin($id){
+    public function checkin($id)
+    {
         $_SESSION['function'] = 'booking';
-        $model= $this->modeladmin("booking");
+        $model = $this->modeladmin("booking");
         $model->checkin($id);
         // header('Location:'.URLAdmin. 'viewbooking');
-        echo "<script>window.location.href= '".URLAdmin. 'viewbooking'."'</script>";
+        echo "<script>window.location.href= '" . URLAdmin . 'viewbooking' . "'</script>";
     }
-    public function checkout($id){
+    public function checkout($id)
+    {
         $_SESSION['function'] = 'booking';
-        $model= $this->modeladmin("booking");
+        $model = $this->modeladmin("booking");
         $model->checkout($id);
         // header('Location:'.URLAdmin. 'viewbooking');
-        echo "<script>window.location.href= '".URLAdmin. 'viewbooking'."'</script>";
+        echo "<script>window.location.href= '" . URLAdmin . 'viewbooking' . "'</script>";
     }
 
 
-// admin room
-    function ViewRoom() {
+    // admin room
+    function ViewRoom()
+    {
         // if ( RequestLib::get('test') ) {
         //     var_dump(RequestLib::get('test'));
         // }
         // rồi đó, giờ ông làm tiếp đi nha :3 tks oong! ok
         // exit;
         $_SESSION['function'] = 'room';
-        
-        if(isset($_GET['value'])) {
+
+        if (isset($_GET['value'])) {
             // echo "Welcome ". $_GET['value']. "<br />"; 
             $data['value'] = trim($_GET['value']);
-            $model=$this->modeladmin("room");
-            
+            $model = $this->modeladmin("room");
+
             // print_r($a); die();
             // echo $data['value']; die();
             if ($data['value'] !== "") {
                 $data['value'] = strtolower($data['value']);
-                $len=strlen($data['value']);
+                $len = strlen($data['value']);
                 $a =  $model->searchRoombyNumb($data['value']);
                 //   print_r($a); die();
-                  $stt=0;
-                foreach($a as $name) {
+                $stt = 0;
+                foreach ($a as $name) {
                     // if ($hint === "") {
                     //     $hint = $name['0'];
                     // } else {
                     //     $hint .= ", ". $name['0'];
                     // }
-                    $model= $this->modeladmin("room");
+                    $model = $this->modeladmin("room");
 
-                    $data['room'][$stt]= $model->getDataRoomById($name['0']);
+                    $data['room'][$stt] = $model->getDataRoomById($name['0']);
                     $stt++;
                 }
                 // print_r($data); die();
-                $data['main']="Room/view-room";
-                $this->viewadmin('index',$data);
+                $data['main'] = "Room/view-room";
+                $this->viewadmin('index', $data);
                 // die();
                 // print_r($data['room']); die();
-            }else{
-                $model=$this->modeladmin("room");
+            } else {
+                $model = $this->modeladmin("room");
                 $data['room'] =  $model->getAllRoom();
-
             }
-    
+
             // Output "no suggestion" if no hint was found or output correct values
             // echo $hint === "" ? "no suggestion" : $hint;
         }
-        $model=$this->modeladmin("room");
+        $model = $this->modeladmin("room");
         $data['room'] =  $model->getAllRoom();
-        $data['main']="Room/view-room";
-        $this->viewadmin('index',$data);
-        
-       
-        
+        $data['main'] = "Room/view-room";
+        $this->viewadmin('index', $data);
     }
 
-    public function AddRoom() {
+    public function AddRoom()
+    {
         $_SESSION['function'] = 'room';
-           $data = [
+        $data = [
             'RoomTypeID' => '',
             'RoomPrice' => '',
             'Description' => '',
@@ -399,12 +825,12 @@ class Admin extends Controller{
             'RoomPriceError' => '',
             'DescriptionError' => '',
             'RoomstatusIDError' => '',
-           
+
         ];
-    
-        
+
+
         //Check for post
-        if(isset($_POST['addroom'])) {
+        if (isset($_POST['addroom'])) {
             //Sanitize post data
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
@@ -416,7 +842,7 @@ class Admin extends Controller{
                 'RoomTypeError' => ''
 
             ];
-            
+
             //Validate username
             if (empty($data['room']['Roomnumber'])) {
                 $data['room']['RoomnumberError'] = 'Please enter Roomnumber.';
@@ -429,373 +855,119 @@ class Admin extends Controller{
 
             //Check if all errors are empty
             if (empty($data['room']['RoomTypeError']) && empty($data['room']['RoomnumberError'])) {
-                $model=$this->modeladmin("room");
-                $model->InsertRoom($data['room']['Roomnumber'],
-                        $data['room']['RoomType'],
-                        $data['room']['Description' ] );
-                
+                $model = $this->modeladmin("room");
+                $model->InsertRoom(
+                    $data['room']['Roomnumber'],
+                    $data['room']['RoomType'],
+                    $data['room']['Description']
+                );
             }
-            echo "<script>window.location.href= '".URLAdmin. 'viewroom'."'</script>";
-
-        } 
-        $data['main']= "Room/add-room";
-        $this->viewadmin("index",$data);
+            echo "<script>window.location.href= '" . URLAdmin . 'viewroom' . "'</script>";
+        }
+        $data['main'] = "Room/add-room";
+        $this->viewadmin("index", $data);
     }
 
-    public function editroom($id){
+    public function editroom($id)
+    {
         $_SESSION['function'] = 'room';
         $room = [
-            'RoomID'=> '',
+            'RoomID' => '',
             'RoomTypeID' => '',
             'RoomPrice' => '',
             'Description' => '',
             'RoomstatusID' => '',
-            'RoomIDError'=> '',
+            'RoomIDError' => '',
             'RoomTypeIDError' => '',
             'RoomPriceError' => '',
             'DescriptionError' => '',
             'RoomstatusIDError' => '',
-        
-        ];
-   
-            $model= $this->modeladmin("room");
-            $data['room'] = $model->getDataRoomById($id);
-            // print_r($data); die();
-             //Check for post
-            if(isset($_POST['editRoom'])) {
-                //Sanitize post data
-                $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
-                $room = [
-                    'RoomID' => trim($_POST['RoomID']),
-                    'RoomNumber' => trim($_POST['RoomNumber']),
-                    'RoomTypeID' => trim($_POST['RoomTypeID']),
-                    'RoomstatusID' => trim($_POST['RoomstatusID']),
-                    'Description' => trim($_POST['Description']),
-                    
-
-                ];
-                // print_r ($room); die();
-                $model=$this->modeladmin("room");
-                $model->updateRoom($id,$room['RoomID'], $room['RoomNumber'], $room['RoomTypeID'],$room['Description' ], $room['RoomstatusID'] );
-                
-                $data['room'] =  $model->getAllRoom();
-                $data['main']="Room/view-room";
-                // header('Location:'.URLAdmin. 'viewroom');
-                echo "<script>window.location.href= '".URLAdmin. 'viewroom'."'</script>";
-                $this->viewadmin("index",$data);
-            }
-        $data['main']="Room/edit-room";
-        $this->viewadmin("index",$data);
-
-    }
-
-    public function deleteRoom($id){
-        $_SESSION['function'] = 'room';
-        $model= $this->modeladmin("room");
-        $model->DeleteRoomById($id);
-        // header('Location:'.URLAdmin. 'viewroom');
-        echo "<script>window.location.href= '".URLAdmin. 'viewroom'."'</script>";
-    }
-
-
-    //view account admin
-    
-    public function viewaccount(){
-        $_SESSION['function'] = 'account';
-
-        if(isset($_GET['value'])) {
-            // echo "Welcome ". $_GET['value']. "<br />"; 
-            $data['value'] = trim($_GET['value']);
-            // echo $data['value']; die();
-            $model=$this->modeladmin("account");
-            // $data['value'] = strtolower($data['value']);
-            $a =  $model->searchAccountbyUsername($data['value']);
-            // print_r($a); die();
-            // echo $data['value']; die();
-            if (($data['value'] !== "")) {
-               if(isset($a)){
-                    $stt=0;
-                    foreach($a as $name) {
-                        $model= $this->modeladmin("account");
-
-                        $data['account'][$stt]= $model->getDataAccountById($name['0']);
-                        $stt++;
-                    }
-                    $data['main'] = 'Account/view-account';
-                    $this->viewadmin('index',$data);
-                    
-               }
-               else{
-                    $model=$this->modeladmin("account");
-                    $data['account'] =  NULL;
-                    $data['main'] = 'Account/view-account';
-                    $this->viewadmin('index',$data);
-               }
-                // $len=strlen($data['value']);
-               
-                // print_r($a); die();
-                
-            }else{
-                $model=$this->modeladmin("account");
-                $data['account'] =  $model-> getAllAccount();
-                $data['main'] = 'Account/view-account';
-                $this->viewadmin('index',$data);
-            }
-        }
-
-        $model=$this->modeladmin("account");
-        $data['account'] =  $model-> getAllAccount();
-        $data['main'] = 'Account/view-account';
-        $this->viewadmin('index',$data);
-    }
-    
-    public function AddAccount() {
-        $_SESSION['function'] = 'account';
-        $data['account'] = [
-            'img' =>'',
-            'username' =>'',
-            'password' => '',
-            'email' => '', 
-            'firstname' => '',
-            'lastname' => '',
-            'address' => '',
-            'country' => '',
-            'phone' => '',
-            'gender' => '',
-            'birthday' => '',
-            'rolesID' => '',
-            'usernameError' => '',
-            'passwordError' => '',
-            'emailError' => ' ',
-            'firstnameError' => ' ',
-            'lastnameError' => ' ',
-            'addressError' => ' ',
-            'countryError' => ' ',
-            'phoneError' => ' ',
-            'genderError' => ' ',
-            'birthdayError' => ' ',
-            'rolesIDError' => ' ',
         ];
 
-            // Check extension
-            // if( in_array($imageFileType,$extensions_arr) ){
-               // Upload file
-            //    move_uploaded_file($_FILES['file']['tmp_name'],$target_dir.$name);
-          
-            // }
-       
+        $model = $this->modeladmin("room");
+        $data['room'] = $model->getDataRoomById($id);
+        // print_r($data); die();
         //Check for post
-        if(isset($_POST['addaccount'])) {
+        if (isset($_POST['editRoom'])) {
             //Sanitize post data
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
-            $file = $_FILES['file']['name'];
-            // echo $file; die();
-            $target_dir = imgAdmin."account/";
-            $path=$target_dir.$file;
-            
-            // $target_file = $target_dir . basename($_FILES["file"]["name"]);
-          
-            // Select file type
-            // $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-          
-            // Valid file extensions
-            // $extensions_arr = array("jpg","jpeg","png","gif");
-
-            $data['account'] = [
-                
-                'username' => trim($_POST['username']),
-                'password' => trim($_POST['password']),
-                'img' =>$_FILES['file']['name'],
-                'email' => trim($_POST['email']),
-                'firstname' => trim($_POST['firstname']),
-                'lastname' => trim($_POST['lastname']),
-                'address' => trim($_POST['address']),
-                'country' => trim($_POST['country']),
-                'phone' => trim($_POST['phone']),
-                'gender' => trim($_POST['gender']),
-                'birthday' => trim($_POST['birthday']),
-                'rolesID' => trim($_POST['rolesID']),
-                'usernameError' => '',
-                'passwordError' => '',
-                'emailError' => ' ',
-                'firstnameError' => ' ',
-                'lastnameError' => ' ',
-                'addressError' => ' ',
-                'countryError' => ' ',
-                'phoneError' => ' ',
-                'genderError' => ' ',
-                'birthdayError' => ' ',
-                'rolesIDError' => ' '
-
+            $room = [
+                'RoomID' => trim($_POST['RoomID']),
+                'RoomNumber' => trim($_POST['RoomNumber']),
+                'RoomTypeID' => trim($_POST['RoomTypeID']),
+                'RoomstatusID' => trim($_POST['RoomstatusID']),
+                'Description' => trim($_POST['Description']),
 
 
             ];
+            // print_r ($room); die();
+            $model = $this->modeladmin("room");
+            $model->updateRoom($id, $room['RoomID'], $room['RoomNumber'], $room['RoomTypeID'], $room['Description'], $room['RoomstatusID']);
 
-            
-            //Validate username
-            if (empty($data['account']['username'])) {
-                $data['usernameError'] = 'Please enter a username.';    
-            }
-
-            //Validate password
-            if (empty($data['account']['password'])) {
-                $data['passwordError'] = 'Please enter a password.';
-            }
-
-            //Check if all errors are empty
-            if (empty($data['account']['usernameError']) && empty($data['account']['passwordError'])) {
-                // echo $_FILES['file']['tmp_name'];
-                // echo $target_dir.$file;
-                // die();
-                if(isset($path)){
-
-                    $target_dir = $target_dir."(1)";
-                    $path=$target_dir.$file;
-                    move_uploaded_file($_FILES['file']['tmp_name'], $path);
-                    $data['account']['img']="(1)".$file;
-                }
-                
-                $model=$this->modeladmin("account");
-                $model->InsertAccount($data['account']['username'],
-                    $data['account']['password'],
-                    $data['account']['img'],
-                    $data['account']['email' ],
-                    $data['account']['firstname' ],
-                    $data['account']['lastname' ],
-                    $data['account']['address' ],
-                    $data['account']['country' ],
-                    $data['account']['phone' ],
-                    $data['account'][ 'gender' ],
-                    $data['account']['birthday' ],
-                    $data['account']['rolesID' ]
-                    );
-               
-            }
-
-        } 
-        $data['main'] ="Account/add-account";
-        $this->viewadmin('index',$data);
-    }
-    public function editAccount($id){
-        $_SESSION['function'] = 'account';
-        $account = [
-            'aAdminID'=> '',
-            'aUsername' => '',
-            'aPassword' => '',
-            'aimg' => '',
-            'aEmail' => '',
-            'aFirstName' => '',
-            'aLastName'=> '',
-            'aAddress' => '',
-            'aCountry' => '',
-            'aPhone' => '',
-            'aGender' => '',
-            'aBirthday' => '',
-        
-        ];
-   
-            $model= $this->modeladmin("account");
-            $data['account'] = $model->getDataAccountById($id);
-            // print_r($data); die();
-             //Check for post
-            if(isset($_POST['editAccount'])) {
-                //Sanitize post data
-                $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-
-                $file = $_FILES['aimg']['name']; 
-                $target_dir = imgAdmin."account/";
-                $path=$target_dir.$file; 
-
-                $account = [
-                    'aAdminID'=> trim($_POST['aAdminID']),
-                    'aUsername' => trim($_POST['aUsername']),
-                    'aPassword' =>  trim($_POST['aPassword']),
-                    'aimg' =>$_FILES['aimg']['name'],
-                    'aEmail' =>  trim($_POST['aEmail']),
-                    'aFirstName' =>  trim($_POST['aFirstName']),
-                    'aLastName'=>  trim($_POST['aLastName']),
-                    'aAddress' =>  trim($_POST['aAddress']),
-                    'aCountry' =>  trim($_POST['aCountry']),
-                    'aPhone' =>  trim($_POST['aPhone']),
-                    'aGender' =>  trim($_POST['aGender']),
-                    'aBirthday' =>  trim($_POST['aBirthday']),
-                    
-
-                ];
-                // echo $path; die();
-                if(isset($path)){
-
-                    $target_dir = $target_dir."(1)";
-                    $path=$target_dir.$file;
-                    
-                    
-                    move_uploaded_file($_FILES['aimg']['tmp_name'], $path);
-                    $account['img']="(1)".$file;
-                }else{
-                    move_uploaded_file($_FILES['aimg']['tmp_name'], $path);
-                    $account['img']= $file;
-                }
-
-                // print_r ($room);
-                $model=$this->modeladmin("account");
-                $model->updateAccount($id,$account['aAdminID'], $account['aUsername' ], $account['aPassword'],$account['img'], $account['aEmail'],$account['aFirstName' ],$account['aLastName' ],$account['aAddress' ],$account['aCountry' ],$account['aPhone' ],$account['aGender' ],$account['aBirthday' ] );
-                
-                $data['account'] =  $model->getAllAccount();
-                $data['main']="Account/view-account";
-                // header('Location:'.URLAdmin. 'viewaccount');
-                echo "<script>window.location.href= '".URLAdmin. 'viewaccount'."'</script>";
-                $this->viewadmin("index",$data);
-            }
-        $data['main']="Account/edit-account";
-        $this->viewadmin("index",$data);
-
-    }
-    public function deleteAccount($id){
-        $_SESSION['function'] = 'account';
-        $model= $this->modeladmin("account");
-        $model->DeleteAccountById($id);
-        // header('Location:'.URLAdmin. 'viewaccount');
-        echo "<script>window.location.href= '".URLAdmin. 'viewaccount'."'</script>";
+            $data['room'] =  $model->getAllRoom();
+            $data['main'] = "Room/view-room";
+            // header('Location:'.URLAdmin. 'viewroom');
+            echo "<script>window.location.href= '" . URLAdmin . 'viewroom' . "'</script>";
+            $this->viewadmin("index", $data);
+        }
+        $data['main'] = "Room/edit-room";
+        $this->viewadmin("index", $data);
     }
 
-    public function addblog(){
+    public function deleteRoom($id)
+    {
+        $_SESSION['function'] = 'room';
+        $model = $this->modeladmin("room");
+        $model->DeleteRoomById($id);
+        // header('Location:'.URLAdmin. 'viewroom');
+        echo "<script>window.location.href= '" . URLAdmin . 'viewroom' . "'</script>";
+    }
+
+
+
+    public function addblog()
+    {
         $_SESSION['function'] = 'blog';
-        $data['main'] ="Blogs/add-blog";
-        $this->viewadmin('index',$data);
+        $data['main'] = "Blogs/add-blog";
+        $this->viewadmin('index', $data);
     }
 
-    public function viewblog(){
+    public function viewblog()
+    {
         $_SESSION['function'] = 'blog';
-        $data['main'] ="Blogs/view-blog";
-        $this->viewadmin('index',$data);
+        $data['main'] = "Blogs/view-blog";
+        $this->viewadmin('index', $data);
     }
 
-    public function editblog(){
+    public function editblog()
+    {
         $_SESSION['function'] = 'blog';
-        $data['main'] ="Blogs/edit-blog";
-        $this->viewadmin('index',$data);
+        $data['main'] = "Blogs/edit-blog";
+        $this->viewadmin('index', $data);
     }
-    
 
-    public function Reservation(){
-        
-        $_SESSION['function']='reservation';
-       
-        $model=$this->modeladmin("reservation");
-        $data['reservation'] =  $model->getAllReservation();
-        
-        $data['main'] ="Reservation/Reservation";
-        $this->viewadmin('index',$data);
-    }
-    public function viewreservation(){
+
+    public function Reservation()
+    {
+
         $_SESSION['function'] = 'reservation';
-        $model=$this->modeladmin("reservation");
+
+        $model = $this->modeladmin("reservation");
         $data['reservation'] =  $model->getAllReservation();
-        
-        $data['main']="Room/view-room";
-        $this->viewadmin('index',$data);
+
+        $data['main'] = "Reservation/Reservation";
+        $this->viewadmin('index', $data);
+    }
+    public function viewreservation()
+    {
+        $_SESSION['function'] = 'reservation';
+        $model = $this->modeladmin("reservation");
+        $data['reservation'] =  $model->getAllReservation();
+
+        $data['main'] = "Room/view-room";
+        $this->viewadmin('index', $data);
     }
     public function deleteReservSinglePage($id)
     {
@@ -805,14 +977,13 @@ class Admin extends Controller{
 
 
     // Chức năng Search
-    public function search(){
-        
-        
+    public function search()
+    {
+
+
         require_once "./test.php";
         // lookup all hints from array if $q is different from ""
-       
-       
+
+
     }
-   
 }
-?>

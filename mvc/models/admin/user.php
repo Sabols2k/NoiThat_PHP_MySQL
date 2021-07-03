@@ -1,11 +1,11 @@
 <?php
-class account extends DB{
+class user extends DB{
     public function __construct()
 	{
 		parent::__construct();
 	}
-    public function InsertAccount($email,$password, $phone, $firstname, $lastname){
-        $sql="INSERT INTO admin(adminid ,email,password,phone,firstname,lastname ) VALUES (NULL,'$email','$password','$phone', '$firstname','$lastname')";
+    public function InsertUser($email,$password, $phone, $firstname, $lastname, $address){
+        $sql="INSERT INTO user(userid ,email,password,phone,firstname,lastname, address ) VALUES (NULL,'$email','$password','$phone', '$firstname','$lastname', '$address')";
         // $sql="CALL `InsertAccount`('$username', '$password', '$img', '$email', '$firstname', '$lastname', '$address', '$country', '$phone', '$gender', '$birthday', '$roles')";
         echo $sql;
         return $this->execute($sql);
@@ -16,8 +16,8 @@ class account extends DB{
     //     $sql="UPDATE $table set RoomTypeID='$RoomTypeID',RoomPrice='$RoomPrice',RoomstatusID='$RoomStatus' WHERE RoomID='$id'";
     //   return $this->execute($sql);
     // }
-    public function getDataAccountById($id){
-        $sql="SELECT * from `admin` where `adminid`='$id'";
+    public function getDataUserById($id){
+        $sql="SELECT * from `user` where `userid`='$id'";
         // $sql = "CALL `getDataAccountById`('$id')";
         $this->execute($sql);
         if($this->result){
@@ -29,21 +29,21 @@ class account extends DB{
         
         return $data;
     }
-     public function updateAccount($update_id,$email, $phone, $firstname,$lastname){
-        $sql="UPDATE admin set email= '$email',phone='$phone',firstname='$firstname', lastname= '$lastname' WHERE adminid ='$update_id'";
-        // $sql = "CALL `updateAccount`('$id', '$aAdminID', '$aUsername', '$aPassword', '$aimg', '$aEmail', '$aFirstName', '$aLastName', '$aAddress', '$aCountry', '$aPhone', '$aGender', '$aBirthday')";
+     public function updateUser($update_id,$email, $phone, $firstname,$lastname, $address){
+        $sql="UPDATE user set email= '$email',phone='$phone',firstname='$firstname', lastname= '$lastname', address= '$address' WHERE userid ='$update_id'";
+        // $sql = "CALL `updateAccount`('$id', '$auserID', '$aUsername', '$aPassword', '$aimg', '$aEmail', '$aFirstName', '$aLastName', '$aAddress', '$aCountry', '$aPhone', '$aGender', '$aBirthday')";
         // echo $sql; die();
         return $this->execute($sql);
      }
-     public function DeleteAccountById($id){
+     public function DeleteUserById($id){
 
-      $sql="DELETE from `admin` WHERE `adminid`='$id'";
+      $sql="DELETE from `user` WHERE `userid`='$id'";
     //   $sql="CALL `DeleteAccountById`($id);";
     
       $this->execute($sql);
      }
-     public function getAllAccount(){
-        $sql = "SELECT * FROM `admin`";
+     public function getAllUser(){
+        $sql = "SELECT * FROM `user`";
     //   $sql ="CALL `viewaccount`()";
       $this->execute($sql);
       while($datas=$this->getData()){
@@ -52,8 +52,8 @@ class account extends DB{
       return $data;
       
     }
-    public function searchAccountbyUsername($value){
-        $sql = "SELECT a.adminid  FROM admin as a WHERE a.firstname like '%$value%'; ";
+    public function searchUsertbyFirstname($value){
+        $sql = "SELECT a.userid  FROM user as a WHERE a.firstname like '%$value%'; ";
         
         $this->execute($sql);
         // echo "1";

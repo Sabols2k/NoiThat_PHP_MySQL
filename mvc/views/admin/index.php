@@ -1,6 +1,6 @@
 <?php  
-    echo "index";    
-    if(empty($_SESSION['admin']['username'])){
+    // echo "index";    
+    if(empty($_SESSION['admin']['email'])){
 
         echo "<script>window.location.href= '".URLAdmin.'login'."'</script>";
 
@@ -12,6 +12,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Admin - Evo Furniture</title>
     <?php
         require_once('general/css.php');

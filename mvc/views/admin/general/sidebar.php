@@ -15,7 +15,7 @@
     </li>
 
     <li class="nav-item <?php if($_SESSION['function']=='admin'){echo "active";}else{echo "";} ?>">
-        <a class="nav-link" href="<?php echo URLAdmin."admin"?>">
+        <a class="nav-link" href="<?php echo URLAdmin."account"?>">
         <i class="fas fa-fw fa-address-book"></i>
             <span>Admins</span></a>
     </li>

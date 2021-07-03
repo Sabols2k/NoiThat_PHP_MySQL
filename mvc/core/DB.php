@@ -6,7 +6,7 @@ class DB{
     protected $servername = "localhost";
     protected $username = "root";
     protected $password = "";
-    protected $dbname = "quite_luxury";
+    protected $dbname = "noi_that";
     protected $result = NULL;
 
     // protected $username = "id15889535_quite_luxury_dbs";
