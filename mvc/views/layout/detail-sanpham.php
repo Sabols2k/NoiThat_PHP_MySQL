@@ -502,8 +502,8 @@
         renderCartModal(cartLS.list())
         cartLS.onChange(renderCartModal)
     </script>
-        <!-- ========== FOOTER ========== -->
-        <?php
+    <!-- ========== FOOTER ========== -->
+    <?php
         require_once('general/footer.php');
       ?> 
     </div>

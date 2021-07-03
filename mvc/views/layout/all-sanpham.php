@@ -162,7 +162,7 @@
                                             <span>
                                                 <label for="">
                                                     <input type="checkbox">
-                                                    Giá dưới 100.000đ
+                                                    100.000đ - 200.000đ
                                                 </label>
                                             </span>
                                         </li>
@@ -170,7 +170,7 @@
                                             <span>
                                                 <label for="">
                                                     <input type="checkbox">
-                                                    Giá dưới 100.000đ
+                                                    200.000đ - 300.000đ
                                                 </label>
                                             </span>
                                         </li>
@@ -178,7 +178,7 @@
                                             <span>
                                                 <label for="">
                                                     <input type="checkbox">
-                                                    Giá dưới 100.000đ
+                                                    300.000đ - 500.000đ
                                                 </label>
                                             </span>
                                         </li>
@@ -186,7 +186,7 @@
                                             <span>
                                                 <label for="">
                                                     <input type="checkbox">
-                                                    Giá dưới 100.000đ
+                                                    500.000đ - 1.000.000đ
                                                 </label>
                                             </span>
                                         </li>
@@ -194,97 +194,11 @@
                                 </div>
                             </div>
                             <div class="filter">
-                                <div class="title">Giá sản phẩm</div>
+                                <div class="title">Khuyến mãi</div>
                                 <div class="content">
-                                    <ul>
-                                        <li class="filter-item">
-                                            <span>
-                                                <label for="">
-                                                    <input type="checkbox">
-                                                    Giá dưới 100.000đ
-                                                </label>
-                                            </span>
-                                        </li>
-                                        <li class="filter-item">
-                                            <span>
-                                                <label for="">
-                                                    <input type="checkbox">
-                                                    Giá dưới 100.000đ
-                                                </label>
-                                            </span>
-                                        </li>
-                                        <li class="filter-item">
-                                            <span>
-                                                <label for="">
-                                                    <input type="checkbox">
-                                                    Giá dưới 100.000đ
-                                                </label>
-                                            </span>
-                                        </li>
-                                        <li class="filter-item">
-                                            <span>
-                                                <label for="">
-                                                    <input type="checkbox">
-                                                    Giá dưới 100.000đ
-                                                </label>
-                                            </span>
-                                        </li>
-                                        <li class="filter-item">
-                                            <span>
-                                                <label for="">
-                                                    <input type="checkbox">
-                                                    Giá dưới 100.000đ
-                                                </label>
-                                            </span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="filter">
-                                <div class="title">Giá sản phẩm</div>
-                                <div class="content">
-                                    <ul>
-                                        <li class="filter-item">
-                                            <span>
-                                                <label for="">
-                                                    <input type="checkbox">
-                                                    Giá dưới 100.000đ
-                                                </label>
-                                            </span>
-                                        </li>
-                                        <li class="filter-item">
-                                            <span>
-                                                <label for="">
-                                                    <input type="checkbox">
-                                                    Giá dưới 100.000đ
-                                                </label>
-                                            </span>
-                                        </li>
-                                        <li class="filter-item">
-                                            <span>
-                                                <label for="">
-                                                    <input type="checkbox">
-                                                    Giá dưới 100.000đ
-                                                </label>
-                                            </span>
-                                        </li>
-                                        <li class="filter-item">
-                                            <span>
-                                                <label for="">
-                                                    <input type="checkbox">
-                                                    Giá dưới 100.000đ
-                                                </label>
-                                            </span>
-                                        </li>
-                                        <li class="filter-item">
-                                            <span>
-                                                <label for="">
-                                                    <input type="checkbox">
-                                                    Giá dưới 100.000đ
-                                                </label>
-                                            </span>
-                                        </li>
-                                    </ul>
+                                    <div class="single-image">
+                                        <img src="<?php echo URL_Layout ."mvc/Assets/img/All-products/aside_banner.jpg"?>" alt="">
+                                    </div>
                                 </div>
                             </div>
                         </div>
