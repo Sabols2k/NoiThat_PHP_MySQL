@@ -1,3 +1,10 @@
+<?php  
+    // print_r ($_SESSION);
+    if(isset($_SESSION['user']['userid'])){
+        // header('Location:'.URLAdmin);
+        echo "<script>window.location.href= '".URL. "home"."'</script>";
+    }
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -42,7 +49,7 @@
                     <div class="line-break">
                         <span>hoặc</span>
                     </div>
-                    <form id="form-2" method="POST" action="/login" class="form" >
+                    <form  method="POST" action="<?php echo URL ."login"?>" class="form" >
                         <div class="form-group">
                             <label for="email" class="form-label">Email*</label>
                             <input id="email" name="email" type="text" class="form-control" placeholder="Nhập Địa Chỉ Email">
@@ -53,7 +60,7 @@
                             <input id="password" name="password" type="password" class="form-control" placeholder="Nhập mật khẩu">
                             <span class="form-message"></span>
                         </div>
-                        <input type="submit" class="form-submit" value="Đăng nhập">
+                        <input type="submit" name="login" class="form-submit" value="Đăng nhập">
                         <p class="text-center">
                             <a href="" class="forgot-password">Quên mật khẩu?</a>
                         </p>

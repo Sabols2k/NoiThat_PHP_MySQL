@@ -1,5 +1,5 @@
 <?php  
-    print_r ($_SESSION);
+    // print_r ($_SESSION);
     if(isset($_SESSION['admin']['email'])){
         // header('Location:'.URLAdmin);
         echo "<script>window.location.href= '".URLAdmin."'</script>";

@@ -8,16 +8,40 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 evo-account">
                     <ul>
-                        <li>
-                            <a href="<?php echo URL_Layout."login"?>">
+                        <?php
+                        if (isset($_SESSION['user']['userid'])) {
+                            $disabled = "display:none ";
+                            $disabled1 = "display: inline-block";
+                        } else {
+                            $disabled1 = "display:none ";
+                            $disabled = "display: inline-block";
+                        }
+                        ?>
+                        <li style="<?php echo $disabled ?>" >
+                            <a href="<?php echo URL_Layout . "login" ?>">
                                 <i class="fas fa-sign-in-alt"></i>
                                 Đăng nhập
                             </a>
                         </li>
-                        <li>
-                            <a href="<?php echo URL_Layout."register"?>">
+                        
+                        <li style="<?php echo $disabled ?>">
+                            <a href="<?php echo URL_Layout . "register" ?>">
                                 <i class="fas fa-user-plus"></i>
                                 Đăng kí
+                            </a>
+                        </li>
+
+                        <li style="<?php echo $disabled1 ?>" >
+                            <a href="<?php echo URL_Layout . "account" ?>">
+                                <i class="fas fa-sign-in-alt"></i>
+                                Account
+                            </a>
+                        </li>
+                        
+                        <li style="<?php echo $disabled1 ?>">
+                            <a href="<?php echo URL_Layout . "logout" ?>">
+                                <i class="fas fa-user-plus"></i>
+                                Logout
                             </a>
                         </li>
                     </ul>
@@ -35,8 +59,8 @@
                     <span class="line"></span>
                     <span class="line"></span>
                 </label>
-                <a href="<?php echo URL. "home"?>" class="logo">
-                    <img  src="<?php echo URL_Layout ."mvc/Assets/img/logo.png"?>" alt="evo_logo">
+                <a href="<?php echo URL . "home" ?>" class="logo">
+                    <img src="<?php echo URL_Layout . "mvc/Assets/img/logo.png" ?>" alt="evo_logo">
                 </a>
                 <div class="evo-cart mini-cart d-none">
                     <a href="cart">
@@ -149,13 +173,13 @@
                     <nav>
                         <ul class="nav">
                             <li class="nav-item active">
-                                <a href="<?php echo URL. "home"?>" class="nav-link">Trang chủ</a>
+                                <a href="<?php echo URL . "home" ?>" class="nav-link">Trang chủ</a>
                             </li>
                             <li class="nav-item">
-                                <a href="<?php echo URL_Layout."GioiThieu"?>" class="nav-link">Giới thiệu</a>
+                                <a href="<?php echo URL_Layout . "GioiThieu" ?>" class="nav-link">Giới thiệu</a>
                             </li>
                             <li class="nav-item open-mega-content">
-                                <a href="<?php echo URL_Layout."AllSanpham"?>" class="nav-link">
+                                <a href="<?php echo URL_Layout . "AllSanpham" ?>" class="nav-link">
                                     Sản phẩm
                                     <i class="fas fa-angle-down"></i>
                                 </a>
@@ -243,7 +267,7 @@
                                 <a href="" class="nav-link">Tin tức</a>
                             </li>
                             <li class="nav-item">
-                                <a href="<?php echo URL_Layout."LienHe"?>" class="nav-link">Liên hệ</a>
+                                <a href="<?php echo URL_Layout . "LienHe" ?>" class="nav-link">Liên hệ</a>
                             </li>
                         </ul>
                     </nav>
@@ -260,7 +284,7 @@
                     <label for="menu-mobile-input" class="close-nav">
                         <i class="fas fa-arrow-left"></i>
                     </label>
-                    <img src="<?php echo URL_Layout ."mvc/Assets/img/logo.png"?>" alt="">
+                    <img src="<?php echo URL_Layout . "mvc/Assets/img/logo.png" ?>" alt="">
                 </div>
                 <div class="account-mobile">
                     <a href="login">Đăng nhập</a>
@@ -276,13 +300,13 @@
                                 </a>
                             </li>
                             <li class="menu-item-count">
-                                <a href="<?php echo URL_Layout."GioiThieu"?>">
+                                <a href="<?php echo URL_Layout . "GioiThieu" ?>">
                                     <i class="fas fa-angle-right"></i>
                                     Giới thiệu
                                 </a>
                             </li>
                             <li class="menu-item-count">
-                                <a href="<?php echo URL_Layout."all-sanpham"?>">
+                                <a href="<?php echo URL_Layout . "all-sanpham" ?>">
                                     <i class="fas fa-angle-right"></i>
                                     Sản phẩm
                                 </a>
@@ -300,7 +324,7 @@
                                 </a>
                             </li>
                             <li class="menu-item-count">
-                                <a href="<?php echo URL_Layout."lien-he"?>">
+                                <a href="<?php echo URL_Layout . "lien-he" ?>">
                                     <i class="fas fa-angle-right"></i>
                                     Liên hệ
                                 </a>
@@ -312,4 +336,3 @@
         </div>
     </div>
 </header>
-

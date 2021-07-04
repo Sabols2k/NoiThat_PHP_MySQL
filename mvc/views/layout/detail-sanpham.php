@@ -20,11 +20,11 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="product-top">
-                                <h1 class="title-head">{{product.name}} </h1>
+                                <h1 class="title-head"><?php echo $data['product']['name'] ?> </h1>
                                 <div class="sku-product">
                                     <div class="item-ku">
                                         SKU:
-                                        <span class="variant-sku">{{product._id}}</span>
+                                        <span class="variant-sku"><?php echo $data['product']['productid'] ?></span>
                                     </div>
                                     <div class="item-ku">
                                         Thương hiệu:
@@ -38,10 +38,10 @@
                                 <div class="col-md-6">
                                     <div class="slider-img-product">
                                         <div class="mySlides">
-                                            <img src="<?php echo URL_Layout ."mvc/Assets/img/All-products/{{product.img}}.jpg"?>" style="width:100%">
+                                            <img src="<?php echo URL_Layout ."mvc/Assets/img/All-products/". $data['product']['img'].".jpg"?>" style="width:100%">
                                         </div>
                                         <div class="mySlides">
-                                            <img src="<?php echo URL_Layout ."mvc/Assets/img/All-products/{{product.img}}.jpg"?>" style="width:100%">
+                                            <img src="<?php echo URL_Layout ."mvc/Assets/img/All-products/". $data['product']['img'].".jpg"?>" style="width:100%">
                                         </div>
                                       
                                         <a class="prev" onclick="plusSlides(-1)">❮</a>
@@ -49,10 +49,10 @@
                                       
                                         <div class="thumb">
                                             <div class="thumb-item">
-                                                <img class="demo" src="<?php echo URL_Layout ."mvc/Assets/img/All-products/{{product.img}}.jpg"?>" style="width:100%" onclick="currentSlide(1)">
+                                                <img class="demo" src="<?php echo URL_Layout ."mvc/Assets/img/All-products/". $data['product']['img'].".jpg"?>" style="width:100%" onclick="currentSlide(1)">
                                             </div>
                                             <div class="thumb-item">
-                                                <img class="demo" src="<?php echo URL_Layout ."mvc/Assets/img/All-products/{{product.img}}.jpg"?>" style="width:100%" onclick="currentSlide(2)">
+                                                <img class="demo" src="<?php echo URL_Layout ."mvc/Assets/img/All-products/". $data['product']['img'].".jpg"?>" style="width:100%" onclick="currentSlide(2)">
                                             </div>
                                         </div>
                                     </div>
@@ -62,7 +62,7 @@
                                         <div class="price-box">
                                             <div>
                                                 <!-- Current price -->
-                                                <span class="product-price">{{product.price}}₫ </span>
+                                                <span class="product-price"><?php echo $data['product']['price'] ?>₫ </span>
                                                 
                                             </div>
                                            
@@ -72,7 +72,7 @@
                                             <span class="a-stock">Còn hàng</span>
                                         </div>
                                         <div class="product-describe">
-                                            <p><strong>{{product.name}}</strong>khiến mọi vị khách cảm thấy hài lòng trong quá trình sử dụng. Điều thu hút khách hàng đầu tiện chính là vẻ đpẹ hiện đại, thanh lịch của mẫu giường ngủ gỗ. Cùng với đó, thiết kế nệm bọc nỉ, da cao cấp của sản phẩm cũng góp phần đem đến những trải nghiệm thoải mái, dễ chịu nhất đối với người dùng.</p>
+                                            <p><strong><?php echo $data['product']['name'] ?></strong>khiến mọi vị khách cảm thấy hài lòng trong quá trình sử dụng. Điều thu hút khách hàng đầu tiện chính là vẻ đpẹ hiện đại, thanh lịch của mẫu giường ngủ gỗ. Cùng với đó, thiết kế nệm bọc nỉ, da cao cấp của sản phẩm cũng góp phần đem đến những trải nghiệm thoải mái, dễ chịu nhất đối với người dùng.</p>
                                         </div>
                                     </div>
                                     <div class="form-product">
@@ -89,11 +89,11 @@
                                             <button type="submit" 
                                                     class="btn btn-gray btn-lg add-to-cart"
                                                     data-bs-toggle="modal" data-bs-target="#cartModal"
-                                            
-                                                    >
+                                                    onClick="cartLS.add({id: <?php echo $data['product']['productid']?>, name: '<?php echo $data['product']['name'] ?>', img:'<?php echo $data['product']['img']?>', price: <?php echo $data['product']['price'] ?> })">
+                                                    
                                                 <span>
                                                     Mua ngay 
-                                                    <b class="product-price">{{product.price}}₫</b>
+                                                    <b class="product-price"><?php echo $data['product']['price'] ?>₫</b>
                                                 </span>
                                                 <span class="txt-add">Đặt mua giao hàng tận nơi</span>
                                             </button>

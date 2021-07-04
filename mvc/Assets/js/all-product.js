@@ -30,7 +30,7 @@
                     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
                         <div class="evo-product-block-item">
                             <div class="product-img">
-                                <a href="/detail-sanpham/${product.productid}">
+                                <a href= "http://localhost:8080/NoiThat/sanpham/detail/${product.productid}">
                                     <img class="img-prd" src="mvc/Assets/img/All-products/${product.img}.jpg" alt="">
                                 </a>
                             </div>
@@ -49,7 +49,7 @@
                                     <a href="">Evo Nội Thất</a>
                                 </div>
                                 <h3>
-                                    <a href="./detail-sanpham/${product.productid}" class="pro-name">${product.name}</a>
+                                    <a href="http://localhost:8080/NoiThat/sanpham/detail/${product.productid}" class="pro-name">${product.name}</a>
                                 </h3>
                                 <p class="pro-price">${format(product.price)}</p>
                             </div>

@@ -1,3 +1,11 @@
+<?php  
+    // echo "index";    
+    if(empty($_SESSION['user']['userid'])){
+
+        echo "<script>window.location.href= '".URL.'login'."'</script>";
+
+    }
+?>
 <!doctype html>
 <html lang="en">
   <head>

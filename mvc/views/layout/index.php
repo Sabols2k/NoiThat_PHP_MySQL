@@ -11,11 +11,11 @@
   </head>
 <body>
       <?php $page = 'home'; require_once('general/header.php');?>
-
+     
       <?php
         require_once('general/home.php');
       ?> 
-
+ 
       <?php
         require_once('general/footer.php');
       ?> 

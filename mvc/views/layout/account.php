@@ -1,3 +1,11 @@
+<?php  
+    // echo "index";    
+    if(empty($_SESSION['user']['userid'])){
+
+        echo "<script>window.location.href= '".URL.'login'."'</script>";
+
+    }
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -18,7 +26,7 @@
             <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Giới thiệu</li>
+                  <li class="breadcrumb-item active" aria-current="page">Account</li>
                 </ol>
             </nav>
         </div>
@@ -31,18 +39,18 @@
                     <h1 class="title-head">Thông tin tài khoản</h1>
                     <div class="form-info-account">
                         <p>
-                            <img id="avatar-image" class="change-avatar" src="../img/users/{{user.img}}" alt="account" 
+                            <img id="avatar-image" class="change-avatar" src="<?php echo $_SESSION['user']['img'] ?>" alt="account" 
                             data-bs-toggle="modal" data-bs-target="#changeAvatarModal">
                         </p>
                         <p>
                             <strong>Họ tên:</strong>
-                            <!-- {{user.firstname}} {{user.lastname}} -->
-                            Đặng Đức Châu
+                           
+                            <?php echo $_SESSION['user']['lastname']." ". $_SESSION['user']['firstname'] ?>
                         </p>
                         <p>
                             <strong>Email:</strong>
-                            <!-- {{user.email}} -->
-                            dangducchau2000@gmail.com
+                           
+                            <?php echo $_SESSION['user']['email'] ?>
                         </p>
                     </div>
                 </div>
@@ -81,18 +89,31 @@
         <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-            <h5 class="modal-title" id="changeAvatarModalLabel">Change avatar</h5>
+            <h5 class="modal-title" id="changeAvatarModalLabel">Update Profile</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
              <form id="changeformAvatar" action="account/changeAvatar" method="POST" enctype="multipart/form-data">
             <div class="modal-body">
                
                     <div class="avatar text-center">
-                        <img src="../img/users/{{user.img}}" class="change-avatar">
+                        <img src="<?php echo $_SESSION['user']['img'] ?>" class="change-avatar">
                     </div>
                     <div class="form-group">
                       <label for="avatar" class="col-form-label" style="font-size: 1.4rem;">Choose avatar:</label>
-                      <input type="file" name="avatar" class="form-control" id="avatar-name" style="padding: 10px 10px; font-size: 1.4rem;">
+                      <input type="file" name="avatar" value="<?php echo $_SESSION['user']['img'] ?>"class="form-control" id="avatar-name" style="padding: 10px 10px; font-size: 1.4rem;">
+                    </div>
+                    <input type="hidden" name="userid" value="<?php echo $_SESSION['user']['userid'] ?>"class="form-control"  style="padding: 10px 10px; font-size: 1.4rem;">
+                    <div class="form-group">
+                      <label for="avatar" class="col-form-label" style="font-size: 1.4rem;">Email</label>
+                      <input type="text" name="email" value="<?php echo $_SESSION['user']['email'] ?>"class="form-control"  style="padding: 10px 10px; font-size: 1.4rem;">
+                    </div>
+                    <div class="form-group">
+                      <label for="avatar" class="col-form-label" style="font-size: 1.4rem;">First Name</label>
+                      <input type="text" name="firstname" value="<?php echo $_SESSION['user']['firstname'] ?>" class="form-control" style="padding: 10px 10px; font-size: 1.4rem;">
+                    </div>
+                    <div class="form-group">
+                      <label for="avatar" class="col-form-label" style="font-size: 1.4rem;">Lastname</label>
+                      <input type="text" name="lastname" value="<?php echo $_SESSION['user']['lastname'] ?>" class="form-control" style="padding: 10px 10px; font-size: 1.4rem;">
                     </div>
                  
             </div>

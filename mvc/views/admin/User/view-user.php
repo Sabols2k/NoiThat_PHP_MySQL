@@ -54,7 +54,7 @@
                                 <td><?php echo $row['email'] ?></td>
                                 <td><?php echo $row['phone'] ?></td>
                                 <td><?php echo $row['address'] ?></td>
-                                <td><img style="width: 60px; height: 60px; border-radius: 50%;" src="<?php echo imgAdmin . $row['avatar'] ?>" alt=""></td>
+                                <td><img style="width: 60px; height: 60px; border-radius: 50%;" src="<?php echo imgUser . $row['avatar'] ?>" alt=""></td>
                                 <td class="d-flex justify-content-around">
                                     <button type="button" class="btn btn-success updatebtn">
                                         <i class="fa fa-wrench fa-lg action" aria-hidden="true"></i>

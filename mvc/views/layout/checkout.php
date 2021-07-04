@@ -1,3 +1,11 @@
+<?php  
+    // echo "index";    
+    if(empty($_SESSION['user']['userid'])){
+
+        echo "<script>window.location.href= '".URL.'login'."'</script>";
+
+    }
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -10,6 +18,8 @@
     ?>
   </head>
 <body>
+  <!-- ========== HEADER ========== -->
+  <?php $page = 'home'; require_once('general/header.php');?>
 <div id="toast"></div>
     <div id="payment">
         <header class="banner">
@@ -215,7 +225,13 @@
             </div>
         </div>
     </div>
-<!-- ========== JAVASCRIPT ========== -->
-<?php 
-    require_once('general/js.php');
-?>
+
+ <!-- ========== FOOTER ========== -->
+ <?php
+        require_once('general/footer.php');
+    ?> 
+    </div>
+    <!-- ========== JAVASCRIPT ========== -->
+    <?php 
+        require_once('general/js.php');
+    ?>
