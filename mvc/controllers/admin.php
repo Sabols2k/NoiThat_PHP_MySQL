@@ -304,8 +304,6 @@ class Admin extends Controller
                 'phone' =>  trim($_POST['phone']),
                 'firstname' =>  trim($_POST['firstname']),
                 'lastname' =>  trim($_POST['lastname']),
-
-
             ];
             // $id= $account['update_id'];
             // print_r ($room);
@@ -315,7 +313,7 @@ class Admin extends Controller
                 $account['email'], 
                 $account['phone'], 
                 $account['firstname'], 
-                $account['lastname'], 
+                $account['lastname']
             );
             echo "<script>window.location.href= '" . URLAdmin . 'account' . "'</script>";
         }

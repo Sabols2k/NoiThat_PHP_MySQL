@@ -47,31 +47,31 @@
                                 <!-- Thông tin nhận hàng -->
                                
                                  <section class="section">
-                                     {{{infoAccount}}}
-                                    {{!-- <div class="section-header">
+                                     
+                                    <div class="section-header">
                                         <div class="d-flex layout-flex">
                                             <h2 class="section-title">
                                                 <i class="far fa-address-card hide-on-desktop"></i>
                                                 Thông tin nhận hàng
                                             </h2>
-                                            <a href="/login">
-                                                <i class="far fa-user-circle"></i>
-                                                <span>Đăng nhập</span>
-                                            </a>
                                         </div>
-                                    </div> --}}
+                                    </div> 
                                     <div class="section-content">
                                         <form action="" class="form" id="form-4">
                                             <div class="form-group">
-                                                <input style="background: #f7f7f7" id="email" name="email" type="text" value="{{{infouser.email}}}" class="form-control" placeholder="Email" {{{disabled}}}>
+                                                <input style="background: #f7f7f7" id="email" name="email" type="text" value="<?php echo $data['user']['email'] ?>" class="form-control" placeholder="Email" disabled>
                                                 <span class="form-message"></span>
                                             </div>
                                             <div class="form-group">
-                                                <input style="background: #f7f7f7" id="fullname" name="fullname" type="text" value="{{{infouser.name}}}"  class="form-control" placeholder="Họ và tên" {{{disabled}}}>
+                                                <input style="background: #f7f7f7" id="fullname" name="fullname" type="text" value="<?php echo $data['user']['firstname'] ?>"  class="form-control" placeholder="FirstName" disabled>
                                                 <span class="form-message"></span>
                                             </div>
                                             <div class="form-group">
-                                                <input style="background: #f7f7f7" id="phoneNumber" name="phoneNumber" type="text" value="{{{infouser.phone}}}" class="form-control" placeholder="Số Điện Thoại" {{{disabled}}}>
+                                                <input style="background: #f7f7f7" id="fullname" name="fullname" type="text" value="<?php echo $data['user']['lastname'] ?>"  class="form-control" placeholder="LastName" disabled>
+                                                <span class="form-message"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <input style="background: #f7f7f7" id="phoneNumber" name="phoneNumber" type="text" value="<?php echo $data['user']['phone'] ?>" class="form-control" placeholder="Số Điện Thoại" disabled>
                                                 <span class="form-message"></span>
                                             </div>
                                             <div class="form-group">
@@ -213,7 +213,7 @@
                         </div>
                         <div class="order-summary-section">
                             <div class="field-input-wrapper hide-on-mobile">
-                                <button class="btn btn-lg btn-checkout" onclick="sendEmail()">Đặt hàng</button>
+                                <button class="btn btn-lg btn-checkout" name="sendmail" onclick="sendEmail()">Đặt hàng</button>
                                 <a href="/cart" class="prev-cart">
                                     <i class="fas fa-arrow-left"></i>
                                     <span>Quay về giỏ hàng</span>

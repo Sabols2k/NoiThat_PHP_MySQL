@@ -213,7 +213,7 @@
 
             }).then(  
                 message => showToastSuccess().then(
-                    window.location="http://localhost:3000/account"
+                    // window.location="http://localhost:3000/account"
                 
                 )
                 
@@ -222,18 +222,38 @@
              // cartLS.add({id: 2, name: "Product 2", price: 100}, 2)
              console.log("sendEmail")
              const data = [];
-             data.push({totalPrice: cartLS.total()})
-             data.push(cartLS.list())
-             console.log(data)
+            //  data.push({totalPrice: cartLS.total()})
+            //  data.push(cartLS.list())
+            //  console.log(data)
+            console.log("length");
+            console.log(cartLS.list().length);
              $.ajax({
                  type: "POST",
-                 url: "http://localhost:3000/checkout/create",
-                 data:  JSON.stringify(data),
-                 contentType: 'application/json',
-                 encode: true,
-             }).done(function(res){
+                 url: "http://localhost:8080/NoiThat/Checkout/create",
+                 data:  {
+                            "totalPrice": cartLS.total(),
+                            "detail": cartLS.list(),
+                            "length": cartLS.list().length
+                 },
+                 success: function (msg){
+                    // alert(msg);
+                }
+             },).done(function(res){
                
              } )
+
+            //  $.ajax({
+            //     type: "POST",
+            //     url: "http://localhost:8080/NoiThat/Checkout/create",
+            //     data:  JSON.stringify(data),
+            //     contentType: 'application/json',
+            //     encode: true,
+            //     success: function (msg){
+            //        alert(msg);
+            //    }
+            // },).done(function(res){
+              
+            // } )
 
              cartLS.destroy();
 

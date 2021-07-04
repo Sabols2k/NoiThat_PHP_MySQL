@@ -86,22 +86,22 @@
                 <div class="modal-body">
 
                     <div class="form-group">
-                        <input name="email" type="email" class="form-control" id="exampleInputPassword" placeholder="Email">
+                        <input name="email" type="email" class="form-control" placeholder="Email">
                     </div>
                     <div class="form-group">
-                        <input name="password" type="password" class="form-control" id="exampleInputPassword" placeholder="Password">
+                        <input name="password" type="password" class="form-control" placeholder="Password">
                     </div>
                     <div class="form-group">
-                        <input name="phone" type="phone" class="form-control" id="exampleInputPassword" placeholder="phoneNumber">
+                        <input name="phone" type="phone" class="form-control" placeholder="phoneNumber">
                     </div>
                     <div class="form-group">
-                        <input name="firstname" type="firstname" class="form-control" id="exampleInputPassword" placeholder="Firstname">
+                        <input name="firstname" type="firstname" class="form-control" placeholder="Firstname">
                     </div>
                     <div class="form-group">
-                        <input name="lastname" type="lastname" class="form-control" id="exampleInputPassword" placeholder="Lastname">
+                        <input name="lastname" type="lastname" class="form-control" placeholder="Lastname">
                     </div>
                     <div class="form-group">
-                        <input name="avatar" type="file" class="form-control" id="exampleInputPassword" placeholder="IMG">
+                        <input name="avatar" type="file" class="form-control" placeholder="IMG">
                     </div>
 
                 </div>

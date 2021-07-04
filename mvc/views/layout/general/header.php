@@ -63,7 +63,7 @@
                     <img src="<?php echo URL_Layout . "mvc/Assets/img/logo.png" ?>" alt="evo_logo">
                 </a>
                 <div class="evo-cart mini-cart d-none">
-                    <a href="cart">
+                    <a href="<?php echo URL_Layout . "cart" ?>">
                         <i class="fas fa-cart-plus"></i>
                         <span class="count_item mobile">0</span>
                     </a>
@@ -95,7 +95,7 @@
                     </a>
                 </div>
                 <div class="evo-cart mini-cart">
-                    <a href="cart">
+                    <a href="<?php echo URL_Layout . "cart" ?>">
                         <i class="fas fa-cart-plus"></i>
                         <span class="count_item desktop">0</span>
                     </a>
