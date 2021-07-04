@@ -1760,7 +1760,7 @@ animation: circle .75s;
 
 .evo-sidebar .aside-item .aside-title {
   position: absolute;
-  top: -48px;
+  top: -30px;
   left: -9px;
   background-color: var(--white-color);
   padding: 10px;
