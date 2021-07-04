@@ -52,7 +52,7 @@
                                 <td><?php echo $row['lastname'] ?></td>
                                 <td><?php echo $row['email'] ?></td>
                                 <td><?php echo $row['phone'] ?></td>
-                                <td><img style="width: 60px; height: 60px; border-radius: 50%;" src="<?php echo imgAdmin . $row['avatar'] ?>" alt=""></td>
+                                <td><img style="width: 60px; height: 60px; border-radius: 50%;" src="<?php echo imgAccount.'/' . $row['avatar'] ?>" alt=""></td>
                                 <td class="d-flex justify-content-around">
                                     <button type="button" class="btn btn-success updatebtn">
                                         <i class="fa fa-wrench fa-lg action" aria-hidden="true"></i>
@@ -157,9 +157,6 @@
                     <div class="form-group">
                         <input id="lastname" name="lastname" type="lastname" class="form-control" placeholder="Lastname">
                     </div>
-                    <div class="form-group">
-                        <input id="avatar" name="avatar" type="file" class="form-control" placeholder="IMG">
-                    </div>
 
                 </div>
                 <div class="modal-footer">
@@ -186,7 +183,6 @@
             $('#lastname').val(data[2]);
             $('#email').val(data[3]);
             $('#phone').val(data[4]);
-            $('#avatar').val(data[5]);
 
 
         })

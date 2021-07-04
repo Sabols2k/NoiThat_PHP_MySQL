@@ -194,14 +194,61 @@ class Admin extends Controller
             'firstname' => '',
             'lastname' => '',
             'phone' => '',
+            'avatar'=>'',
             'emailError' => ' ',
             'passwordError' => '',
             'firstnameError' => ' ',
             'lastnameError' => ' ',
             'phoneError' => ' ',
+            'avatarError' => ' ',
         ];
         //Check for post
         if (isset($_POST['addaccount'])) {
+            if(isset($_FILES['avatar'])){
+                echo "<pre>";
+                print_r($_FILES['avatar']);
+                echo "</pre>";
+
+                $img_name = $_FILES['avatar']['name'];
+                $img_type = $_FILES['avatar']['type'];
+                $tmp_name = $_FILES['avatar']['tmp_name'];
+                $img_size = $_FILES['avatar']['size'];
+                $error = $_FILES['avatar']['error'];
+
+                if($error === 0){
+                    if($img_size > 12500000){
+                        $em = "Sorry, your file is too large.";
+                        header("location: http://localhost:8080/NoiThat/admin/AddAccount?error=$em");
+                    
+                    }
+                    else{
+                        $img_ex = pathinfo($img_name, PATHINFO_EXTENSION);
+                        $img_ex_lc = strtolower($img_ex);
+                        
+                        $allowed_exs = array("jpg", "jpeg", "png");
+                        if(in_array($img_ex_lc, $allowed_exs)){
+                            $new_img_name = uniqid("IMG-", true).'.'.$img_ex_lc;
+                            // $new_img_name = trim($_POST['email']).'.'.$img_ex_lc;
+                            // echo  $new_img_name;
+                            $img_upload_path = 'C:\xampp\htdocs\NoiThat\mvc\Assets\admin\img\account/'. $new_img_name;
+                            // echo  $img_upload_path;
+                            move_uploaded_file($tmp_name, $img_upload_path);
+                        } else{
+                            $em = "You can't upload files of this type";
+                            header("location: http://localhost:8080/NoiThat/admin/AddAccount?error=$em");
+                    
+                        }
+                    }
+                }
+                else{
+                    $em = "Unknown error occurred";
+                    header("location: http://localhost:8080/NoiThat/admin/AddAccount?error=$em");
+                    
+                }
+            }
+            // echo "abc";
+            // echo $new_img_name;
+            // die();
 
             $data['account'] = [
                 'email' => trim($_POST['email']),
@@ -209,6 +256,7 @@ class Admin extends Controller
                 'firstname' => trim($_POST['firstname']),
                 'lastname' => trim($_POST['lastname']),
                 'phone' => trim($_POST['phone']),
+                'avatar' => $new_img_name,
                 'usernameError' => '',
                 'passwordError' => '',
                 'emailError' => ' ',
@@ -216,15 +264,16 @@ class Admin extends Controller
                 'lastnameError' => ' ',
                 'phoneError' => ' ',
             ];
-            // echo $data['account'];
-            // exit;
+            // echo $data['account']['avatar'];
+            // die();
             $model = $this->modeladmin("account");
             $model->InsertAccount(
                 $data['account']['email'],
                 $data['account']['password'],
                 $data['account']['phone'],
                 $data['account']['firstname'],
-                $data['account']['lastname']
+                $data['account']['lastname'],
+                $data['account']['avatar']
             );
             echo "<script>window.location.href= '" . URLAdmin . 'account' . "'</script>";
         }

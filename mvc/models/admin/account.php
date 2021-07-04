@@ -4,8 +4,8 @@ class account extends DB{
 	{
 		parent::__construct();
 	}
-    public function InsertAccount($email,$password, $phone, $firstname, $lastname){
-        $sql="INSERT INTO admin(adminid ,email,password,phone,firstname,lastname ) VALUES (NULL,'$email','$password','$phone', '$firstname','$lastname')";
+    public function InsertAccount($email,$password, $phone, $firstname, $lastname, $avatar){
+        $sql="INSERT INTO admin(adminid ,email,password,phone,firstname,lastname, avatar ) VALUES (NULL,'$email','$password','$phone', '$firstname','$lastname', '$avatar')";
         // $sql="CALL `InsertAccount`('$username', '$password', '$img', '$email', '$firstname', '$lastname', '$address', '$country', '$phone', '$gender', '$birthday', '$roles')";
         echo $sql;
         return $this->execute($sql);
