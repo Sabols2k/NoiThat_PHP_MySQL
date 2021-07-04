@@ -95,7 +95,7 @@
                     <th class="product-image">
                         <div class="product-thumbnail">
                             <div class="product-thumbnail-wrapper">
-                                <img src="../img/All-products/${item.img}.jpg" alt="">
+                                <img src="mvc/Assets/img/All-products/${item.img}.jpg" alt="">
                             </div>
                             <span class="product-thumbnail-quantily">${item.quantity}</span>
                         </div>

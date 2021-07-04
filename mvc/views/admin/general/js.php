@@ -8,24 +8,44 @@
     <!-- Custom scripts for all pages-->
     <script src="<?php echo URL ."mvc/Assets/admin/js/sb-admin-2.min.js"?>"></script>
 
-    <!-- Sweetalert -->
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script>
-    //   --- Delete Single Page ---
-    $('a.deleteReservById').click(function(event){
-        event.preventDefault();
-        var href=$(this).attr("href");
-
-        $.ajax({
-            url:href,
-            type:'POST',
-            // data:{reserv:reserv},
-            success:function(res){
-                $.trim(res)=='Xóa thành công'
-                    swal(res,"","success");
+        document.addEventListener('DOMContentLoaded', function () {
+            Validator({
+            form: '#form-1',
+            formGroupSelector: '.form-group',
+            errorSelector: '.form-message',
+            rules: [
+                Validator.isRequired('#firstname', 'Vui lòng nhập họ của bạn!'),
+                Validator.isRequired('#lastname', 'Vui lòng nhập tên của bạn!'),
+                Validator.isRequired('#phoneNumber', 'Vui lòng nhập số điện thoại!'),
+                Validator.isPhoneNumber('#phoneNumber', 'Số máy quý khách vừa nhập là số không có thực!'),
+                Validator.isRequired('#email', 'Vui lòng nhập email!'),
+                Validator.isEmail('#email'),
+                Validator.isRequired('#password', 'Vui lòng nhập password!'),
+                Validator.minLength('#password', 6),
+            ],
+            onSubmit: (data) => {
+                console.log(data)
             }
-        });
-    });
-    </script>
+        })
+        Validator({
+            form: '#form-2',
+            formGroupSelector: '.form-group',
+            errorSelector: '.form-message',
+            rules: [
+                Validator.isRequired('#firstname', 'Vui lòng nhập họ của bạn!'),
+                Validator.isRequired('#lastname', 'Vui lòng nhập tên của bạn!'),
+                Validator.isRequired('#phoneNumber', 'Vui lòng nhập số điện thoại!'),
+                Validator.isPhoneNumber('#phoneNumber', 'Số máy quý khách vừa nhập là số không có thực!'),
+                Validator.isRequired('#email', 'Vui lòng nhập email!'),
+                Validator.isEmail('#email'),
+                Validator.isRequired('#password', 'Vui lòng nhập password!'),
+                Validator.minLength('#password', 6),
+            ],
+            onSubmit: (data) => {
+                console.log(data)
+            }
+        })
+    })
     
 

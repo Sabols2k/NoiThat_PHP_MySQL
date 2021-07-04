@@ -38,10 +38,12 @@
                 <a href="<?php echo URL. "home"?>" class="logo">
                     <img  src="<?php echo URL_Layout ."mvc/Assets/img/logo.png"?>" alt="evo_logo">
                 </a>
-                <a class="evo-cart mini-cart d-none" href="/cart">
-                    <i class="fas fa-cart-plus"></i>
-                    <span class="count_item mobile">0</span>
-                </a>
+                <div class="evo-cart mini-cart d-none">
+                    <a href="cart">
+                        <i class="fas fa-cart-plus"></i>
+                        <span class="count_item mobile">0</span>
+                    </a>
+                </div>
             </div>
             <div class="col-md-5 evo-header-search">
                 <form id="search-form" action="/search">
@@ -311,31 +313,3 @@
     </div>
 </header>
 
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-
-
-                $('#search-form').submit(function(e) {
-                    alert('aaaa');
-                    e.preventDefault()
-                    const query = $('#search-form input[name=query]').val()
-                    $.ajax({
-                        type: "GET",
-                        url: `http://localhost:3000/search/${query}`,
-                        contentType: 'application/json',
-                        encode: true,
-                    }).done(function(res) {
-                        if (Array.from(res.product).length != 0) {
-                            // $('.no-result').css('display', 'none')
-                            console.log('no-result')
-                            render(res.product)
-                        } else {
-                            console.log('false')
-                            $('#list-products-search').html('')
-                            // $('.no-result').css('display', 'block')
-                        }
-                    })
-                })
-            }
-</script> -->

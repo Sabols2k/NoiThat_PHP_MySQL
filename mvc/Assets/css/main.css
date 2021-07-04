@@ -142,8 +142,8 @@ ul, li {
   color: var(--orange-color);
   border: none;
   position: absolute;
-  right: 6px;
-  top: -3px;
+  right: 12px;
+  top: 0px;
   z-index: 3;
   line-height: 40px;
   font-size: 14px;

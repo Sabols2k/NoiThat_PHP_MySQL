@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evo Nội Thất</title>
     <?php 
-        require_once "general/css.php";
+        require_once('general/css.php');
     ?>
   </head>
 <body>

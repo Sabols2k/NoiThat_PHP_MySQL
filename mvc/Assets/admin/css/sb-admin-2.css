@@ -11333,3 +11333,6 @@ body.sidebar-toggled footer.sticky-footer {
 .label-success{
   background: linear-gradient(45deg,#2ed8b6,#59e0c5) !important;
 }
+.form-message {
+  color: var(--red);
+}

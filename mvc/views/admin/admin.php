@@ -63,87 +63,96 @@
 
    <!-- Add Admin Modal-->
    <div class="modal fade" id="addAdminModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-       aria-hidden="true">
-       <div class="modal-dialog" role="document">
-           <div class="modal-content">
-               <div class="modal-header">
-                   <h5 class="modal-title" id="exampleModalLabel">Add Admin</h5>
-                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                       <span aria-hidden="true">&times;</span>
-                   </button>
-               </div>
-                <form class="modal-form form-create" action="/all-admin/create" method="POST">
-                   <div class="modal-body">
-                  
-                       <div class="form-group">
-                           <input name="email" type="email" class="form-control" id="exampleInputPassword" placeholder="Email">
-                       </div>
-                       <div class="form-group">
-                           <input name="username" type="username" class="form-control" id="exampleInputPassword" placeholder="Username">
-                       </div>
-                       <div class="form-group">
-                           <input name="password" type="password" class="form-control" id="exampleInputPassword" placeholder="Password">
-                       </div>
-                       <div class="form-group">
-                           <input name="phoneNumber" type="phoneNumber" class="form-control" id="exampleInputPassword" placeholder="phoneNumber">
-                       </div>
-                       <div class="form-group">
-                           <input name="firstname" type="firstname" class="form-control" id="exampleInputPassword" placeholder="Firstname">
-                       </div>
-                       <div class="form-group">
-                           <input name="lastname" type="lastname" class="form-control" id="exampleInputPassword" placeholder="Lastname">
-                       </div>
-                       <div class="form-group">
-                           <input name="age" type="age" class="form-control" id="exampleInputPassword" placeholder="age">
-                       </div>
-                       <div class="form-group">
-                           <input name="img" type="img" class="form-control" id="exampleInputPassword" placeholder="IMG">
-                       </div>
-                 
-               </div>
-               <div class="modal-footer">
-                   <button type="submit" class="btn btn-success">Submit</button>
-                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-               </div>
-                 </form>
-           </div>
-       </div>
-   </div>
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Admin</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form class="form modal-form form-create" action="" method="" id="form-1">
+                        <div class="form-group">
+                            <input value="" name="email" type="email" class="form-control" id="email" placeholder="Email">
+                            <span class="form-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <input value="" name="password" type="password" class="form-control" id="password" placeholder="Password">
+                            <span class="form-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <input value="" name="phoneNumber" type="phoneNumber" class="form-control" id="phoneNumber" placeholder="Phone number">
+                            <span class="form-message"></span>
+                        </div>  
+                        <div class="form-group">
+                            <input value="" name="firstname" type="firstname" class="form-control" id="firstname" placeholder="Firstname">
+                            <span class="form-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <input value="" name="lastname" type="lastname" class="form-control" id="lastname" placeholder="Lastname">
+                            <span class="form-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <input value="" name="file" type="file" class="form-control" id="File">
+                            <span class="form-message"></span>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success">Submit</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        
-    <!-- Update admin modal -->
+    <!-- Update Admin Modal-->
     <div class="modal fade" id="updateAdminModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <a href="" id="modalEdit" data-dismiss="modal" style="text-decoration: none; color: #000">X</a>
+                    <h5 class="modal-title" id="exampleModalLabel">Update Admin</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
-                    <form  method="POST" class="update-form">
+                    <form action="" method="" class="update-form" id="form-2">
                         <div class="form-group">
-                            <input value="" name="email" type="email" class="form-control" id="exampleInputPassword1"
-                                placeholder="Email" disabled>
+                            <input value="" name="email" type="email" class="form-control" id="email" placeholder="Email" disabled>
+                            <span class="form-message"></span>
                         </div>
                         <div class="form-group">
-                            <input value="" name="firstname" type="firstname" class="form-control" id="exampleInputPassword1"
-                                placeholder="Firstname" >
+                            <input value="" name="password" type="password" class="form-control" id="password" placeholder="Password">
+                            <span class="form-message"></span>
                         </div>
                         <div class="form-group">
-                            <input value="" name="lastname" type="lastname" class="form-control" id="exampleInputPassword1"
-                                placeholder="Lastname" >
+                            <input value="" name="phoneNumber" type="phoneNumber" class="form-control" id="phoneNumber" placeholder="Phone number">
+                            <span class="form-message"></span>
+                        </div>  
+                        <div class="form-group">
+                            <input value="" name="firstname" type="firstname" class="form-control" id="firstname" placeholder="Firstname">
+                            <span class="form-message"></span>
                         </div>
-                        
-                        <button name="updateAdmin" type="submit" class="btn btn-primary mt-2">Submit</button>
+                        <div class="form-group">
+                            <input value="" name="lastname" type="lastname" class="form-control" id="lastname" placeholder="Lastname">
+                            <span class="form-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <input value="" name="file" type="file" class="form-control" id="File">
+                            <span class="form-message"></span>
+                        </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <div class="modal-footer">
+                        <button name="updateUser" type="submit" class="btn btn-success">Submit</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-            
