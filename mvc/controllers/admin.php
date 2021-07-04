@@ -86,68 +86,7 @@ class Admin extends Controller
         }
         $this->viewadmin('login', $data);
     }
-    public function loginReserve()
-    {
-
-        $data = [
-            'title' => 'Login page',
-            'username' => '',
-            'password' => '',
-            'usernameError' => '',
-            'passwordError' => ''
-        ];
-
-        //Check for post
-        if (isset($_POST['loginReserve'])) {
-            // //Sanitize post data
-            // $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-
-            $data = [
-                'username' => trim($_POST['username']),
-                'password' => trim($_POST['password']),
-                'usernameError' => '',
-                'passwordError' => '',
-            ];
-            //Validate username
-            if (empty($data['username'])) {
-                $data['usernameError'] = 'Please enter a username.';
-            }
-
-            //Validate password
-            if (empty($data['password'])) {
-                $data['passwordError'] = 'Please enter a password.';
-            }
-
-            //Check if all errors are empty
-            if (empty($data['usernameError']) && empty($data['passwordError'])) {
-                $model = $this->modeladmin("login");
-                $user =  $model->loginReserve($data['username'], $data['password']);
-
-                // print_r($user); die();
-                // echo mysqli_num_rows($data['user']);
-                // print_r( $data['user']); die();
-                // die();
-
-                if (isset($user['raUsername'])) {
-
-                    $this->createReserveSession($user);
-                } else {
-                    $data['passwordError'] = 'Password or username is incorrect. Please try again.';
-
-                    $this->view('admin/loginReserve', $data);
-                }
-            }
-        } else {
-            $data = [
-                'username' => '',
-                'password' => '',
-                'usernameError' => '',
-                'passwordError' => ''
-            ];
-        }
-        $this->viewadmin('loginReserve', $data);
-    }
-
+    
     public function createUserSession($user)
     {
         $_SESSION['admin']['type'] = 'admin';

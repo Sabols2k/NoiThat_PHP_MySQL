@@ -6,5 +6,5 @@ class AllSanpham extends Controller{
         $this->view('all-sanpham');
     }
 
-
 }
+?>

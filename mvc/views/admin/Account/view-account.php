@@ -101,7 +101,7 @@
                         <input name="lastname" type="lastname" class="form-control" id="exampleInputPassword" placeholder="Lastname">
                     </div>
                     <div class="form-group">
-                        <input name="avatar" type="avatar" class="form-control" id="exampleInputPassword" placeholder="IMG">
+                        <input name="avatar" type="file" class="form-control" id="exampleInputPassword" placeholder="IMG">
                     </div>
 
                 </div>
