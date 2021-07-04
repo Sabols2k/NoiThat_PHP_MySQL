@@ -3,9 +3,8 @@
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="admin-dashboard">
         <div class="sidebar-brand-icon">
-            <img src="<?php echo URL ."mvc/Assets/admin/img/logo.png"?>" alt="logo" width="100%" height="100%">
+            <img src="<?php echo URL ."mvc/Assets/admin/img/logo.png"?>" alt="logo" width="80%" height="80%">
         </div>
-        <div class="sidebar-brand-text mx-3">Admin</div>
     </a>
 
     <li class="nav-item <?php if($_SESSION['function']=='index'){echo "active";}else{echo "";} ?>">
@@ -14,10 +13,10 @@
             <span>Dashboard</span></a>
     </li>
 
-    <li class="nav-item <?php if($_SESSION['function']=='admin'){echo "active";}else{echo "";} ?>">
+    <li class="nav-item <?php if($_SESSION['function']=='account'){echo "active";}else{echo "";} ?>">
         <a class="nav-link" href="<?php echo URLAdmin."account"?>">
         <i class="fas fa-fw fa-address-book"></i>
-            <span>Admins</span></a>
+            <span>Accounts</span></a>
     </li>
 
     <li class="nav-item <?php if($_SESSION['function']=='user'){echo "active";}else{echo "";} ?>">

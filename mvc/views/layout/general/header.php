@@ -31,16 +31,16 @@
                             </a>
                         </li>
 
-                        <li style="<?php echo $disabled1 ?>" >
+                        <li style="<?php echo $disabled1 ?>; border-left: none">
                             <a href="<?php echo URL_Layout . "account" ?>">
-                                <i class="fas fa-sign-in-alt"></i>
-                                Account
+                                <i class="fas fa-user"></i>   
+                                Xin chào, <?php echo $_SESSION['user']['lastname']." ". $_SESSION['user']['firstname'] ?>
                             </a>
                         </li>
                         
                         <li style="<?php echo $disabled1 ?>">
                             <a href="<?php echo URL_Layout . "logout" ?>">
-                                <i class="fas fa-user-plus"></i>
+                            <i class="fas fa-sign-in-alt"></i>
                                 Logout
                             </a>
                         </li>

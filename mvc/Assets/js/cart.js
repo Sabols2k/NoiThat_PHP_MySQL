@@ -96,7 +96,7 @@ function renderCartModal(items) {
         <div class="item-popup">
             <div style="width: 55%" class="text-left">
                 <div class="item-image">
-                    <img src="mvc/Assets/img/All-products/${item.img}.jpg" alt="" width="80">
+                    <img src="/NoiThat/mvc/Assets/img/All-products/${item.img}.jpg" alt="" width="80">
                 </div>
                 <div class="item-info">
                     <p class="item-name">${item.name}</p>

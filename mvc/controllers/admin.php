@@ -315,7 +315,7 @@ class Admin extends Controller
                 $account['email'], 
                 $account['phone'], 
                 $account['firstname'], 
-                $account['lastname'], 
+                $account['lastname']
             );
             echo "<script>window.location.href= '" . URLAdmin . 'account' . "'</script>";
         }
@@ -424,7 +424,7 @@ class Admin extends Controller
                 $data['user']['phone'],
                 $data['user']['firstname'],
                 $data['user']['lastname'],
-                $data['user']['address'],
+                $data['user']['address']
             );
             echo "<script>window.location.href= '" . URLAdmin . 'user' . "'</script>";
         }
@@ -468,7 +468,7 @@ class Admin extends Controller
                 $user['phone'], 
                 $user['firstname'], 
                 $user['lastname'], 
-                $user['address'], 
+                $user['address']
             );
             echo "<script>window.location.href= '" . URLAdmin . 'user' . "'</script>";
         }
@@ -664,7 +664,7 @@ class Admin extends Controller
                 $data['booking']['numberChildren'],
                 $data['booking']['roomType'],
                 $data['booking']['Description'],
-                $data['booking']['roomcount'],
+                $data['booking']['roomcount']
             );
         }
         $data['main'] = "Booking/add-booking";

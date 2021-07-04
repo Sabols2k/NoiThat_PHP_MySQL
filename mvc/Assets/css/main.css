@@ -1675,6 +1675,7 @@ textarea.form-control {
   font-size: 2rem;
   color: var(--text-color-black);
   letter-spacing: 0.4px;
+  margin-top: 2rem;
 }
 
 .page-all-product .single-image img {
