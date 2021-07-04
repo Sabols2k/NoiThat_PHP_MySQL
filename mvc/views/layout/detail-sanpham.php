@@ -72,16 +72,16 @@
                                             <span class="a-stock">Còn hàng</span>
                                         </div>
                                         <div class="product-describe">
-                                            <p><strong><?php echo $data['product']['name'] ?></strong>khiến mọi vị khách cảm thấy hài lòng trong quá trình sử dụng. Điều thu hút khách hàng đầu tiện chính là vẻ đpẹ hiện đại, thanh lịch của mẫu giường ngủ gỗ. Cùng với đó, thiết kế nệm bọc nỉ, da cao cấp của sản phẩm cũng góp phần đem đến những trải nghiệm thoải mái, dễ chịu nhất đối với người dùng.</p>
+                                            <p><strong><?php echo $data['product']['name'] ?></strong> khiến mọi vị khách cảm thấy hài lòng trong quá trình sử dụng. Điều thu hút khách hàng đầu tiện chính là vẻ đpẹ hiện đại, thanh lịch của mẫu giường ngủ gỗ. Cùng với đó, thiết kế nệm bọc nỉ, da cao cấp của sản phẩm cũng góp phần đem đến những trải nghiệm thoải mái, dễ chịu nhất đối với người dùng.</p>
                                         </div>
                                     </div>
                                     <div class="form-product">
                                         <div class="qty-ant">
                                             <label for="">Số lượng:</label>
                                             <div class="custom-btn-number">
-                                                <button id="dec" class="btn-cts btn-minus" onClick="cartLS.quantity(1,-1)">-</button>
+                                            <button id="dec" class="btn-cts btn-minus" onClick="cartLS.quantity(1,-1)">-</button>
                                                 <input type="text" id="qty" value="1">
-                                                <button id="inc" class="btn-cts btn-plus" onClick="cartLS.quantity(1,1)">+</button>
+                                            <button id="inc" class="btn-cts btn-plus" onClick="cartLS.quantity(1,1)">+</button>
                                             </div>
                                         </div>
                                         <!-- Button open cart modal -->
@@ -150,8 +150,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- <form>
-                                        </form> -->
                                     </div>
                                     <div class="call-payment">
                                         <div class="hotline-product">
@@ -448,60 +446,7 @@
             </div>
         </div>
     </section>
-    <script>
-        function format(n) {
-            return (n * 1000).toLocaleString('vi', {
-                style: 'currency',
-                currency: 'VND'
-            })
-        }
 
-        function renderCartModal(items) {
-            const $cartModal = document.querySelector(".tbody-popup")
-            const $totalModal = document.querySelector("#total-price")
-
-            $cartModal.innerHTML = items.map((item) => `
-                <div class="item-popup">
-                    <div style="width: 55%" class="text-left">
-                        <div class="item-image">
-                            <img src="mvc/Assets/img/All-products/${item.img}.jpg"?>" alt="" width="80">
-                        </div>
-                        <div class="item-info">
-                            <p class="item-name">${item.name}</p>
-                            <p class="item-remove">
-                                <button class="btn remove-item-cart" onClick="cartLS.remove(${item.id})">
-                                    <i class="fas fa-times"></i>
-                                    Bỏ sản phẩm
-                                </button>
-                            </p>
-                        </div>
-                    </div>
-                    <div style="width: 15%" class="text-center">
-                        <div class="item-price">
-                            <span class="price price-change">${format(item.price)}</span>
-                        </div>
-                    </div>
-                    <div style="width: 15%;">
-                        <div class="item-count">
-                            <div class="custom-btn-number">
-                                <button class="btn-cts btn-minus" onClick="cartLS.quantity(${item.id},-1)">-</button>
-                                <input type="text" id="qty" value="${item.quantity}">
-                                <button class="btn-cts btn-plus" onClick="cartLS.quantity(${item.id},1)">+</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="width: 15%" class="text-center">
-                        <span class="cart-price">
-                            <span class="price">${format(item.quantity * item.price)}</span>
-                        </span>
-                    </div>
-                </div>`).join("")
-
-            $totalModal.innerHTML = format(cartLS.total())
-        }
-        renderCartModal(cartLS.list())
-        cartLS.onChange(renderCartModal)
-    </script>
     <!-- ========== FOOTER ========== -->
     <?php
         require_once('general/footer.php');

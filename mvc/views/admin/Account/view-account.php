@@ -2,25 +2,12 @@
 
     <div class="row">
         <div class="col-lg-9 d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">All Admins</h1>
-        </div>
-        <div class="col-lg-3 d-sm-flex align-items-center justify-content-between ">
-            <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 " method="GET">
-                <div class="input-group">
-                    <input name="value" type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                        <button class="btn btn-info" type="submit">
-                            <i class="fas fa-search fa-sm"></i>
-                        </button>
-                    </div>
-                </div>
-            </form>
-
+            <h1 class="h3 mb-0 text-gray-800">All Accounts</h1>
         </div>
     </div>
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-secondary">All Admins</h6>
+            <h6 class="m-0 font-weight-bold text-secondary">All Accounts</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -82,10 +69,10 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form class="modal-form form-create" enctype="multipart/form-data" action="http://localhost:8080/NoiThat/admin/AddAccount" method="POST">
+            <form id="form-admin" class="modal-form form-create" enctype="multipart/form-data" action="http://localhost:8080/NoiThat/admin/AddAccount" method="POST">
                 <div class="modal-body">
-
                     <div class="form-group">
+<<<<<<< HEAD
                         <input name="email" type="email" class="form-control" placeholder="Email">
                     </div>
                     <div class="form-group">
@@ -102,8 +89,31 @@
                     </div>
                     <div class="form-group">
                         <input name="avatar" type="file" class="form-control" placeholder="IMG">
+=======
+                        <input name="email" type="email" class="form-control" id="emailAdmin" placeholder="Email">
+                        <span class="form-message"></span>
                     </div>
-
+                    <div class="form-group">
+                        <input name="password" type="password" class="form-control"  id="passwordAdmin" placeholder="Password">
+                        <span class="form-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <input name="password" type="phone" class="form-control" id="phoneNumberAdmin"  placeholder="Phone number">
+                        <span class="form-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <input name="firstname" type="firstname" class="form-control"  id="firstnameAdmin" placeholder="Firstname">
+                        <span class="form-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <input name="lastname" type="lastname" class="form-control"  id="lastnameAdmin" placeholder="Lastname">
+                        <span class="form-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <input name="avatar" type="file" class="form-control" id="file" placeholder="IMG">
+                        <span class="form-message"></span>
+>>>>>>> 490bdcb1dfbfc1fc70fca22da47239e560c82865
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="submit" name="addaccount" class="btn btn-success">Submit</button>
@@ -120,28 +130,11 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <a href="" id="modalEdit" data-dismiss="modal" style="text-decoration: none; color: #000">X</a>
+                <h5 class="modal-title" id="exampleModalLabel">Update Admin</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
-            <!-- <div class="modal-body">
-                <form method="POST" class="update-form">
-                    <div class="form-group">
-                        <input value="" name="email" type="email" class="form-control" id="exampleInputPassword1" placeholder="Email" disabled>
-                    </div>
-                    <div class="form-group">
-                        <input value="" name="firstname" type="firstname" class="form-control" id="exampleInputPassword1" placeholder="Firstname">
-                    </div>
-                    <div class="form-group">
-                        <input value="" name="lastname" type="lastname" class="form-control" id="exampleInputPassword1" placeholder="Lastname">
-                    </div>
-
-                    <button name="updateAdmin" type="submit" class="btn btn-primary mt-2">Submit</button>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div> -->
             <form class="update-form" enctype="multipart/form-data" action="http://localhost:8080/NoiThat/admin/editAccount" method="POST">
                 <div class="modal-body">
                     <input type="hidden" name="update_id" id="update_id">
@@ -167,7 +160,7 @@
         </div>
     </div>
 </div>
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+
 <script>
     $(document).ready(function() {
         $('.updatebtn').on('click', function() {
@@ -187,4 +180,23 @@
 
         })
     });
+
+    document.addEventListener('DOMContentLoaded', function () {
+            Validator({
+            form: '#form-admin',
+            formGroupSelector: '.form-group',
+            errorSelector: '.form-message',
+            rules: [
+                Validator.isRequired('#firstnameAdmin', 'Vui lòng nhập họ của bạn!'),
+                Validator.isRequired('#lastnameAdmin', 'Vui lòng nhập tên của bạn!'),
+                Validator.isRequired('#phoneNumberAdmin', 'Vui lòng nhập số điện thoại!'),
+                Validator.isPhoneNumber('#phoneNumberAdmin', 'Số máy quý khách vừa nhập là số không có thực!'),
+                Validator.isRequired('#emailAdmin', 'Vui lòng nhập email!'),
+                Validator.isEmail('#emailAdmin'),
+                Validator.isRequired('#passwordAdmin', 'Vui lòng nhập password!'),
+                Validator.minLength('#passwordAdmin', 6),
+            ],
+        })
+    })
+    
 </script>

@@ -4,19 +4,6 @@
         <div class="col-lg-9 d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">All Products</h1>
         </div>
-        <div class="col-lg-3 d-sm-flex align-items-center justify-content-between ">
-            <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 " method="GET">
-                <div class="input-group">
-                    <input name="value" type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                        <button class="btn btn-info" type="submit">
-                            <i class="fas fa-search fa-sm"></i>
-                        </button>
-                    </div>
-                </div>
-            </form>
-
-        </div>
     </div>
     <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -80,22 +67,23 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form class="modal-form form-create" enctype="multipart/form-data" action="http://localhost:8080/NoiThat/admin/AddProduct" method="POST">
+            <form id="form-product" class="modal-form form-create" enctype="multipart/form-data" action="http://localhost:8080/NoiThat/admin/AddProduct" method="POST">
                 <div class="modal-body">
-
                     <div class="form-group">
-                        <input name="name" type="text" class="form-control"  placeholder="Name">
+                        <input name="name" type="text" class="form-control" id="nameProduct" placeholder="Name">
+                        <span class="form-message"></span>
                     </div>
                     <div class="form-group">
-                        <input name="price" type="text" class="form-control"  placeholder="Price">
+                        <input name="price" type="text" class="form-control" id="priceProduct" placeholder="Price">
+                        <span class="form-message"></span>
                     </div>
                     <div class="form-group">
-                        <input name="category" type="text" class="form-control" placeholder="Category">
+                        <input name="category" type="text" class="form-control"id="categoryProduct" placeholder="Category">
+                        <span class="form-message"></span>
                     </div>
                     <div class="form-group">
-                        <input name="img" type="file" class="form-control"  placeholder="IMG">
+                        <input name="img" type="file" class="form-control" id="file" placeholder="IMG">
                     </div>
-
                 </div>
                 <div class="modal-footer">
                     <button type="submit" name="addproduct" class="btn btn-success">Submit</button>
@@ -112,7 +100,10 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <a href="" id="modalEdit" data-dismiss="modal" style="text-decoration: none; color: #000">X</a>
+                <h5 class="modal-title" id="exampleModalLabel">Add Product</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <form class="update-form" enctype="multipart/form-data" action="http://localhost:8080/NoiThat/admin/editProduct" method="POST">
                 <div class="modal-body">
@@ -139,7 +130,6 @@
         </div>
     </div>
 </div>
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
 <script>
     $(document).ready(function() {
         $('.updatebtn').on('click', function() {
@@ -159,4 +149,17 @@
 
         })
     });
+
+    document.addEventListener('DOMContentLoaded', function () {
+            Validator({
+            form: '#form-product',
+            formGroupSelector: '.form-group',
+            errorSelector: '.form-message',
+            rules: [
+                Validator.isRequired('#nameProduct', 'Vui lòng tên sản phẩm!'),
+                Validator.isRequired('#priceProduct', 'Vui lòng giá sản phẩm!'),
+                Validator.isRequired('#categoryProduct', 'Vui lòng loại sản phẩm!'),
+            ],
+        })
+    })
 </script>

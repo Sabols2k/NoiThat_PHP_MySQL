@@ -4,19 +4,6 @@
         <div class="col-lg-9 d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">All Users</h1>
         </div>
-        <div class="col-lg-3 d-sm-flex align-items-center justify-content-between ">
-            <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 " method="GET">
-                <div class="input-group">
-                    <input name="value" type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                        <button class="btn btn-info" type="submit">
-                            <i class="fas fa-search fa-sm"></i>
-                        </button>
-                    </div>
-                </div>
-            </form>
-
-        </div>
     </div>
     <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -84,31 +71,35 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form class="modal-form form-create" enctype="multipart/form-data" action="http://localhost:8080/NoiThat/admin/AddUser" method="POST">
+            <form id="form-user" class="modal-form form-create" enctype="multipart/form-data" action="http://localhost:8080/NoiThat/admin/AddUser" method="POST">
                 <div class="modal-body">
-
                     <div class="form-group">
-                        <input name="email" type="email" class="form-control" id="exampleInputPassword" placeholder="Email">
+                        <input name="email" type="email" class="form-control" id="emailUser" placeholder="Email">
+                        <span class="form-message"></span>
                     </div>
                     <div class="form-group">
-                        <input name="password" type="password" class="form-control" id="exampleInputPassword" placeholder="Password">
+                        <input name="password" type="password" class="form-control"  id="passwordUser" placeholder="Password">
+                        <span class="form-message"></span>
                     </div>
                     <div class="form-group">
-                        <input name="phone" type="phone" class="form-control" id="exampleInputPassword" placeholder="phoneNumber">
+                        <input name="password" type="phone" class="form-control" id="phoneNumberUser"  placeholder="Phone number">
+                        <span class="form-message"></span>
                     </div>
                     <div class="form-group">
-                        <input name="firstname" type="firstname" class="form-control" id="exampleInputPassword" placeholder="Firstname">
+                        <input name="firstname" type="firstname" class="form-control"  id="firstnameUser" placeholder="Firstname">
+                        <span class="form-message"></span>
                     </div>
                     <div class="form-group">
-                        <input name="lastname" type="lastname" class="form-control" id="exampleInputPassword" placeholder="Lastname">
+                        <input name="lastname" type="lastname" class="form-control"  id="lastnameUser" placeholder="Lastname">
+                        <span class="form-message"></span>
                     </div>
                     <div class="form-group">
-                        <input name="address" type="address" class="form-control" id="exampleInputPassword" placeholder="Address">
+                        <input name="address" type="address" class="form-control" id="addressUser" placeholder="Address">
+                        <span class="form-message"></span>
                     </div>
                     <div class="form-group">
-                        <input name="avatar" type="avatar" class="form-control" id="exampleInputPassword" placeholder="IMG">
+                        <input name="avatar" type="file" class="form-control" id="file" placeholder="IMG">
                     </div>
-
                 </div>
                 <div class="modal-footer">
                     <button type="submit" name="adduser" class="btn btn-success">Submit</button>
@@ -125,7 +116,10 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <a href="" id="modalEdit" data-dismiss="modal" style="text-decoration: none; color: #000">X</a>
+                <h5 class="modal-title" id="exampleModalLabel">Add User</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <form class="update-form" enctype="multipart/form-data" action="http://localhost:8080/NoiThat/admin/editUser" method="POST">
                 <div class="modal-body">
@@ -158,7 +152,6 @@
         </div>
     </div>
 </div>
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
 <script>
     $(document).ready(function() {
         $('.updatebtn').on('click', function() {
@@ -180,4 +173,22 @@
 
         })
     });
+    document.addEventListener('DOMContentLoaded', function () {
+            Validator({
+            form: '#form-user',
+            formGroupSelector: '.form-group',
+            errorSelector: '.form-message',
+            rules: [
+                Validator.isRequired('#firstnameUser', 'Vui lòng nhập họ của bạn!'),
+                Validator.isRequired('#lastnameUser', 'Vui lòng nhập tên của bạn!'),
+                Validator.isRequired('#phoneNumberUser', 'Vui lòng nhập số điện thoại!'),
+                Validator.isRequired('#addressUser', 'Vui lòng nhập địa chỉ!'),
+                Validator.isPhoneNumber('#phoneNumberUser', 'Số máy quý khách vừa nhập là số không có thực!'),
+                Validator.isRequired('#emailUser', 'Vui lòng nhập email!'),
+                Validator.isEmail('#emailUser'),
+                Validator.isRequired('#passwordUser', 'Vui lòng nhập password!'),
+                Validator.minLength('#passwordUser', 6),
+            ],
+        })
+    })
 </script>

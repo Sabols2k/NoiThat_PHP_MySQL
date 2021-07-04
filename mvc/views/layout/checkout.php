@@ -18,9 +18,7 @@
     ?>
   </head>
 <body>
-  <!-- ========== HEADER ========== -->
-  <?php $page = 'home'; require_once('general/header.php');?>
-<div id="toast"></div>
+    <div id="toast"></div>
     <div id="payment">
         <header class="banner">
             <div class="wrap">
@@ -44,10 +42,8 @@
                     <div class="main-content">
                         <div class="row">
                             <div class="col col--two">
-                                <!-- Thông tin nhận hàng -->
-                               
-                                 <section class="section">
-                                     
+                                <!-- Thông tin nhận hàng -->                              
+                                 <section class="section">                          
                                     <div class="section-header">
                                         <div class="d-flex layout-flex">
                                             <h2 class="section-title">
@@ -55,23 +51,19 @@
                                                 Thông tin nhận hàng
                                             </h2>
                                         </div>
-                                    </div> 
+                                    </div>
                                     <div class="section-content">
                                         <form action="" class="form" id="form-4">
                                             <div class="form-group">
-                                                <input style="background: #f7f7f7" id="email" name="email" type="text" value="<?php echo $data['user']['email'] ?>" class="form-control" placeholder="Email" disabled>
+                                                <input style="background: #f7f7f7" id="email" name="email" type="text" value="" class="form-control" placeholder="Email" {{{disabled}}}>
                                                 <span class="form-message"></span>
                                             </div>
                                             <div class="form-group">
-                                                <input style="background: #f7f7f7" id="fullname" name="fullname" type="text" value="<?php echo $data['user']['firstname'] ?>"  class="form-control" placeholder="FirstName" disabled>
+                                                <input style="background: #f7f7f7" id="fullname" name="fullname" type="text" value=""  class="form-control" placeholder="Họ và tên" {{{disabled}}}>
                                                 <span class="form-message"></span>
                                             </div>
                                             <div class="form-group">
-                                                <input style="background: #f7f7f7" id="fullname" name="fullname" type="text" value="<?php echo $data['user']['lastname'] ?>"  class="form-control" placeholder="LastName" disabled>
-                                                <span class="form-message"></span>
-                                            </div>
-                                            <div class="form-group">
-                                                <input style="background: #f7f7f7" id="phoneNumber" name="phoneNumber" type="text" value="<?php echo $data['user']['phone'] ?>" class="form-control" placeholder="Số Điện Thoại" disabled>
+                                                <input style="background: #f7f7f7" id="phoneNumber" name="phoneNumber" type="text" value="" class="form-control" placeholder="Số Điện Thoại" {{{disabled}}}>
                                                 <span class="form-message"></span>
                                             </div>
                                             <div class="form-group">
@@ -224,12 +216,6 @@
                 </aside>
             </div>
         </div>
-    </div>
-
- <!-- ========== FOOTER ========== -->
- <?php
-        require_once('general/footer.php');
-    ?> 
     </div>
     <!-- ========== JAVASCRIPT ========== -->
     <?php 
