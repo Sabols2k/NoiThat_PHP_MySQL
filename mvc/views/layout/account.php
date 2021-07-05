@@ -75,7 +75,7 @@ if (empty($_SESSION['user']['userid'])) {
                                     <tr>
                                         <td style="padding-left: 10px;">#<?php echo $stt?></td>
                                         <td><?php echo $row['createdAt'] ?></td>
-                                        <td>TP.HCM</td>
+                                        <td><?php echo $row['address'] ?></td>
                                         <td class="price"><?php echo $row['totalprice'] ?>₫</td>
                                         <td class="span-pending">Chưa thu tiền</td>
                                         <td>Chưa chuyển</td>

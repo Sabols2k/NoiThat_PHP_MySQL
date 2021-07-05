@@ -70,7 +70,7 @@
                 </div>
             </div>
             <div class="col-md-5 evo-header-search">
-                <form id="search-form" action="/search">
+                <form id="search-form" action="<?php echo URL . "search" ?>">
                     <div class="input-group">
                         <input type="text" name="query" class="form-control search-auto" placeholder="Bạn muốn tìm gì?">
                         <span class="input-group-btn">

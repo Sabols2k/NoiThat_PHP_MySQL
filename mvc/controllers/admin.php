@@ -22,8 +22,11 @@ class Admin extends Controller
         $_SESSION['function'] = "index";
         // echo "abc"; die();
 
-        // $model = $this->modeladmin("dashboard");
-        // $data['dashboard'] =  $model->general();
+        $model = $this->modeladmin("dashboard");
+        $data['countProducts'] =  $model->countProducts();
+        $data['countBills'] =  $model->countBill();
+        $data['countUsers'] =  $model->countUser();
+        $data['countEarnings'] =  $model->countEarning();
 
         $data['main'] = "home/main";
         // require_once "./mvc/views/admin/index.php";
@@ -98,17 +101,7 @@ class Admin extends Controller
         // header('Location:'.URL);
         echo "<script>window.location.href= '" . URLAdmin . "'</script>";
     }
-    public function createReserveSession($user)
-    {
-        $_SESSION['admin']['type'] = 'reserve';
-        $_SESSION['admin']['user_id'] =  $user['raReservationAgentID'];
-        $_SESSION['admin']['username'] = $user['raUsername'];
-        $_SESSION['admin']['mail'] = $user['raEmail'];
-        $_SESSION['admin']['img'] = imgAccount . $user['raImg'];
-
-        // header('Location:'.URLAdmin);
-        echo "<script>window.location.href= '" . URLAdmin . "'</script>";
-    }
+    
 
     public function logout()
     {
