@@ -18,6 +18,9 @@
     ?>
   </head>
 <body>
+
+     <!-- ========== HEADER ========== -->
+     <?php $page = 'home'; require_once('general/header.php');?>
     <div id="toast"></div>
     <div id="payment">
         <header class="banner">
@@ -55,15 +58,19 @@
                                     <div class="section-content">
                                         <form action="" class="form" id="form-4">
                                             <div class="form-group">
-                                                <input style="background: #f7f7f7" id="email" name="email" type="text" value="" class="form-control" placeholder="Email" {{{disabled}}}>
+                                                <input style="background: #f7f7f7" id="email" name="email" type="text" value="<?php echo $data['user']['email']; ?>" class="form-control" placeholder="Email" disabled>
                                                 <span class="form-message"></span>
                                             </div>
                                             <div class="form-group">
-                                                <input style="background: #f7f7f7" id="fullname" name="fullname" type="text" value=""  class="form-control" placeholder="Họ và tên" {{{disabled}}}>
+                                                <input style="background: #f7f7f7" id="firstname" name="firstname" type="text" value="<?php echo $data['user']['firstname']; ?>" class="form-control" placeholder="Firstname" disabled>
                                                 <span class="form-message"></span>
                                             </div>
                                             <div class="form-group">
-                                                <input style="background: #f7f7f7" id="phoneNumber" name="phoneNumber" type="text" value="" class="form-control" placeholder="Số Điện Thoại" {{{disabled}}}>
+                                                <input style="background: #f7f7f7" id="lastname" name="lastname" type="text" value="<?php echo $data['user']['lastname']; ?>"  class="form-control" placeholder="Lastname" disabled>
+                                                <span class="form-message"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <input style="background: #f7f7f7" id="phoneNumber" name="phoneNumber" type="text" value="<?php echo $data['user']['phone']; ?>"" class="form-control" placeholder="Phone Number" disabled>
                                                 <span class="form-message"></span>
                                             </div>
                                             <div class="form-group">
@@ -216,6 +223,11 @@
                 </aside>
             </div>
         </div>
+    </div>
+     <!-- ========== FOOTER ========== -->
+     <?php
+        require_once('general/footer.php');
+      ?> 
     </div>
     <!-- ========== JAVASCRIPT ========== -->
     <?php 
