@@ -35,8 +35,8 @@
                             <tr>
                                 <td><?php echo $row['productid'] ?></td>
                                 <td><?php echo $row['name'] ?></td>
-                                <td><img style="width: 60px; height: 60px; border-radius: 50%;" src="<?php echo imgAdmin . $row['img'] ?>" alt=""></td>
-                                <td><?php echo $row['price'] ?></td>
+                                <td><img style="width: 60px; height: 60px; border-radius: 50%;" src="<?php echo imgAdmin . $row['img'] ?>.jpg" alt=""></td>
+                                <td><?php echo $row['price'] ?>₫</td>
                                 <td><?php echo $row['category'] ?></td>
                                 <td class="d-flex justify-content-around">
                                     <button type="button" class="btn btn-success updatebtn">
@@ -67,8 +67,8 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form id="form-product" class="modal-form form-create" enctype="multipart/form-data" action="http://localhost:8080/NoiThat/admin/AddProduct" method="POST">
-                <div class="modal-body">
+            <form class="modal-form form-create" enctype="multipart/form-data" action="http://localhost:8080/NoiThat/admin/AddProduct" method="POST">
+                <div class="modal-body form-product">
                     <div class="form-group">
                         <input name="name" type="text" class="form-control" id="nameProduct" placeholder="Name">
                         <span class="form-message"></span>
@@ -152,7 +152,7 @@
 
     document.addEventListener('DOMContentLoaded', function () {
             Validator({
-            form: '#form-product',
+            form: '.form-product',
             formGroupSelector: '.form-group',
             errorSelector: '.form-message',
             rules: [

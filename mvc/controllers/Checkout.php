@@ -41,7 +41,7 @@ class Checkout extends Controller
             $model->InsertBill(
                 $data['bill']['userid'],
                 $data['bill']['totalprice'],
-                $data['bill']['createdAt'],
+                $data['bill']['createdAt']
             );
             $maxid = $model->getmaxBillidById();
             // echo "aa";
@@ -59,7 +59,7 @@ class Checkout extends Controller
                     $data['billdetail']['billid'],
                     $data['billdetail']['productid'],
                     $data['billdetail']['quantily'],
-                    $data['billdetail']['price'],
+                    $data['billdetail']['price']
                 );
             }
         }

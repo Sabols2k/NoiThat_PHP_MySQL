@@ -71,8 +71,8 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form id="form-user" class="modal-form form-create" enctype="multipart/form-data" action="http://localhost:8080/NoiThat/admin/AddUser" method="POST">
-                <div class="modal-body">
+            <form class="modal-form form-create" enctype="multipart/form-data" action="http://localhost:8080/NoiThat/admin/AddUser" method="POST">
+                <div class="modal-body form-user">
                     <div class="form-group">
                         <input name="email" type="email" class="form-control" id="emailUser" placeholder="Email">
                         <span class="form-message"></span>
@@ -82,15 +82,15 @@
                         <span class="form-message"></span>
                     </div>
                     <div class="form-group">
-                        <input name="password" type="phone" class="form-control" id="phoneNumberUser"  placeholder="Phone number">
-                        <span class="form-message"></span>
-                    </div>
-                    <div class="form-group">
                         <input name="firstname" type="firstname" class="form-control"  id="firstnameUser" placeholder="Firstname">
                         <span class="form-message"></span>
                     </div>
                     <div class="form-group">
                         <input name="lastname" type="lastname" class="form-control"  id="lastnameUser" placeholder="Lastname">
+                        <span class="form-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <input name="phone" type="phone" class="form-control" id="phoneNumberUser"  placeholder="Phone number">
                         <span class="form-message"></span>
                     </div>
                     <div class="form-group">
@@ -175,7 +175,7 @@
     });
     document.addEventListener('DOMContentLoaded', function () {
             Validator({
-            form: '#form-user',
+            form: '.form-user',
             formGroupSelector: '.form-group',
             errorSelector: '.form-message',
             rules: [

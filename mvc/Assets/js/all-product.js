@@ -6,6 +6,13 @@
             getProducts(renderProducts)
         }
         start()
+
+        function format(n) {
+            return n.toLocaleString('vi', {
+                style: 'currency',
+                currency: 'VND'
+            })
+        }
         
         function getProducts(callback) {
             fetch(productAPI)
@@ -13,13 +20,6 @@
                     return response.json()
                 })
                 .then(callback)
-        }
-        
-        function format(n) {
-            return (n * 1000).toLocaleString('vi', {
-                style: 'currency',
-                currency: 'VND'
-            })
         }
 
         function renderProducts(products) {

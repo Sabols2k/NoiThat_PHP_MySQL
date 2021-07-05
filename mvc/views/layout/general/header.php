@@ -34,7 +34,7 @@
                         <li style="<?php echo $disabled1 ?>; border-left: none">
                             <a href="<?php echo URL_Layout . "account" ?>">
                                 <i class="fas fa-user"></i>   
-                                Xin chào, <?php echo $_SESSION['user']['lastname']." ". $_SESSION['user']['firstname'] ?>
+                                Xin chào, <?php echo $_SESSION['user']['firstname']." ". $_SESSION['user']['lastname'] ?>
                             </a>
                         </li>
                         
