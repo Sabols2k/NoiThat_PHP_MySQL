@@ -98,58 +98,6 @@
                                                 <span class="txt-add">Đặt mua giao hàng tận nơi</span>
                                             </button>
                                         </div>
-                                        <!-- Modal -->
-                                        <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="cartModalLabel">
-                                                            BẠN ĐÃ THÊM
-                                                            <span class="cart-name">1 SẢN PHẨM</span>                                                           
-                                                            VÀO GIỎ HÀNG
-                                                        </h5>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <div class="title-quantily">
-                                                            <a href="/cart">Xem giỏ hàng</a>
-                                                        </div>
-                                                        <div class="content-cart">
-                                                            <div class="thead-popup">
-                                                                <div style="width: 55%" class="text-left">Sản phẩm</div>
-                                                                <div style="width: 15%" class="text-center">Đơn giá</div>
-                                                                <div style="width: 15%" class="text-center">Số lượng</div>
-                                                                <div style="width: 15%" class="text-center">Thành tiền</div>
-                                                            </div>
-                                                            <div class="tbody-popup">
-                                                                <!-- ...Render -->
-                                                            </div>
-                                                            <div class="tfoot-popup">
-                                                                <div class="pull-left">
-                                                                    <a href="">
-                                                                        <span data-bs-dismiss="modal">
-                                                                            <i class="fas fa-arrow-left"></i>
-                                                                            Tiếp tục mua hàng
-                                                                        </span>
-                                                                    </a>
-                                                                </div>
-                                                                <div class="pull-right">
-                                                                    <p>
-                                                                        Thành tiền:
-                                                                        <span id="total-price">43.860.000₫</span>
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="modal-footer"> 
-                                                       <a href="/cart">
-                                                            <button  type="button" class="btn btn-lg">Thanh toán đơn hàng</button>
-                                                       </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                     <div class="call-payment">
                                         <div class="hotline-product">

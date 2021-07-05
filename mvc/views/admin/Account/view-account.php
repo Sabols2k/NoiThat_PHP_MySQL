@@ -69,36 +69,18 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form id="form-admin" class="modal-form form-create" enctype="multipart/form-data" action="http://localhost:8080/NoiThat/admin/AddAccount" method="POST">
-                <div class="modal-body">
+            <form class="modal-form form-create" enctype="multipart/form-data" action="http://localhost:8080/NoiThat/admin/AddAccount" method="POST">
+                <div class="modal-body form-admin">
                     <div class="form-group">
-<<<<<<< HEAD
-                        <input name="email" type="email" class="form-control" placeholder="Email">
-                    </div>
-                    <div class="form-group">
-                        <input name="password" type="password" class="form-control" placeholder="Password">
-                    </div>
-                    <div class="form-group">
-                        <input name="phone" type="phone" class="form-control" placeholder="phoneNumber">
-                    </div>
-                    <div class="form-group">
-                        <input name="firstname" type="firstname" class="form-control" placeholder="Firstname">
-                    </div>
-                    <div class="form-group">
-                        <input name="lastname" type="lastname" class="form-control" placeholder="Lastname">
-                    </div>
-                    <div class="form-group">
-                        <input name="avatar" type="file" class="form-control" placeholder="IMG">
-=======
                         <input name="email" type="email" class="form-control" id="emailAdmin" placeholder="Email">
                         <span class="form-message"></span>
                     </div>
                     <div class="form-group">
-                        <input name="password" type="password" class="form-control"  id="passwordAdmin" placeholder="Password">
+                        <input name="password" type="password" class="form-control" id="passwordAdmin" placeholder="Password">
                         <span class="form-message"></span>
                     </div>
                     <div class="form-group">
-                        <input name="password" type="phone" class="form-control" id="phoneNumberAdmin"  placeholder="Phone number">
+                        <input name="phone" type="phone" class="form-control" id="phoneNumberAdmin"  placeholder="Phone number">
                         <span class="form-message"></span>
                     </div>
                     <div class="form-group">
@@ -112,7 +94,6 @@
                     <div class="form-group">
                         <input name="avatar" type="file" class="form-control" id="file" placeholder="IMG">
                         <span class="form-message"></span>
->>>>>>> 490bdcb1dfbfc1fc70fca22da47239e560c82865
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -150,7 +131,6 @@
                     <div class="form-group">
                         <input id="lastname" name="lastname" type="lastname" class="form-control" placeholder="Lastname">
                     </div>
-
                 </div>
                 <div class="modal-footer">
                     <button type="submit" name="updateaccount" class="btn btn-success">Submit</button>
@@ -183,7 +163,7 @@
 
     document.addEventListener('DOMContentLoaded', function () {
             Validator({
-            form: '#form-admin',
+            form: '.form-admin',
             formGroupSelector: '.form-group',
             errorSelector: '.form-message',
             rules: [

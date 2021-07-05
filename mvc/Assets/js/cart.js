@@ -1,5 +1,5 @@
 function format(n) {
-    return (n * 1000).toLocaleString('vi', {
+    return n.toLocaleString('vi', {
         style: 'currency',
         currency: 'VND'
     })
