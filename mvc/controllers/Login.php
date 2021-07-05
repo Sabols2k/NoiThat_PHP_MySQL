@@ -72,7 +72,7 @@ class Login extends Controller{
         $_SESSION['user']['email'] = $user['email'];
         $_SESSION['user']['firstname'] = $user['firstname'];
         $_SESSION['user']['lastname'] = $user['lastname'];
-        $_SESSION['user']['img'] = imgAccount . $user['avatar'];
+        $_SESSION['user']['img'] = imgUser . $user['avatar'];
         // header('Location:'.URL);
         echo "<script>window.location.href= '" . URL. "home" . "'</script>";
     }

@@ -42,7 +42,7 @@
                     <div class="line-break">
                         <span>hoặc</span>
                     </div>
-                    <form id="form-1" method="POST" action="/register" class="form">
+                    <form method="POST" action="http://localhost:8080/NoiThat/register/create" class="form">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -79,7 +79,7 @@
                             <input id="password-confirm" type="password" class="form-control" placeholder="Nhập lại mật khẩu">
                             <span class="form-message"></span>
                         </div>
-                        <button type="submit" class="form-submit" onclick="showToastSuccess()">Đăng ký</button>
+                        <button type="submit" name="register" class="form-submit" onclick="showToastSuccess()">Đăng ký</button>
                         <div class="text-register text-center mt-4">
                             <p>
                                 <a href="login">Đăng nhập</a>

@@ -4,6 +4,20 @@
         <div class="col-lg-9 d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">All Accounts</h1>
         </div>
+        <div class="col-lg-3 d-sm-flex align-items-center justify-content-between ">
+            <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 " method="GET">
+                <div class="input-group">
+                    <input name="value" type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                        aria-label="Search" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-info"  type="submit"  >
+                            <i class="fas fa-search fa-sm"></i>
+                        </button> 
+                    </div>
+                </div>
+            </form>
+            
+        </div>
     </div>
     <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -39,7 +53,8 @@
                                 <td><?php echo $row['lastname'] ?></td>
                                 <td><?php echo $row['email'] ?></td>
                                 <td><?php echo $row['phone'] ?></td>
-                                <td><img style="width: 60px; height: 60px; border-radius: 50%;" src="<?php echo imgAccount.'/' . $row['avatar'] ?>" alt=""></td>
+                                <td style="display: none;"><?php echo $row['avatar'] ?></td>
+                                <td><img style="width: 60px; height: 60px; border-radius: 50%;" src="<?php echo imgAccount . '/' . $row['avatar'] ?>" alt=""></td>
                                 <td class="d-flex justify-content-around">
                                     <button type="button" class="btn btn-success updatebtn">
                                         <i class="fa fa-wrench fa-lg action" aria-hidden="true"></i>
@@ -80,15 +95,15 @@
                         <span class="form-message"></span>
                     </div>
                     <div class="form-group">
-                        <input name="phone" type="phone" class="form-control" id="phoneNumberAdmin"  placeholder="Phone number">
+                        <input name="phone" type="phone" class="form-control" id="phoneNumberAdmin" placeholder="Phone number">
                         <span class="form-message"></span>
                     </div>
                     <div class="form-group">
-                        <input name="firstname" type="firstname" class="form-control"  id="firstnameAdmin" placeholder="Firstname">
+                        <input name="firstname" type="firstname" class="form-control" id="firstnameAdmin" placeholder="Firstname">
                         <span class="form-message"></span>
                     </div>
                     <div class="form-group">
-                        <input name="lastname" type="lastname" class="form-control"  id="lastnameAdmin" placeholder="Lastname">
+                        <input name="lastname" type="lastname" class="form-control" id="lastnameAdmin" placeholder="Lastname">
                         <span class="form-message"></span>
                     </div>
                     <div class="form-group">
@@ -118,6 +133,9 @@
             </div>
             <form class="update-form" enctype="multipart/form-data" action="http://localhost:8080/NoiThat/admin/editAccount" method="POST">
                 <div class="modal-body">
+                    <div class="avatar text-center">
+                        <img id="avatar" src="" class="change-avatar">
+                    </div>
                     <input type="hidden" name="update_id" id="update_id">
                     <div class="form-group">
                         <input id="email" name="email" type="email" class="form-control" placeholder="Email">
@@ -156,13 +174,14 @@
             $('#lastname').val(data[2]);
             $('#email').val(data[3]);
             $('#phone').val(data[4]);
+            $('#avatar').src(data[5]);
 
 
         })
     });
 
-    document.addEventListener('DOMContentLoaded', function () {
-            Validator({
+    document.addEventListener('DOMContentLoaded', function() {
+        Validator({
             form: '.form-admin',
             formGroupSelector: '.form-group',
             errorSelector: '.form-message',
@@ -178,5 +197,4 @@
             ],
         })
     })
-    
 </script>

@@ -4,6 +4,20 @@
         <div class="col-lg-9 d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">All Users</h1>
         </div>
+        <div class="col-lg-3 d-sm-flex align-items-center justify-content-between ">
+            <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 " method="GET">
+                <div class="input-group">
+                    <input name="value" type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                        aria-label="Search" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-info"  type="submit"  >
+                            <i class="fas fa-search fa-sm"></i>
+                        </button> 
+                    </div>
+                </div>
+            </form>
+            
+        </div>
     </div>
     <div class="card shadow mb-4">
         <div class="card-header py-3">

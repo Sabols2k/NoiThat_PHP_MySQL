@@ -190,13 +190,12 @@
         // console.log(bd)
             
         function sendEmail(items) {
-            console.log("sendEmail")
-            // console.log(cartLS.list())
 
             const name= document.querySelector('#fullname').value;
             const email= document.querySelector('#email').value;
-
-            if(email==='' || name===''){
+            const address= document.querySelector('#address').value;
+            
+            if(email==='' || name==='' || address ===''){
                 showToastWarn()
                 return;
             }
@@ -220,6 +219,7 @@
                
             );
              // cartLS.add({id: 2, name: "Product 2", price: 100}, 2)
+            
              console.log("sendEmail")
              const data = [];
             //  data.push({totalPrice: cartLS.total()})
@@ -232,8 +232,10 @@
                  url: "http://localhost:8080/NoiThat/Checkout/create",
                  data:  {
                             "totalPrice": cartLS.total(),
+                            "address": address,
                             "detail": cartLS.list(),
                             "length": cartLS.list().length
+
                  },
                  success: function (msg){
                     // alert(msg);
@@ -242,18 +244,7 @@
                
              } )
 
-            //  $.ajax({
-            //     type: "POST",
-            //     url: "http://localhost:8080/NoiThat/Checkout/create",
-            //     data:  JSON.stringify(data),
-            //     contentType: 'application/json',
-            //     encode: true,
-            //     success: function (msg){
-            //        alert(msg);
-            //    }
-            // },).done(function(res){
-              
-            // } )
+       
 
              cartLS.destroy();
 

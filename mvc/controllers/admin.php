@@ -86,7 +86,7 @@ class Admin extends Controller
         }
         $this->viewadmin('login', $data);
     }
-    
+
     public function createUserSession($user)
     {
         $_SESSION['admin']['type'] = 'admin';
@@ -153,7 +153,7 @@ class Admin extends Controller
                 if (isset($a)) {
                     $stt = 0;
                     foreach ($a as $name) {
-                        print_r($name['0']);
+                        // print_r($name['0']);
                         $model = $this->modeladmin("account");
                         $data['account'][$stt] = $model->getDataAccountById($name['0']);
                         $stt++;
@@ -188,26 +188,19 @@ class Admin extends Controller
     {
         $_SESSION['function'] = 'account';
         $data['account'] = [
-
             'email' => '',
             'password' => '',
             'firstname' => '',
             'lastname' => '',
             'phone' => '',
-            'avatar'=>'',
-            'emailError' => ' ',
-            'passwordError' => '',
-            'firstnameError' => ' ',
-            'lastnameError' => ' ',
-            'phoneError' => ' ',
-            'avatarError' => ' ',
+            'avatar' => '',
         ];
         //Check for post
         if (isset($_POST['addaccount'])) {
-            if(isset($_FILES['avatar'])){
-                echo "<pre>";
-                print_r($_FILES['avatar']);
-                echo "</pre>";
+            if (isset($_FILES['avatar'])) {
+                // echo "<pre>";
+                // print_r($_FILES['avatar']);
+                // echo "</pre>";
 
                 $img_name = $_FILES['avatar']['name'];
                 $img_type = $_FILES['avatar']['type'];
@@ -215,35 +208,29 @@ class Admin extends Controller
                 $img_size = $_FILES['avatar']['size'];
                 $error = $_FILES['avatar']['error'];
 
-                if($error === 0){
-                    if($img_size > 12500000){
+                if ($error === 0) {
+                    if ($img_size > 12500000) {
                         $em = "Sorry, your file is too large.";
                         header("location: http://localhost:8080/NoiThat/admin/AddAccount?error=$em");
-                    
-                    }
-                    else{
+                    } else {
                         $img_ex = pathinfo($img_name, PATHINFO_EXTENSION);
                         $img_ex_lc = strtolower($img_ex);
-                        
+
                         $allowed_exs = array("jpg", "jpeg", "png");
-                        if(in_array($img_ex_lc, $allowed_exs)){
-                            $new_img_name = uniqid("IMG-", true).'.'.$img_ex_lc;
+                        if (in_array($img_ex_lc, $allowed_exs)) {
+                            $new_img_name = uniqid("IMG-", true) . '.' . $img_ex_lc;
                             // $new_img_name = trim($_POST['email']).'.'.$img_ex_lc;
                             // echo  $new_img_name;
-                            $img_upload_path = 'C:\xampp\htdocs\NoiThat\mvc\Assets\admin\img\account/'. $new_img_name;
+                            $img_upload_path = 'C:\xampp\htdocs\NoiThat\mvc\Assets\admin\img\account/' . $new_img_name;
                             // echo  $img_upload_path;
                             move_uploaded_file($tmp_name, $img_upload_path);
-                        } else{
+                        } else {
                             $em = "You can't upload files of this type";
                             header("location: http://localhost:8080/NoiThat/admin/AddAccount?error=$em");
-                    
                         }
                     }
-                }
-                else{
-                    $em = "Unknown error occurred";
-                    header("location: http://localhost:8080/NoiThat/admin/AddAccount?error=$em");
-                    
+                } else {
+                    $new_img_name = "img_avatar.png";
                 }
             }
             // echo "abc";
@@ -257,12 +244,6 @@ class Admin extends Controller
                 'lastname' => trim($_POST['lastname']),
                 'phone' => trim($_POST['phone']),
                 'avatar' => $new_img_name,
-                'usernameError' => '',
-                'passwordError' => '',
-                'emailError' => ' ',
-                'firstnameError' => ' ',
-                'lastnameError' => ' ',
-                'phoneError' => ' ',
             ];
             // echo $data['account']['avatar'];
             // die();
@@ -297,7 +278,7 @@ class Admin extends Controller
         // print_r($data); die();
         //Check for post
         if (isset($_POST['updateaccount'])) {
-            
+
             $account = [
                 'update_id' => trim($_POST['update_id']),
                 'email' => trim($_POST['email']),
@@ -309,10 +290,10 @@ class Admin extends Controller
             // print_r ($room);
             $model = $this->modeladmin("account");
             $model->updateAccount(
-                $account['update_id'], 
-                $account['email'], 
-                $account['phone'], 
-                $account['firstname'], 
+                $account['update_id'],
+                $account['email'],
+                $account['phone'],
+                $account['firstname'],
                 $account['lastname']
             );
             echo "<script>window.location.href= '" . URLAdmin . 'account' . "'</script>";
@@ -327,7 +308,7 @@ class Admin extends Controller
         // header('Location:'.URLAdmin. 'viewaccount');
         echo "<script>window.location.href= '" . URLAdmin . 'account' . "'</script>";
     }
-    
+
 
     //view account user
 
@@ -388,16 +369,41 @@ class Admin extends Controller
             'lastname' => '',
             'phone' => '',
             'address' => '',
-            'emailError' => ' ',
-            'passwordError' => '',
-            'firstnameError' => ' ',
-            'lastnameError' => ' ',
-            'phoneError' => ' ',
-            'addressError' => ' ',
+            'avatar' => ''
         ];
         //Check for post
         if (isset($_POST['adduser'])) {
+            if (isset($_FILES['avatar'])) {
 
+                $img_name = $_FILES['avatar']['name'];
+                $img_type = $_FILES['avatar']['type'];
+                $tmp_name = $_FILES['avatar']['tmp_name'];
+                $img_size = $_FILES['avatar']['size'];
+                $error = $_FILES['avatar']['error'];
+
+                if ($error === 0) {
+                    if ($img_size > 12500000) {
+                        $em = "Sorry, your file is too large.";
+                        header("location: http://localhost:8080/NoiThat/admin/AddUser?error=$em");
+                    } else {
+                        $img_ex = pathinfo($img_name, PATHINFO_EXTENSION);
+                        $img_ex_lc = strtolower($img_ex);
+
+                        $allowed_exs = array("jpg", "jpeg", "png");
+                        if (in_array($img_ex_lc, $allowed_exs)) {
+                            $new_img_name = uniqid("IMG-", true) . '.' . $img_ex_lc;
+                            $img_upload_path = 'C:\xampp\htdocs\NoiThat\mvc\Assets\img\users/' . $new_img_name;
+                            // echo  $img_upload_path;
+                            move_uploaded_file($tmp_name, $img_upload_path);
+                        } else {
+                            $em = "You can't upload files of this type";
+                            header("location: http://localhost:8080/NoiThat/admin/AddAccount?error=$em");
+                        }
+                    }
+                } else {
+                    $new_img_name = "img_avatar.png";
+                }
+            }
             $data['user'] = [
                 'email' => trim($_POST['email']),
                 'password' => trim($_POST['password']),
@@ -405,13 +411,7 @@ class Admin extends Controller
                 'lastname' => trim($_POST['lastname']),
                 'phone' => trim($_POST['phone']),
                 'address' => trim($_POST['address']),
-                'usernameError' => '',
-                'passwordError' => '',
-                'emailError' => ' ',
-                'firstnameError' => ' ',
-                'lastnameError' => ' ',
-                'phoneError' => ' ',
-                'addressError' => ' ',
+                'avatar' => $new_img_name,
             ];
             // echo $data['user'];
             // exit;
@@ -422,7 +422,8 @@ class Admin extends Controller
                 $data['user']['phone'],
                 $data['user']['firstname'],
                 $data['user']['lastname'],
-                $data['user']['address']
+                $data['user']['address'],
+                $data['user']['avatar']
             );
             echo "<script>window.location.href= '" . URLAdmin . 'user' . "'</script>";
         }
@@ -438,7 +439,6 @@ class Admin extends Controller
             'firstname' => '',
             'lastname' => '',
             'avatar' => '',
-
         ];
 
         // $model = $this->modeladmin("account");
@@ -446,7 +446,7 @@ class Admin extends Controller
         // print_r($data); die();
         //Check for post
         if (isset($_POST['updateuser'])) {
-            
+
             $user = [
                 'update_id' => trim($_POST['update_id']),
                 'email' => trim($_POST['email']),
@@ -460,12 +460,12 @@ class Admin extends Controller
             // $id= $user['update_id'];
             // print_r ($room);
             $model = $this->modeladmin("user");
-            $model->updateUser(
-                $user['update_id'], 
-                $user['email'], 
-                $user['phone'], 
-                $user['firstname'], 
-                $user['lastname'], 
+            $model->updateUser2(
+                $user['update_id'],
+                $user['email'],
+                $user['phone'],
+                $user['firstname'],
+                $user['lastname'],
                 $user['address']
             );
             echo "<script>window.location.href= '" . URLAdmin . 'user' . "'</script>";
@@ -481,124 +481,162 @@ class Admin extends Controller
         echo "<script>window.location.href= '" . URLAdmin . 'user' . "'</script>";
     }
 
-       //view product
+    //view product
 
-       public function product()
-       {
-           $_SESSION['function'] = 'product';
-   
-           //Hàm dùng để search data by name
-           if (isset($_GET['value'])) {
-               $data['value'] = trim($_GET['value']);
-               $model = $this->modeladmin("product");
-               $a =  $model->searchProductbyName($data['value']);
-               // print_r($a); die();
-               // echo $data['value']; die();
-               if (($data['value'] !== "")) {
-                   if (isset($a)) {
-                       $stt = 0;
-                       foreach ($a as $name) {
-                           print_r($name['0']);
-                           $model = $this->modeladmin("product");
-                           $data['product'][$stt] = $model->getDataProductById($name['0']);
-                           $stt++;
-                       }
-                       // die();
-                       $data['main'] = 'Product/view-product';
-                       $this->viewadmin('index', $data);
-                   } else {
-                       $model = $this->modeladmin("product");
-                       $data['product'] =  NULL;
-                       $data['main'] = 'Product/view-product';
-                       $this->viewadmin('index', $data);
-                   }
-                   // $len=strlen($data['value']);
-   
-                   // print_r($a); die();
-   
-               } else {
-                   $model = $this->modeladmin("product");
-                   $data['product'] =  $model->getAllProduct();
-                   $data['main'] = 'Product/view-product';
-                   $this->viewadmin('index', $data);
-               }
-           }
-   
-           $model = $this->modeladmin("product");
-           $data['product'] =  $model->getAllProduct();
-           $data['main'] = 'Product/view-product';
-           $this->viewadmin('index', $data);
-       }
-       public function AddProduct()
-       {
-           $_SESSION['function'] = 'user';
-           $data['product'] = [
-               'name' => '',
-               'price' => '',
-               'category' => '',
-           ];
-           //Check for post
-           if (isset($_POST['addproduct'])) {
-   
-               $data['product'] = [
-                   'name' => trim($_POST['name']),
-                   'price' => trim($_POST['price']),
-                   'category' => trim($_POST['category'])
-               ];
-               $model = $this->modeladmin("product");
-               $model->InsertProduct(
-                   $data['product']['name'],
-                   $data['product']['price'],
-                   $data['product']['category']
-               );
-               echo "<script>window.location.href= '" . URLAdmin . 'product' . "'</script>";
-           }
-       }
-   
-       public function editProduct()
-       {
-           $_SESSION['function'] = 'product';
-           $product = [
-               'update_id' => '',
-               'name' => '',
-               'price' => '',
-               'category' => '',
-           ];
-   
-           // $model = $this->modeladmin("account");
-           // $data['account'] = $model->getDataAccountById($id);
-           // print_r($data); die();
-           //Check for post
-           if (isset($_POST['updateproduct'])) {
-               
-               $product = [
-                   'update_id' => trim($_POST['update_id']),
-                   'name' => trim($_POST['name']),
-                   'price' =>  trim($_POST['price']),
-                   'category' =>  trim($_POST['category']),
-               ];
-               // $id= $product['update_id'];
-               // print_r ($room);
-               $model = $this->modeladmin("product");
-               $model->updateProduct(
-                   $product['update_id'], 
-                   $product['name'], 
-                   $product['price'], 
-                   $product['category']
-               );
-               echo "<script>window.location.href= '" . URLAdmin . 'product' . "'</script>";
-           }
-       }
-   
-       public function deleteProduct($id)
-       {
-           $_SESSION['function'] = 'product';
-           $model = $this->modeladmin("product");
-           $model->DeleteProductById($id);
-           // header('Location:'.URLAdmin. 'viewaccount');
-           echo "<script>window.location.href= '" . URLAdmin . 'product' . "'</script>";
-       }
-   
+    public function product()
+    {
+        $_SESSION['function'] = 'product';
+
+        //Hàm dùng để search data by name
+        if (isset($_GET['value'])) {
+            $data['value'] = trim($_GET['value']);
+            $model = $this->modeladmin("product");
+            $a =  $model->searchProductbyName($data['value']);
+            // print_r($a); die();
+            // echo $data['value']; die();
+            if (($data['value'] !== "")) {
+                if (isset($a)) {
+                    $stt = 0;
+                    foreach ($a as $name) {
+                        print_r($name['0']);
+                        $model = $this->modeladmin("product");
+                        $data['product'][$stt] = $model->getDataProductById($name['0']);
+                        $stt++;
+                    }
+                    // die();
+                    $data['main'] = 'Product/view-product';
+                    $this->viewadmin('index', $data);
+                } else {
+                    $model = $this->modeladmin("product");
+                    $data['product'] =  NULL;
+                    $data['main'] = 'Product/view-product';
+                    $this->viewadmin('index', $data);
+                }
+                // $len=strlen($data['value']);
+
+                // print_r($a); die();
+
+            } else {
+                $model = $this->modeladmin("product");
+                $data['product'] =  $model->getAllProduct();
+                $data['main'] = 'Product/view-product';
+                $this->viewadmin('index', $data);
+            }
+        }
+
+        $model = $this->modeladmin("product");
+        $data['product'] =  $model->getAllProduct();
+        $data['main'] = 'Product/view-product';
+        $this->viewadmin('index', $data);
+    }
+    public function AddProduct()
+    {
+        $_SESSION['function'] = 'user';
+        $data['product'] = [
+            'name' => '',
+            'price' => '',
+            'category' => '',
+            'img' => '',
+        ];
+        //Check for post
+        if (isset($_POST['addproduct'])) {
+            if (isset($_FILES['img'])) {
+                // echo "<pre>";
+                // print_r($_FILES['avatar']);
+                // echo "</pre>";
+
+                $img_name = $_FILES['img']['name'];
+                $img_type = $_FILES['img']['type'];
+                $tmp_name = $_FILES['img']['tmp_name'];
+                $img_size = $_FILES['img']['size'];
+                $error = $_FILES['img']['error'];
+
+                if ($error === 0) {
+                    if ($img_size > 12500000) {
+                        $em = "Sorry, your file is too large.";
+                        header("location: http://localhost:8080/NoiThat/admin/AddAccount?error=$em");
+                    } else {
+                        $img_ex = pathinfo($img_name, PATHINFO_EXTENSION);
+                        $img_ex_lc = strtolower($img_ex);
+
+                        $allowed_exs = array("jpg", "jpeg", "png");
+                        if (in_array($img_ex_lc, $allowed_exs)) {
+                            $new_img_name = uniqid("IMG-", true);
+                            // $new_img_name = trim($_POST['email']).'.'.$img_ex_lc;
+                            // echo  $new_img_name;
+                            $img_upload_path = 'C:\xampp\htdocs\NoiThat\mvc\Assets\img\All-products/' . $new_img_name.'.'.$img_ex_lc;
+                            // echo  $img_upload_path;
+                            move_uploaded_file($tmp_name, $img_upload_path);
+                        } else {
+                            $em = "You can't upload files of this type";
+                            header("location: http://localhost:8080/NoiThat/admin/AddAccount?error=$em");
+                        }
+                    }
+                } else {
+                    $new_img_name = "img_avatar.png";
+                }
+            }
+            $data['product'] = [
+                'name' => trim($_POST['name']),
+                'price' => trim($_POST['price']),
+                'category' => trim($_POST['category']),
+                'img' => $new_img_name
+            ];
+            $model = $this->modeladmin("product");
+            $model->InsertProduct(
+                $data['product']['name'],
+                $data['product']['img'],
+                $data['product']['price'],
+                $data['product']['category']
+            );
+            echo "<script>window.location.href= '" . URLAdmin . 'product' . "'</script>";
+        }
+    }
+
+    public function editProduct()
+    {
+        $_SESSION['function'] = 'product';
+        $product = [
+            'update_id' => '',
+            'name' => '',
+            'price' => '',
+            'category' => '',
+        ];
+
+        // $model = $this->modeladmin("account");
+        // $data['account'] = $model->getDataAccountById($id);
+        // print_r($data); die();
+        //Check for post
+        if (isset($_POST['updateproduct'])) {
+
+            $product = [
+                'update_id' => trim($_POST['update_id']),
+                'name' => trim($_POST['name']),
+                'price' =>  trim($_POST['price']),
+                'category' =>  trim($_POST['category']),
+            ];
+            // $id= $product['update_id'];
+            // print_r ($room);
+            $model = $this->modeladmin("product");
+            $model->updateProduct(
+                $product['update_id'],
+                $product['name'],
+                $product['price'],
+                $product['category']
+            );
+            echo "<script>window.location.href= '" . URLAdmin . 'product' . "'</script>";
+        }
+    }
+
+    public function deleteProduct($id)
+    {
+        $_SESSION['function'] = 'product';
+        $model = $this->modeladmin("product");
+        $model->DeleteProductById($id);
+        // header('Location:'.URLAdmin. 'viewaccount');
+        echo "<script>window.location.href= '" . URLAdmin . 'product' . "'</script>";
+    }
+
 
 
 

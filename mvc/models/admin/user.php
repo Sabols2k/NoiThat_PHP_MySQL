@@ -4,10 +4,17 @@ class user extends DB{
 	{
 		parent::__construct();
 	}
-    public function InsertUser($email,$password, $phone, $firstname, $lastname, $address){
-        $sql="INSERT INTO user(userid ,email,password,phone,firstname,lastname, address ) VALUES (NULL,'$email','$password','$phone', '$firstname','$lastname', '$address')";
+    public function InsertUser($email,$password, $phone, $firstname, $lastname, $address, $avatar){
+        $sql="INSERT INTO user(userid ,email,password,phone,firstname,lastname, address, avatar) VALUES (NULL,'$email','$password','$phone', '$firstname','$lastname', '$address', '$avatar')";
         // $sql="CALL `InsertAccount`('$username', '$password', '$img', '$email', '$firstname', '$lastname', '$address', '$country', '$phone', '$gender', '$birthday', '$roles')";
-        echo $sql;
+        // echo $sql; die();
+        return $this->execute($sql);
+     }
+
+     public function register($email,$password, $phone, $firstname, $lastname, $avatar){
+        $sql="INSERT INTO user(userid ,email,password,phone,firstname,lastname, avatar) VALUES (NULL,'$email','$password','$phone', '$firstname','$lastname', '$avatar')";
+        // $sql="CALL `InsertAccount`('$username', '$password', '$img', '$email', '$firstname', '$lastname', '$address', '$country', '$phone', '$gender', '$birthday', '$roles')";
+        // echo $sql; die();
         return $this->execute($sql);
      }
     //  public function editbyId($id){
@@ -29,7 +36,13 @@ class user extends DB{
         
         return $data;
     }
-     public function updateUser($update_id,$email, $phone, $firstname,$lastname, $address){
+     public function updateUser($update_id,$email, $phone, $firstname,$lastname, $address, $avatar){
+        $sql="UPDATE user set email= '$email',phone='$phone',firstname='$firstname', lastname= '$lastname', address= '$address', avatar= '$avatar' WHERE userid ='$update_id'";
+        // $sql = "CALL `updateAccount`('$id', '$auserID', '$aUsername', '$aPassword', '$aimg', '$aEmail', '$aFirstName', '$aLastName', '$aAddress', '$aCountry', '$aPhone', '$aGender', '$aBirthday')";
+        // echo $sql; die();
+        return $this->execute($sql);
+     }
+     public function updateUser2($update_id,$email, $phone, $firstname,$lastname, $address){
         $sql="UPDATE user set email= '$email',phone='$phone',firstname='$firstname', lastname= '$lastname', address= '$address' WHERE userid ='$update_id'";
         // $sql = "CALL `updateAccount`('$id', '$auserID', '$aUsername', '$aPassword', '$aimg', '$aEmail', '$aFirstName', '$aLastName', '$aAddress', '$aCountry', '$aPhone', '$aGender', '$aBirthday')";
         // echo $sql; die();

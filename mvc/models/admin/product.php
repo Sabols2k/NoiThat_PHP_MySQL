@@ -4,8 +4,8 @@ class product extends DB{
 	{
 		parent::__construct();
 	}
-    public function InsertProduct($name, $price, $category){
-        $sql="INSERT INTO product(productid ,name,price,category) VALUES (NULL,'$name','$price', '$category')";
+    public function InsertProduct($name, $img, $price, $category){
+        $sql="INSERT INTO product(productid ,name,img,price,category) VALUES (NULL,'$name','$img','$price', '$category')";
         // $sql="CALL `InsertAccount`('$productname', '$password', '$img', '$email', '$firstname', '$lastname', '$address', '$country', '$phone', '$gender', '$birthday', '$roles')";
         echo $sql;
         return $this->execute($sql);

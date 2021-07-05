@@ -20,6 +20,7 @@ class Checkout extends Controller
         $data['bill'] = [
             'userid' => '',
             'totalprice' => '',
+            'address' => '',
             'createdAt' => '',
         ];
         $data['billdetail'] = [
@@ -28,12 +29,14 @@ class Checkout extends Controller
             'quantily' => '',
             'price' => '',
         ];
-        echo $_SESSION['user']['userid'];
+        // echo $_SESSION['user']['userid'];
         if (isset($_POST['totalPrice']) && isset($_POST['detail'])) {
-            
+            // echo "aaa";
+            // print_r($_POST['address']) ;die();
             $data['bill'] = [
                 'userid' => trim($_SESSION['user']['userid']),
                 'totalprice' => trim($_POST['totalPrice']),
+                'address' => trim($_POST['address']),
                 'createdAt' => date("Y-m-d", time())
             ];
             $length = $_POST['length'];
@@ -41,12 +44,13 @@ class Checkout extends Controller
             $model->InsertBill(
                 $data['bill']['userid'],
                 $data['bill']['totalprice'],
+                $data['bill']['address'],
                 $data['bill']['createdAt']
             );
             $maxid = $model->getmaxBillidById();
             // echo "aa";
             for ($x = 0; $x <  $length; $x++) {
-                echo "The number is: $x <br>";
+                // echo "The number is: $x <br>";
                 $data['billdetail'] = [
                     'billid' => $maxid['0'],
                     'productid' => trim($_POST['detail'][$x]['id']),

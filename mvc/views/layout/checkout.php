@@ -62,19 +62,15 @@
                                                 <span class="form-message"></span>
                                             </div>
                                             <div class="form-group">
-                                                <input style="background: #f7f7f7" id="firstname" name="firstname" type="text" value="<?php echo $data['user']['firstname']; ?>" class="form-control" placeholder="Firstname" disabled>
+                                                <input style="background: #f7f7f7" id="fullname" name="fullname" type="text" value="<?php echo $data['user']['firstname']. " ". $data['user']['lastname']; ?>" class="form-control" placeholder="Firstname" disabled>
                                                 <span class="form-message"></span>
                                             </div>
                                             <div class="form-group">
-                                                <input style="background: #f7f7f7" id="lastname" name="lastname" type="text" value="<?php echo $data['user']['lastname']; ?>"  class="form-control" placeholder="Lastname" disabled>
+                                                <input style="background: #f7f7f7" id="phoneNumber" name="phoneNumber" type="text" value="<?php echo $data['user']['phone']; ?>" class="form-control" placeholder="Phone Number" disabled>
                                                 <span class="form-message"></span>
                                             </div>
                                             <div class="form-group">
-                                                <input style="background: #f7f7f7" id="phoneNumber" name="phoneNumber" type="text" value="<?php echo $data['user']['phone']; ?>"" class="form-control" placeholder="Phone Number" disabled>
-                                                <span class="form-message"></span>
-                                            </div>
-                                            <div class="form-group">
-                                                <input id="address" name="address" type="text" class="form-control" placeholder="Địa chỉ (tùy chọn)">
+                                                <input id="address" name="address" type="text"value="<?php echo $data['user']['address']; ?>"class="form-control" placeholder="Địa chỉ (tùy chọn)">
                                                 <span class="form-message"></span>
                                             </div>
                                             <div class="form-group">
