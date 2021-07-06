@@ -49,16 +49,18 @@
                     <div class="line-break">
                         <span>hoặc</span>
                     </div>
-                    <form  method="POST" action="<?php echo URL ."login"?>" class="form" >
-                        <div class="form-group">
-                            <label for="email" class="form-label">Email*</label>
-                            <input id="email" name="email" type="text" class="form-control" placeholder="Nhập Địa Chỉ Email">
-                            <span class="form-message"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="password" class="form-label">Mật khẩu*</label>
-                            <input id="password" name="password" type="password" class="form-control" placeholder="Nhập mật khẩu">
-                            <span class="form-message"></span>
+                    <form method="POST" action="<?php echo URL ."login"?>" class="form">
+                        <div id="form-login">
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email*</label>
+                                <input id="email" name="email" type="text" class="form-control" placeholder="Nhập Địa Chỉ Email">
+                                <span class="form-message"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="form-label">Mật khẩu*</label>
+                                <input id="password" name="password" type="password" class="form-control" placeholder="Nhập mật khẩu">
+                                <span class="form-message"></span>
+                            </div>
                         </div>
                         <input type="submit" name="login" class="form-submit" value="Đăng nhập">
                         <p class="text-center">
@@ -87,7 +89,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             Validator({
-            form: '#form-2',
+            form: '#form-login',
             formGroupSelector: '.form-group',
             errorSelector: '.form-message',
             rules: [

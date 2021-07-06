@@ -43,41 +43,43 @@
                         <span>hoặc</span>
                     </div>
                     <form method="POST" action="http://localhost:8080/NoiThat/register/create" class="form">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="firstname" class="form-label">Họ*</label>
-                                    <input id="firstname" name="firstname" type="text" class="form-control" placeholder="Nhập Họ">
-                                    <span class="form-message"></span>
+                        <div id="form-register">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="firstname" class="form-label">Họ*</label>
+                                        <input id="firstname" name="firstname" type="text" class="form-control" placeholder="Nhập Họ">
+                                        <span class="form-message"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="lastname" class="form-label">Tên*</label>
+                                        <input id="lastname" name="lastname" type="text" class="form-control" placeholder="Nhập Tên">
+                                        <span class="form-message"></span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="lastname" class="form-label">Tên*</label>
-                                    <input id="lastname" name="lastname" type="text" class="form-control" placeholder="Nhập Tên">
-                                    <span class="form-message"></span>
-                                </div>
+                            <div class="form-group">
+                                <label for="phoneNumber" class="form-label">Số điện thoại*</label>
+                                <input id="phoneNumber" name="phoneNumber" type="text" class="form-control" placeholder="Nhập Số Điện Thoại">
+                                <span class="form-message"></span>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="phoneNumber" class="form-label">Số điện thoại*</label>
-                            <input id="phoneNumber" name="phoneNumber" type="text" class="form-control" placeholder="Nhập Số Điện Thoại">
-                            <span class="form-message"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="email" class="form-label">Email*</label>
-                            <input id="email" name="email" type="text" class="form-control" placeholder="Nhập Địa Chỉ Email">
-                            <span class="form-message"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="password" class="form-label">Mật khẩu*</label>
-                            <input id="password" name="password" type="password" class="form-control" placeholder="Nhập mật khẩu">
-                            <span class="form-message"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="password-confirm" class="form-label">Nhập lại mật khẩu*</label>
-                            <input id="password-confirm" type="password" class="form-control" placeholder="Nhập lại mật khẩu">
-                            <span class="form-message"></span>
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email*</label>
+                                <input id="email" name="email" type="text" class="form-control" placeholder="Nhập Địa Chỉ Email">
+                                <span class="form-message"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="form-label">Mật khẩu*</label>
+                                <input id="password" name="password" type="password" class="form-control" placeholder="Nhập mật khẩu">
+                                <span class="form-message"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="password-confirm" class="form-label">Nhập lại mật khẩu*</label>
+                                <input id="password-confirm" type="password" class="form-control" placeholder="Nhập lại mật khẩu">
+                                <span class="form-message"></span>
+                            </div>
                         </div>
                         <button type="submit" name="register" class="form-submit" onclick="showToastSuccess()">Đăng ký</button>
                         <div class="text-register text-center mt-4">
@@ -85,7 +87,7 @@
                                 <a href="login">Đăng nhập</a>
                             </p>
                         </div>
-                    </form>                  
+                    </form>                 
                 </div>
             </div>
         </div>
@@ -102,7 +104,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             Validator({
-            form: '#form-1',
+            form: '#form-register',
             formGroupSelector: '.form-group',
             errorSelector: '.form-message',
             rules: [
