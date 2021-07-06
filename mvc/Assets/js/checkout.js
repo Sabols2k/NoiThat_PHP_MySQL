@@ -72,9 +72,7 @@
                 currency: 'VND'
             })
         }
-        function render(items){
-            // console.log(items);
-        }
+        
         var data = [];
         var total;
         function renderCartCheckout(items) {
@@ -83,9 +81,7 @@
             const $totalCheckout = document.querySelector(".total")
             const $totalCheckoutPrice = document.querySelector(".total.amount")
             const $countItemsCheckout = document.querySelector(".count-item")
-            console.log($totalCheckout);
-            // console.log(items)
-            // req.session.pricetotal=$totalCheckout
+
             const formData = {
                 cartCheckout: $cartCheckout
             }
@@ -111,7 +107,6 @@
                 </tr>`).join("")
 
             $totalCheckout.innerHTML = format(cartLS.total())
-            // console.log(cartLS.total())
             total = cartLS.total();
             console.log(total)
             $totalCheckoutPrice.innerHTML = format(cartLS.total() + 40)
@@ -126,14 +121,14 @@
         // =============================================
         // MAIL PRODUCT TO CUSTOMER
         // =============================================
-        function showToastWarn() {
-            toast({
-                title: 'Warning',
-                message: 'Vui lòng nhập thông tin của bạn!',
-                type: 'warn',
-                duration: 3000
-            })
-        }
+        // function showToastWarn() {
+        //     toast({
+        //         title: 'Warning',
+        //         message: 'Vui lòng nhập thông tin của bạn!',
+        //         type: 'warn',
+        //         duration: 3000
+        //     })
+        // }
 
         function showToastSuccess() {
             toast({
@@ -153,6 +148,7 @@
 
             const totalCheckout = document.querySelector("#total")
             const totalCheckoutMail = format(cartLS.total(totalCheckout))
+            const name= document.querySelector('#fullname').value;
             
             const item = Array.from(items).map(item => `
                 <tbody>
@@ -163,7 +159,7 @@
                         </tr>
                 </tbody>
                 `).join('');
-                bd = `  Xin chào, đơn hàng của Anh/chị đã được tiếp nhận, chúng tôi sẽ nhanh chóng liên hệ với Anh/chị.<br><br>
+                bd = `  Xin chào `+ name +`, đơn hàng của Anh/chị đã được tiếp nhận, chúng tôi sẽ nhanh chóng liên hệ với Anh/chị.<br><br>
                         <table style="width:500px; text-align:center" cellspacing=”0” cellpadding=”0” width=”640” align=”center” border=”1”>
                             <thead>
                                 <tr>
@@ -187,18 +183,16 @@
                 
         }
         cartMail(cartLS.list())
-        // console.log(bd)
             
         function sendEmail(items) {
 
-            const name= document.querySelector('#fullname').value;
             const email= document.querySelector('#email').value;
             const address= document.querySelector('#address').value;
             
-            if(email==='' || name==='' || address ===''){
-                showToastWarn()
-                return;
-            }
+            // if(email==='' || name==='' || address ===''){
+            //     showToastWarn()
+            //     return;
+            // }
 
             Email.send({
 
@@ -212,21 +206,10 @@
 
             }).then(  
                 message => showToastSuccess().then(
-                    // window.location="http://localhost:3000/account"
-                
+                    
                 )
-                
                
             );
-             // cartLS.add({id: 2, name: "Product 2", price: 100}, 2)
-            
-             console.log("sendEmail")
-             const data = [];
-            //  data.push({totalPrice: cartLS.total()})
-            //  data.push(cartLS.list())
-            //  console.log(data)
-            console.log("length");
-            console.log(cartLS.list().length);
              $.ajax({
                  type: "POST",
                  url: "http://localhost:8080/NoiThat/Checkout/create",
@@ -238,20 +221,13 @@
 
                  },
                  success: function (msg){
-                    // alert(msg);
+                    // window.location="http://localhost:8080/NoiThat/home"
                 }
              },).done(function(res){
-               
+                
              } )
 
-       
-
              cartLS.destroy();
-
-
-            
-            
-
 
         }
         sendEmail(cartLS.list())

@@ -19,8 +19,7 @@
   </head>
 <body>
 
-     <!-- ========== HEADER ========== -->
-     <?php $page = 'home'; require_once('general/header.php');?>
+    
     <div id="toast"></div>
     <div id="payment">
         <header class="banner">
@@ -209,7 +208,7 @@
                         <div class="order-summary-section">
                             <div class="field-input-wrapper hide-on-mobile">
                                 <button class="btn btn-lg btn-checkout" name="sendmail" onclick="sendEmail()">Đặt hàng</button>
-                                <a href="/cart" class="prev-cart">
+                                <a href="<?php echo URL. "cart"?>" class="prev-cart">
                                     <i class="fas fa-arrow-left"></i>
                                     <span>Quay về giỏ hàng</span>
                                 </a>
@@ -220,10 +219,7 @@
             </div>
         </div>
     </div>
-     <!-- ========== FOOTER ========== -->
-     <?php
-        require_once('general/footer.php');
-      ?> 
+    
     </div>
     <!-- ========== JAVASCRIPT ========== -->
     <?php 

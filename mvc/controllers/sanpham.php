@@ -21,7 +21,7 @@ class sanpham extends Controller
 
         $model = $this->modeladmin("product");
         $data['product'] = $model->getDataProductById($id);
-        print_r($data['product']);
+        // print_r($data['product']);
         $this->view("detail-sanpham", $data);
     }
     

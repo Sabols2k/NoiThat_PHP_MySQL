@@ -13,7 +13,7 @@ class Search extends Controller{
                 if (isset($a)) {
                     $stt = 0;
                     foreach ($a as $name) {
-                        print_r($name['0']);
+                        // print_r($name['0']);
                         $model = $this->modeladmin("product");
                         $data['product'][$stt] = $model->getDataProductById($name['0']);
                         $stt++;

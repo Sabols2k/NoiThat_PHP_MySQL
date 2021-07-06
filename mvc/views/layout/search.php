@@ -37,38 +37,37 @@
                 <div class="col-md-12 mb-5">
                     <div class="products-view-search">
                         <div class="row mb-5" id="list-products-search">
-                        <?php
-                        foreach ($data['product'] as $row) {
-                        ?>
-                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
-                                <div class="evo-product-block-item">
-                                    <div class="product-img">
-                                        <a href="http://localhost:8080/NoiThat/sanpham/detail/<?php echo $row['productid'] ?>">
-                                            <img class="img-prd" src="mvc/Assets/img/All-products/<?php echo $row['img'] ?>.jpg" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="button-add">
-                                        <button>
-                                            <i class="far fa-check-square"></i>
-                                        </button>
-                                        <button class="btn-cart" type="submit" data-bs-toggle="modal" data-bs-target="#cartModal" onClick="cartLS.add({id: <?php echo $row['productid'] ?>, name: '<?php echo $row['name'] ?>', img:'<?php echo $row['img'] ?>', price: <?php echo $row['price'] ?>})">
-                                            <i class="fas fa-shopping-bag"></i>
-                                        </button>
-                                    </div>
-                                    <div class="product-detail">
-                                        <div class="pro-brand">
-                                            <a href="">Evo Nội Thất</a>
+                            <?php
+                            foreach ($data['product'] as $row) {
+                            ?>
+                                <div class="col-xs-6 col-sm-4 col-md-15">
+                                    <div class="evo-product-block-item ">
+                                        <div class="product-img">
+                                            <a href="http://localhost:8080/NoiThat/sanpham/detail/<?php echo $row['productid'] ?>">
+                                                <img class="img-prd" src="mvc/Assets/img/All-products/<?php echo $row['img'] ?>.jpg" alt="">
+                                            </a>
                                         </div>
-                                        <h3>
-                                            <a href="http://localhost:8080/NoiThat/sanpham/detail/${product.productid}" class="pro-name"><?php echo $row['name'] ?></a>
-                                        </h3>
-                                        <p class="pro-price">$<?php echo $row['price'] ?></p>
+                                        <div class="button-add">
+                                            <button>
+                                                <i class="far fa-check-square"></i>
+                                            </button>
+                                            <button class="btn-cart" type="submit" data-bs-toggle="modal" data-bs-target="#cartModal" onClick="cartLS.add({id: <?php echo $row['productid'] ?>, name: '<?php echo $row['name'] ?>', img:'<?php echo $row['img'] ?>', price: <?php echo $row['price'] ?>})">
+                                                <i class="fas fa-shopping-bag"></i>
+                                            </button>
+                                        </div>
+                                        <div class="product-detail">
+                                            <div class="pro-brand">
+                                                <a href="">Evo Nội Thất</a>
+                                            </div>
+                                            <h3>
+                                                <a href="http://localhost:8080/NoiThat/sanpham/detail/${product.productid}" class="pro-name"><?php echo $row['name'] ?></a>
+                                            </h3>
+                                            <p class="pro-price">$<?php echo $row['price'] ?></p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-
                             <?php }
-                        ?>
+                            ?>
                         </div>
                     </div>
                 </div>

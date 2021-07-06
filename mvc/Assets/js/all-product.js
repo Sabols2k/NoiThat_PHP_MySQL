@@ -51,7 +51,7 @@
                                 <h3>
                                     <a href="http://localhost:8080/NoiThat/sanpham/detail/${product.productid}" class="pro-name">${product.name}</a>
                                 </h3>
-                                <p class="pro-price">${format(product.price)}</p>
+                                <p class="pro-price"> ${format(product.price)}</p>
                             </div>
                         </div>
                     </div>`
